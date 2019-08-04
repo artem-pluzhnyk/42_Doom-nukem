@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/07/17 16:26:40 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/03 17:59:41 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ void	render_2(t_main *m)
 	if (REND.tz1 <= 0 || REND.tz2 <= 0)
 	{
 		render_init2(m);
+		REND.org1.x = REND.tx1;
+		REND.org1.y = REND.tz1;
+		REND.org2.x = REND.tx2;
+		REND.org2.y = REND.tz2;
 		if (REND.tz1 < 1e-4f)
 		{
 			if (REND.i1.y > 0)
@@ -42,6 +46,16 @@ void	render_2(t_main *m)
 				REND.tx2 = REND.i2.x;
 				REND.tz2 = REND.i2.y;
 			}
+		}
+		if (fabsf(REND.tx2 - REND.tx1) > fabsf(REND.tz2 - REND.tz1))
+		{
+			REND.u0 = (REND.tx1 - REND.org1.x) * 1023 / (REND.org2.x - REND.org1.x);
+			REND.u1 = (REND.tx2 - REND.org1.x) * 1023 / (REND.org2.x - REND.org1.x);
+		}
+		else
+		{
+			REND.u0 = (REND.tz1 - REND.org1.y) * 1023 / (REND.org2.y - REND.org1.y);
+			REND.u1 = (REND.tz2 - REND.org1.y) * 1023 / (REND.org2.y - REND.org1.y);
 		}
 	}
 }

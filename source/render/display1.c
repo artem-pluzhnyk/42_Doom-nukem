@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/07/17 17:38:29 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/03 18:41:00 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	render_npoints(t_main *m)
 	s = -1;
 	while (++s < REND.sect->npoints)
 	{
+		REND.u0 = 0;
+		REND.u1 = 1023;
 		render_init1(m, s);
 		if (REND.tz1 <= 0 && REND.tz2 <= 0)
 			continue ;

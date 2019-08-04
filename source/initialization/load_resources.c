@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 16:25:20 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/03 14:16:44 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/03 15:37:00 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void	load_textures(t_main *m)
 
 void	load_font(t_main *m)
 {
-	if (!(SDL.ttf = TTF_OpenFont("resources/SAMBD.ttf", 50)))
+	if (!(SDL.ttf = TTF_OpenFont("resources/font/SAMBD.ttf", 50)))
 		ft_exit("☣ Error ☣");
 	TTF_SetFontStyle(SDL.ttf, TTF_STYLE_NORMAL);
 	TTF_SetFontOutline(SDL.ttf, 1);
 	TTF_SetFontKerning(SDL.ttf, 1);
 	TTF_SetFontHinting(SDL.ttf, TTF_HINTING_NORMAL);
-	if (!(SDL.ttf2 = TTF_OpenFont("resources/SAMBD.ttf", 28)))
+	if (!(SDL.ttf2 = TTF_OpenFont("resources/font/SAMBD.ttf", 28)))
 		ft_exit("☣ Error ☣");
 	TTF_SetFontStyle(SDL.ttf2, TTF_STYLE_NORMAL);
 }

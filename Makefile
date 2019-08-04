@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/08/03 15:23:31 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/08/04 15:23:28 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME = doom-nukem
 
-OPTIM = -flto -Ofast -pipe -O2
+OPTIM = -flto -Ofast -pipe -O3
 DEBUG = -g -fsanitize=address
 FLAGS = -Wall -Wextra -Werror $(OPTIM) $(DEBUG)
 
@@ -50,6 +50,7 @@ SRC = main.c						\
 	render/display2.c				\
 	render/display3.c				\
 	render/options.c				\
+	render/additions.c				\
 	\
 	events/events_sdl.c				\
 	events/moves.c					\
@@ -116,7 +117,6 @@ fclean: clean
 	@rm -f $(NAME)
 	@rm -f setting.cfg
 	@rm -rf $(NAME).dSYM
-	@rm -rf .vscode
 	@echo "\033[1;34m$(NAME): \033[32mDeleted!\033[0m"
 
 re: fclean all

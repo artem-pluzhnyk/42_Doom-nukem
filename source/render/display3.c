@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/02 19:24:12 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/04 19:27:19 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,62 @@ void	render_startend(t_main *m)
 	x = REND.beginx - 1;
 	while (++x <= REND.endx)
 	{
+		REND.txtx = (REND.u0 * ((REND.x2 - x) * REND.tz2) + REND.u1 * ((x - REND.x1) * REND.tz1))
+		/ ((REND.x2 - x) * REND.tz2 + (x - REND.x1) * REND.tz1);
 		render_init5(m, x);
 		if (REND.neighbor >= 0)
 			render_init6(m, x);
 		else
 		{
-			REND.texture_id = 7;
-			REND.color = 0xa03623;
-			vline(m, x, REND.cya, REND.cyb); // Walls
+			REND.txtr_id = 7;
+			scaler_init(m, REND.ya, REND.cya, REND.yb, 0, 1023);
+			vline(m, x, REND.cya, REND.cyb, REND.txtx); // Walls
 		}
 	}
 }
 
 void	render_init5(t_main *m, int x)
 {
+	// int			y;
+	// float		hei;
+	// float		mapx;
+	// float		mapz;
+	// unsigned	txtx;
+	// unsigned	txtz;
+	// int			pel;
+
 	REND.z = ((x - REND.x1) * (REND.tz2 - REND.tz1) / (REND.x2 - REND.x1) + REND.tz1) * 8;
 	REND.ya = (x - REND.x1) * (REND.y2a - REND.y1a) / (REND.x2 - REND.x1) + REND.y1a;
-	REND.cya = CLAMP(REND.ya, REND.ytop[x], REND.ybottom[x]);
 	REND.yb = (x - REND.x1) * (REND.y2b - REND.y1b) / (REND.x2 - REND.x1) + REND.y1b;
+	REND.cya = CLAMP(REND.ya, REND.ytop[x], REND.ybottom[x]);
 	REND.cyb = CLAMP(REND.yb, REND.ytop[x], REND.ybottom[x]);
-	REND.texture_id = 6;
-	REND.color = 0x00BFFF;
-	vline(m, x, REND.ytop[x], REND.cya - 1); // Celing
-	REND.texture_id = 9;
-	REND.color = 0x3f9b0b;
-	vline(m, x, REND.cyb + 1, REND.ybottom[x]); // Floor
+	// y = REND.ytop[x] - 1;
+	// while (++y <= REND.ybottom[x])
+	// {
+	// 	if(y >= REND.cya && y <= REND.cyb)
+	// 	{
+	// 		y = REND.cyb;
+	// 		continue ;
+	// 	}
+	// 	hei = y < REND.cya ? REND.yceil : REND.yfloor;
+	// 	mapz = hei * WIN_H * (1.0 * .2f) / ((WIN_H / 2 - y) - USER.yaw * WIN_H * (1.0 * .2f));
+	// 	mapx = mapz * (WIN_W / 2 - x) / (WIN_W * (1.0 * 0.73f * WIN_H / WIN_W));
+	// 	mapx = (mapz * REND.pcos + mapx * REND.psin) + USER.where.x;
+	// 	mapz = (mapz * REND.psin - mapx * REND.pcos) + USER.where.y;
+	// 	txtx = (mapx * 256);
+	// 	txtz = (mapz * 256);
+	// 	if (y < REND.cya)
+	// 		pel = ft_get_pixel(SDL.txtr[6], txtx % 1024, txtz % 1024); // Ceiling
+	// 	else
+	// 		pel = ft_get_pixel(SDL.txtr[9], txtx % 1024, txtz % 1024); // Floor
+		// ((int*)SDL.sur->pixels)[y * WIN_W + x] = pel;
+	// }
+	// REND.txtr_id = 6;
+	// vline(m, x, REND.ytop[x], REND.cya - 1); // Ceiling
+	// REND.txtr_id = 9;
+	// vline(m, x, REND.cyb + 1, REND.ybottom[x]); // Floor
+	REND.txtr_id = 9;
+	vline(m, x, REND.cyb + 1, REND.ybottom[x], REND.txtx); // Floor
 }
 
 void	render_init6(t_main *m, int x)
@@ -52,15 +83,13 @@ void	render_init6(t_main *m, int x)
 	REND.cnya = CLAMP(REND.nya, REND.ytop[x], REND.ybottom[x]);
 	REND.nyb = (x - REND.x1) * (REND.ny2b - REND.ny1b) / (REND.x2 - REND.x1) + REND.ny1b;
 	REND.cnyb = CLAMP(REND.nyb, REND.ytop[x], REND.ybottom[x]);
-	REND.r1 = 0x010101 * (255 - REND.z);
-	REND.r2 = 0x040007 * (31 - REND.z / 8);
-	REND.texture_id = 8;
-	REND.color = 0x464196;
-	vline(m, x, REND.cya, REND.cnya - 1); // Top missing
+	REND.txtr_id = 8;
+	scaler_init(m, REND.ya, REND.cya, REND.yb, 0, 1023);
+	vline(m, x, REND.cya, REND.cnya - 1, REND.txtx); // Lower
 	REND.ytop[x] = CLAMP(MAX(REND.cya, REND.cnya), REND.ytop[x], (int)WIN_H - 1);
-	REND.texture_id = 8;
-	REND.color = 0x464196;
-	vline(m, x, REND.cnyb + 1, REND.cyb); // Bottom missing
+	REND.txtr_id = 8;
+	scaler_init(m, REND.ya, REND.cnyb + 1, REND.yb, 0, 1023);
+	vline(m, x, REND.cnyb + 1, REND.cyb, REND.txtx); // Upper
 	REND.ybottom[x] = CLAMP(MIN(REND.cyb, REND.cnyb), 0, REND.ybottom[x]);
 }
 

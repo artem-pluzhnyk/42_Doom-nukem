@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 12:14:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/03 14:05:41 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/04 14:32:33 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,28 +32,22 @@ int		ft_get_pixel(SDL_Surface *sur, int32_t x, int32_t y)
 	return (*pixel);
 }
 
-void	vline(t_main *m, int x, int y1,int y2)
+void	vline(t_main *m, int x, int y1, int y2, unsigned txtx)
 {
-	int		*pix;
-	int		y;
+	int			*pix;
+	int			y;
+	unsigned	txty;
 
 	pix = (int*) SDL.sur->pixels;
 	y1 = CLAMP(y1, 0, (int)WIN_H - 1);
 	y2 = CLAMP(y2, 0, (int)WIN_H - 1);
-	if (y2 == y1)
-		pix[y1 * WIN_W + x] = ft_get_pixel(SDL.txtr[REND.texture_id], x, y1);
-	else if (y2 > y1)
+	pix += y1 * WIN_W + x;
+	y = y1 - 1;
+	while (++y <= y2)
 	{
-		y = y1 - 1;
-		REND.tex_y = 0;
-		REND.tex_x = x;
-		while (++y <= y2)
-		{
-			REND.tex_y++;
-			// REND.tex_y = (y - y1) / (y2 - y1);
-			pix[y * WIN_W + x] =
-			ft_get_pixel(SDL.txtr[REND.texture_id], REND.tex_x, REND.tex_y);
-		}
+		txty = scaler_next(&SCAL);
+		*pix = ft_get_pixel(SDL.txtr[REND.txtr_id], txtx % 1024, txty % 1024);
+		pix += WIN_W;
 	}
 }
 
@@ -64,17 +58,4 @@ void	draw_background(t_main *m)
 	SDL.back_rect.h = WIN_H;
 	SDL.back_rect.w = WIN_W;
 	SDL_BlitScaled(SDL.txtr[0], NULL, SDL.sur, &SDL.back_rect);
-}
-
-t_xy	intersect(t_main *m)
-{
-	t_xy	s;
-
-	s.x = VXS(VXS(IS.x1,IS.y1, IS.x2,IS.y2), (IS.x1)-(IS.x2),
-	VXS(IS.x3,IS.y3, IS.x4,IS.y4), (IS.x3)-(IS.x4)) / VXS((IS.x1)-(IS.x2),
-	(IS.y1)-(IS.y2), (IS.x3)-(IS.x4), (IS.y3)-(IS.y4));
-	s.y = VXS(VXS(IS.x1,IS.y1, IS.x2,IS.y2), (IS.y1)-(IS.y2),
-	VXS(IS.x3,IS.y3, IS.x4,IS.y4), (IS.y3)-(IS.y4)) / VXS((IS.x1)-(IS.x2),
-	(IS.y1)-(IS.y2), (IS.x3)-(IS.x4), (IS.y3)-(IS.y4));
-	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/02 18:44:17 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/04 14:32:34 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # define INTERSECT(m)	intersect(m);
 # define IS				m->rend.is
 # define MOV			m->moves
+# define SCAL			m->rend.ty
 
 # define WIN_W			CFG.window_width
 # define WIN_H			CFG.window_height
@@ -80,6 +81,15 @@ typedef struct		s_item
 	int				sx1;
 	int				sx2;
 }					t_item;
+
+typedef struct		s_scaler
+{
+	int				result;
+	int				bop;
+	int				fd;
+	int				ca;
+	int				cache;
+}					t_scaler;
 
 typedef struct		s_rend
 {
@@ -136,10 +146,13 @@ typedef struct		s_rend
 	int				cnyb;
 	unsigned		r1;
 	unsigned		r2;
-	int				texture_id;
-	int				tex_x;
-	int				tex_y;
-	int				color;
+	int				u0;
+	int				u1;
+	t_xy			org1;
+	t_xy			org2;
+	int				txtx;
+	int				txtr_id;
+	t_scaler		ty;
 }					t_rend;
 
 typedef struct		s_move
@@ -254,9 +267,15 @@ void				select_window(t_main *m);
 */
 void				ft_put_pixel(t_main *m, int x, int y, int pixel);
 int					ft_get_pixel(SDL_Surface *sur, int32_t x, int32_t y);
-void				vline(t_main *m, int x, int y1,int y2);
+void				vline(t_main *m, int x, int y1, int y2, unsigned txtx);
 void				draw_background(t_main *m);
+
+/*
+** render/additions.c
+*/
 t_xy				intersect(t_main *m);
+int					scaler_next(t_scaler *i);
+void				scaler_init(t_main *m, int a, int b, int c, int d, int f);
 
 /*
 ** render/display1.c
