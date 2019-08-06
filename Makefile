@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/08/06 17:09:17 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/08/06 19:24:12 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,8 @@ SRC =	main.c						\
 		interface/aim.c				\
 		interface/hud.c				\
 		\
+		mapping/poster.c			\
+		\
 		map_editor/map_editor.c
 
 OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
@@ -91,6 +93,7 @@ $(OBJ_DIR):
 	@mkdir $(OBJ_DIR)/events
 	@mkdir $(OBJ_DIR)/map_editor
 	@mkdir $(OBJ_DIR)/interface
+	@mkdir $(OBJ_DIR)/mapping
 	@echo "\033[1;34m$(NAME): \033[5;36mCompiling source...\033[0m"
 
 $(OBJ_DIR)%.o:$(SRC_DIR)%.c
