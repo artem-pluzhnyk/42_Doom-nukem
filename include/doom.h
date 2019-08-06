@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 15:56:14 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/06 16:56:45 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ struct				s_sector
 	t_xy			*vertex;
 	signed char		*neighbors;
 	unsigned		npoints;
+	int				*texture;
+	int				*texture2;
 };
 
 struct				s_map
@@ -327,7 +329,7 @@ void				render_init4(t_main *m, unsigned s);
 /*
 ** display3.c
 */
-void				render_startend(t_main *m);
+void				render_startend(t_main *m, int s);
 void				render_init5(t_main *m, int x);
 void				render_init6(t_main *m, int x);
 void				render_last(t_main *m);

@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:23:43 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/05 17:39:57 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/06 17:09:54 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,18 @@ void	default_sector(t_main *m, int fd)
 	SECT[0].vertex[5] = MAP.vert[3];
 	SECT[0].vertex[6] = MAP.vert[2];
 	SECT[0].vertex[0] = SECT[0].vertex[6];
+	SECT[0].texture = malloc(sizeof(int) * (SECT[0].npoints + 4));
+	SECT[0].texture[0] = 7;
+	SECT[0].texture[1] = 7;
+	SECT[0].texture[2] = 7;
+	SECT[0].texture[3] = 8;
+	SECT[0].texture[4] = -1;
+	SECT[0].texture[5] = 8;
+	SECT[0].texture[6] = 9; // floor
+	SECT[0].texture[7] = 6; // ceiling
+	SECT[0].texture[8] = 9; // lower
+	SECT[0].texture[9] = 6; // upper
+
 	SECT[1].floor = 0;
 	SECT[1].ceil = 50;
 	SECT[1].npoints = 6;
@@ -87,11 +99,27 @@ void	default_sector(t_main *m, int fd)
 	SECT[1].vertex[5] = MAP.vert[7];
 	SECT[1].vertex[6] = MAP.vert[6];
 	SECT[1].vertex[0] = SECT[1].vertex[6];
+	SECT[1].texture = malloc(sizeof(int) * (SECT[1].npoints + 4));
+	SECT[1].texture[0] = 7;
+	SECT[1].texture[1] = 8;
+	SECT[1].texture[2] = -1;
+	SECT[1].texture[3] = 8;
+	SECT[1].texture[4] = 7;
+	SECT[1].texture[5] = 7;
+	SECT[1].texture[6] = 9; // floor
+	SECT[1].texture[7] = 6; // ceiling
+	SECT[1].texture[8] = 8; // lower
+	SECT[1].texture[9] = 8; // upper
+
 	write(fd, SECT, sizeof(t_sector) * MAP.num_s);
+
 	write(fd, SECT[0].neighbors, sizeof(signed char) * SECT[0].npoints);
 	write(fd, SECT[0].vertex, sizeof(t_xy) * (SECT[0].npoints + 1));
+	write(fd, SECT[0].texture, sizeof(int) * (SECT[0].npoints + 4));
+
 	write(fd, SECT[1].neighbors, sizeof(signed char) * SECT[1].npoints);
 	write(fd, SECT[1].vertex, sizeof(t_xy) * (SECT[1].npoints + 1));
+	write(fd, SECT[1].texture, sizeof(int) * (SECT[1].npoints + 4));
 }
 
 void	default_player(t_main *m, int fd)

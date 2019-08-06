@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 15:03:41 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/06 16:45:13 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	render_npoints(t_main *m)
 		if (REND.x1 >= REND.x2 || REND.x2 < REND.now.sx1 || REND.x1 > REND.now.sx2)
 			continue ;
 		render_init4(m, s);
-		render_startend(m);
+		render_startend(m, s);
 		render_last(m);
 	}
 	++REND.rend_sect[REND.now.sectorno];
