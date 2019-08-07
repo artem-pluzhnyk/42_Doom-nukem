@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 20:20:03 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/07 15:55:28 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -419,7 +419,7 @@ void				draw_hud(t_main *m, SDL_Surface *sur);
 /*
 ** poster.c
 */
-void				draw_poster(t_main *m, int x, int y1, int y2);
+void				draw_poster(t_main *m, int x, int y1, int y2, unsigned txtx);
 
 /*
 ** ./map_editor/###############################################################|

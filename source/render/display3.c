@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 20:23:20 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/07 15:55:42 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	render_startend(t_main *m, int s)
 {
 	int		x;
 
-	printf("%d\n", REND.x1);
 	x = REND.beginx - 1;
 	while (++x <= REND.endx)
 	{
@@ -32,11 +31,13 @@ void	render_startend(t_main *m, int s)
 			vline2(m, x, REND.cya, REND.cyb, REND.txtx); // Walls
 			REND.txtr_id = 10;
 			if (s == 0)
-				draw_poster(m, x, REND.cya + 20,
-				(REND.cya + SDL.texture[10]->h - 8) < REND.cyb ? REND.cya + SDL.texture[10]->h - 8 : REND.cyb); // Posters
+				draw_poster(m, x, REND.cya,
+				REND.cya + SDL.texture[REND.txtr_id]->h, REND.txtx); // Posters
 		}
 	}
 }
+
+// Fix CLAMP
 
 void	render_init5(t_main *m, int x)
 {
