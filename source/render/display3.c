@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/07 15:55:42 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/07 18:21:02 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,16 @@ void	render_startend(t_main *m, int s)
 		else
 		{
 			REND.txtr_id = SECT[REND.now.sectorno].texture[s];
-			scaler_init(m, REND.ya, REND.cya, REND.yb, 0, 1023);
+			scaler_init(m, REND.ya, REND.cya, REND.yb, 0, 1024);
 			vline2(m, x, REND.cya, REND.cyb, REND.txtx); // Walls
+			// POSTERS
 			REND.txtr_id = 10;
-			if (s == 0)
-				draw_poster(m, x, REND.cya,
-				REND.cya + SDL.texture[REND.txtr_id]->h, REND.txtx); // Posters
+			if (REND.now.sectorno == 0 && s == 5
+			&& x > (REND.beginx + 150) && x < (REND.endx - 150))
+				draw_poster(m, x, REND.cya + 100, REND.cyb - 100, REND.txtx);
 		}
 	}
 }
-
-// Fix CLAMP
 
 void	render_init5(t_main *m, int x)
 {
