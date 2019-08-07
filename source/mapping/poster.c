@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:24:24 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/07 15:56:24 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/07 15:57:28 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	draw_poster(t_main *m, int x, int y1, int y2, unsigned txtx)
 		txty = scaler_next(&SCAL);
 		*pix = ft_get_pixel(SDL.texture[REND.txtr_id],
 		txtx % SDL.texture[REND.txtr_id]->w,
-		stxty % SDL.texture[REND.txtr_id]->h);
+		txty % SDL.texture[REND.txtr_id]->h);
 		pix += WIN_W;
 	}
 }
