@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:22:04 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 16:58:02 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/11 20:12:41 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,7 @@ void	read_map(t_main *m, int fd)
 		read(fd, SECT[i].texture, sizeof(int) * (SECT[i].npoints + 4));
 	}
 	read(fd, &USER, sizeof(t_player));
+	read(fd, &MAP.num_sprite, sizeof(double));
+	OBJ = malloc(sizeof(t_sprite) * MAP.num_sprite);
+	read(fd, OBJ, sizeof(t_sprite));
 }

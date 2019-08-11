@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/07 18:21:02 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/11 20:13:46 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,15 @@ void	render_startend(t_main *m, int s)
 			scaler_init(m, REND.ya, REND.cya, REND.yb, 0, 1024);
 			vline2(m, x, REND.cya, REND.cyb, REND.txtx); // Walls
 			// POSTERS
-			REND.txtr_id = 10;
-			if (REND.now.sectorno == 0 && s == 5
+			// REND.txtr_id = 10;
+			// if (REND.now.sectorno == 0 && s == 5
+			// && x > (REND.beginx + 150) && x < (REND.endx - 150))
+			// 	draw_poster(m, x, REND.cya + 100, REND.cyb - 100, REND.txtx);
+			// SPRITES
+			REND.txtr_id = 11;
+			if (REND.now.sectorno == 0 && s == 3
 			&& x > (REND.beginx + 150) && x < (REND.endx - 150))
-				draw_poster(m, x, REND.cya + 100, REND.cyb - 100, REND.txtx);
+				draw_sprite(m, x, REND.cya + 100, REND.cyb - 100, REND.txtx);
 		}
 	}
 }

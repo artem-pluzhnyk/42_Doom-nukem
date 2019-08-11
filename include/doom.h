@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/07 15:55:28 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/11 20:08:35 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define MAP		m->map
 # define SECT		MAP.sectors
 # define USER		MAP.player
+# define OBJ		MAP.obj
 # define REND		m->rend
 # define IS			REND.is
 # define SCAL		REND.ty
@@ -51,6 +52,7 @@ typedef struct s_move		t_move;
 typedef struct s_sector		t_sector;
 typedef struct s_player		t_player;
 typedef struct s_rend		t_rend;
+typedef struct s_sprite		t_sprite;
 typedef struct s_map		t_map;
 typedef struct s_cfg		t_cfg;
 typedef struct s_hud		t_hud;
@@ -83,9 +85,11 @@ struct				s_map
 {
 	unsigned		num_v;
 	unsigned		num_s;
+	unsigned		num_sprite;
 	t_xy			*vert;
 	t_sector		*sectors;
 	t_player		player;
+	t_sprite		*obj;
 };
 
 struct				s_item
@@ -93,6 +97,13 @@ struct				s_item
 	int				sectorno;
 	int				sx1;
 	int				sx2;
+};
+
+struct				s_sprite
+{
+	double			x;
+	double			y;
+	int				texture;
 };
 
 struct				s_scaler
@@ -289,6 +300,7 @@ void				create_map(t_main *m, char *file);
 void				default_vertex(t_main *m, int fd);
 void				default_sector(t_main *m, int fd);
 void				default_player(t_main *m, int fd);
+void				default_sprite(t_main *m, int fd);
 
 /*
 ** ./settings/#################################################################|
@@ -420,6 +432,11 @@ void				draw_hud(t_main *m, SDL_Surface *sur);
 ** poster.c
 */
 void				draw_poster(t_main *m, int x, int y1, int y2, unsigned txtx);
+
+/*
+** sprites.c
+*/
+void				draw_sprite(t_main *m, int x, int y1, int y2, unsigned txtx);
 
 /*
 ** ./map_editor/###############################################################|

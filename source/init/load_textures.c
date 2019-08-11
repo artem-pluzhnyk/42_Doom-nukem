@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:10:00 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 19:21:11 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/11 10:31:03 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ void	load_textures(t_main *m)
 	if (!(SDL.texture[9] = SDL_LoadBMP("resources/textures/grass.bmp")))
 		ft_exit("☣ Error ☣");
 	if (!(SDL.texture[10] = SDL_LoadBMP("resources/textures/poster1.bmp")))
+		ft_exit("☣ Error ☣");
+	if (!(SDL.texture[11] = SDL_LoadBMP("resources/textures/atm.bmp")))
 		ft_exit("☣ Error ☣");
 }

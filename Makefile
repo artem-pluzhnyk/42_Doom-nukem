@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/08/06 19:24:12 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/08/11 10:30:05 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRC =	main.c						\
 		interface/hud.c				\
 		\
 		mapping/poster.c			\
+		mapping/sprites.c			\
 		\
 		map_editor/map_editor.c
 

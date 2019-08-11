@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   poster.c                                           :+:      :+:    :+:   */
+/*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 19:24:24 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/11 11:32:53 by apluzhni         ###   ########.fr       */
+/*   Created: 2019/08/11 10:29:25 by apluzhni          #+#    #+#             */
+/*   Updated: 2019/08/11 13:36:49 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "doom.h"
 
-void	draw_poster(t_main *m, int x, int y1, int y2, unsigned txtx)
+void	draw_sprite(t_main *m, int x, int y1, int y2, unsigned txtx)
 {
 	int			*pix;
 	int			y;
 	unsigned	txty;
 
+	SDL_SetColorKey(SDL.texture[REND.txtr_id], SDL_TRUE, SDL_MapRGB(SDL.texture[REND.txtr_id]->format, 0, 0, 0));
 	pix = (int*) SDL.sur->pixels;
 	y1 = CLAMP(y1, 0, (int)WIN_H - 1);
 	y2 = CLAMP(y2, 0, (int)WIN_H - 1);
@@ -26,9 +27,12 @@ void	draw_poster(t_main *m, int x, int y1, int y2, unsigned txtx)
 	while (++y <= y2)
 	{
 		txty = scaler_next(&SCAL);
-		*pix = ft_get_pixel(SDL.texture[REND.txtr_id],
+		if (ft_get_pixel(SDL.texture[REND.txtr_id],
 		txtx % SDL.texture[REND.txtr_id]->w,
-		txty % SDL.texture[REND.txtr_id]->h);
+		txty % SDL.texture[REND.txtr_id]->h) != 0x000000)
+			*pix = ft_get_pixel(SDL.texture[REND.txtr_id],
+			txtx % SDL.texture[REND.txtr_id]->w,
+			txty % SDL.texture[REND.txtr_id]->h);
 		pix += WIN_W;
 	}
 }
