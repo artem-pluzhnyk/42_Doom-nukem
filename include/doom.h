@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/13 16:54:18 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/14 16:26:46 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,6 +251,8 @@ struct				s_sdl
 	SDL_Color		white;
 	SDL_Color		green;
 	SDL_Color		red;
+	SDL_Color		blue;
+	SDL_Color		yellow;
 	SDL_Rect		rect;
 };
 

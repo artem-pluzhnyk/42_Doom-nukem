@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:06:48 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/13 17:01:02 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/14 16:26:15 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,18 @@ void	init_data(t_main *m)
 	SDL.white.r = 255;
 	SDL.white.g = 255;
 	SDL.white.b = 255;
-	SDL.green.r = 255;
+	SDL.green.r = 0;
 	SDL.green.g = 255;
-	SDL.green.b = 255;
+	SDL.green.b = 0;
 	SDL.red.r = 255;
-	SDL.red.g = 255;
-	SDL.red.b = 255;
+	SDL.red.g = 0;
+	SDL.red.b = 0;
+	SDL.blue.r = 0;
+	SDL.blue.g = 0;
+	SDL.blue.b = 255;
+	SDL.yellow.r = 255;
+	SDL.yellow.g = 255;
+	SDL.yellow.b = 0;
 	MOVE.wsad[0] = 0;
 	MOVE.wsad[1] = 0;
 	MOVE.wsad[2] = 0;
