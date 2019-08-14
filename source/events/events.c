@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:10:27 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 15:14:12 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/13 17:01:21 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,8 @@ void	mouse_rotation(t_main *m)
 {
 	int		x;
 	int		y;
+	double	old_dir_x;
+	double	old_plane_x;
 
 	SDL_GetRelativeMouseState(&x,&y);
 	USER.angle += x * 0.01f;
@@ -127,6 +129,13 @@ void	mouse_rotation(t_main *m)
 	move_player(m, 0,0);
 	MOVE.move_vec[0] = 0.f;
 	MOVE.move_vec[1] = 0.f;
+
+	old_dir_x = SREND.dir_x;
+	SREND.dir_x = SREND.dir_x * cos(0.01f) - SREND.dir_y * sin(0.01f);
+	SREND.dir_y = old_dir_x * sin(0.01f) + SREND.dir_y * cos(0.01f);
+	old_plane_x = SREND.plane_x;
+	SREND.plane_x = SREND.plane_x * cos(0.01f) - SREND.plane_y * sin(0.01f);
+	SREND.plane_y = old_plane_x * sin(0.01f) + SREND.plane_y * cos(0.01f);
 
 	if (MOVE.wsad[0])
 	{

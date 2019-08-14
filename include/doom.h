@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/11 20:08:35 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/13 16:54:18 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define USER		MAP.player
 # define OBJ		MAP.obj
 # define REND		m->rend
+# define SREND		m->srend
 # define IS			REND.is
 # define SCAL		REND.ty
 # define MOVE		m->move
@@ -52,12 +53,22 @@ typedef struct s_move		t_move;
 typedef struct s_sector		t_sector;
 typedef struct s_player		t_player;
 typedef struct s_rend		t_rend;
+typedef struct s_srend		t_srend;
 typedef struct s_sprite		t_sprite;
 typedef struct s_map		t_map;
 typedef struct s_cfg		t_cfg;
 typedef struct s_hud		t_hud;
 typedef struct s_sdl		t_sdl;
 typedef struct s_main		t_main;
+
+struct				s_srend
+{
+	double			*ZBuffer;
+	double			dir_x;
+	double			dir_y;
+	double			plane_x;
+	double			plane_y;
+};
 
 struct				s_player
 {
@@ -252,6 +263,7 @@ struct				s_main
 	t_move			move;
 	int				state;
 	t_hud			hud;
+	t_srend			srend;
 };
 
 /*
@@ -436,7 +448,7 @@ void				draw_poster(t_main *m, int x, int y1, int y2, unsigned txtx);
 /*
 ** sprites.c
 */
-void				draw_sprite(t_main *m, int x, int y1, int y2, unsigned txtx);
+void				draw_sprite(t_main *m);
 
 /*
 ** ./map_editor/###############################################################|

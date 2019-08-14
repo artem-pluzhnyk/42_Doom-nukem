@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/08/11 10:30:05 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/08/14 14:55:51 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -135,3 +135,8 @@ debug: $(NAME)
 	@rm -f ./resources/maps/level0.map
 	@echo "\033[1;34m$(NAME): \033[5;32mStarting Doom 2077...\033[0m"
 	@./$(NAME)
+
+git: fclean
+	@git add *
+	@git commit -m "update"
+	@git push

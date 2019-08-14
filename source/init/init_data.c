@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:06:48 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 15:50:52 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/13 17:01:02 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,10 @@ void	init_data(t_main *m)
 	MOVE.yaw = 0;
 	HUD.hud = 1;
 	HUD.aim = 0;
+	SREND.ZBuffer = malloc(sizeof(t_srend) * WIN_W);
+	SREND.dir_x = -1;
+	SREND.dir_y = 0;
+	SREND.plane_x = 0;
+	SREND.plane_y = 0.66;
+
 }

@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/09 15:19:47 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/13 18:19:51 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ void	render_2(t_main *m)
 	if (REND.tz1 <= 0 || REND.tz2 <= 0)
 	{
 		render_init2(m);
-		REND.org1.x = REND.tx1;
-		REND.org1.y = REND.tz1;
-		REND.org2.x = REND.tx2;
-		REND.org2.y = REND.tz2;
 		if (REND.tz1 < 1e-4f)
 		{
 			if (REND.i1.y > 0)
@@ -74,6 +70,10 @@ void	render_init2(t_main *m)
 		IS.x3 = 1e-5f;
 		IS.x4 = 20.f;
 		REND.i2 = intersect(m);
+		REND.org1.x = REND.tx1;
+		REND.org1.y = REND.tz1;
+		REND.org2.x = REND.tx2;
+		REND.org2.y = REND.tz2;
 }
 
 void	render_init3(t_main *m)

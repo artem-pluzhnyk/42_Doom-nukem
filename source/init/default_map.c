@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:23:43 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/11 20:12:54 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/13 12:05:25 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,8 +144,8 @@ void	default_sprite(t_main *m, int fd)
 	MAP.num_sprite = 1;
 	write(fd, &MAP.num_sprite, sizeof(double));
 	OBJ = malloc(sizeof(t_sprite) * MAP.num_sprite);
-	OBJ[0].x = 10;
-	OBJ[0].y = 10;
+	OBJ[0].x = 50;
+	OBJ[0].y = 50;
 	OBJ[0].texture = 11;
 	write(fd, OBJ, sizeof(t_sprite) * MAP.num_sprite);
 }
