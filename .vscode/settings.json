@@ -1,5 +1,10 @@
 {
 	"files.associations": {
 		"doom.h": "c"
-	}
+	},
+	"files.autoSave": "onFocusChange",
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"editor.renderWhitespace": "all",
+	"editor.insertSpaces": false
 }
