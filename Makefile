@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/08/14 14:55:51 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/08/14 16:29:53 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,5 +138,6 @@ debug: $(NAME)
 
 git: fclean
 	@git add *
+	@git add .vscode
 	@git commit -m "update"
 	@git push
