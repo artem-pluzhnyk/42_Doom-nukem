@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:45:51 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 15:18:03 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/20 13:47:54 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	game_loop(t_main *m)
 {
+	REND.ytop = malloc(sizeof(int) * WIN_W);
+	REND.ybottom = malloc(sizeof(int) * WIN_W);
+	REND.rend_sect = malloc(sizeof(int) * MAP.num_s);
 	while (1)
 	{
 		SDL_FillRect(SDL.sur, NULL, 0x000000);

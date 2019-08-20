@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:23:43 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/13 12:05:25 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/20 17:21:48 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	create_map(t_main *m, char *file)
 	default_vertex(m, fd);
 	default_sector(m, fd);
 	default_player(m, fd);
+	default_poster(m, fd);
 	default_sprite(m, fd);
 }
 
@@ -53,7 +54,7 @@ void	default_sector(t_main *m, int fd)
 	write(fd, &MAP.num_s, sizeof(int));
 	SECT = malloc(sizeof(t_sector) * MAP.num_s);
 	SECT[0].floor = 0;
-	SECT[0].ceil = 50;
+	SECT[0].ceil = 20;
 	SECT[0].npoints = 6;
 	SECT[0].neighbors = malloc(sizeof(signed char) * SECT[0].npoints);
 	SECT[0].neighbors[0] = -1;
@@ -71,19 +72,19 @@ void	default_sector(t_main *m, int fd)
 	SECT[0].vertex[6] = MAP.vert[2];
 	SECT[0].vertex[0] = SECT[0].vertex[6];
 	SECT[0].texture = malloc(sizeof(int) * (SECT[0].npoints + 4));
-	SECT[0].texture[0] = 7;
-	SECT[0].texture[1] = 7;
-	SECT[0].texture[2] = 7;
-	SECT[0].texture[3] = 8;
+	SECT[0].texture[0] = 13;
+	SECT[0].texture[1] = 13;
+	SECT[0].texture[2] = 13;
+	SECT[0].texture[3] = 13;
 	SECT[0].texture[4] = -1;
-	SECT[0].texture[5] = 8;
-	SECT[0].texture[6] = 9; // floor
-	SECT[0].texture[7] = 6; // ceiling
-	SECT[0].texture[8] = 9; // lower
-	SECT[0].texture[9] = 6; // upper
+	SECT[0].texture[5] = 13;
+	SECT[0].texture[6] = 12; // floor
+	SECT[0].texture[7] = 12; // ceiling
+	SECT[0].texture[8] = 7; // lower
+	SECT[0].texture[9] = 8; // upper
 
-	SECT[1].floor = 0;
-	SECT[1].ceil = 50;
+	SECT[1].floor = 2;
+	SECT[1].ceil = 18;
 	SECT[1].npoints = 6;
 	SECT[1].neighbors = malloc(sizeof(signed char) * SECT[1].npoints);
 	SECT[1].neighbors[0] = -1;
@@ -101,15 +102,15 @@ void	default_sector(t_main *m, int fd)
 	SECT[1].vertex[6] = MAP.vert[6];
 	SECT[1].vertex[0] = SECT[1].vertex[6];
 	SECT[1].texture = malloc(sizeof(int) * (SECT[1].npoints + 4));
-	SECT[1].texture[0] = 7;
-	SECT[1].texture[1] = 8;
+	SECT[1].texture[0] = 13;
+	SECT[1].texture[1] = 13;
 	SECT[1].texture[2] = -1;
-	SECT[1].texture[3] = 8;
-	SECT[1].texture[4] = 7;
-	SECT[1].texture[5] = 7;
-	SECT[1].texture[6] = 9; // floor
-	SECT[1].texture[7] = 6; // ceiling
-	SECT[1].texture[8] = 8; // lower
+	SECT[1].texture[3] = 13;
+	SECT[1].texture[4] = 13;
+	SECT[1].texture[5] = 13;
+	SECT[1].texture[6] = 12; // floor
+	SECT[1].texture[7] = 12; // ceiling
+	SECT[1].texture[8] = 7; // lower
 	SECT[1].texture[9] = 8; // upper
 
 	write(fd, SECT, sizeof(t_sector) * MAP.num_s);
@@ -139,13 +140,24 @@ void	default_player(t_main *m, int fd)
 	write(fd, &USER, sizeof(t_player));
 }
 
+void	default_poster(t_main *m, int fd)
+{
+	MAP.num_poster = 1;
+	write(fd, &MAP.num_poster, sizeof(unsigned));
+	PIC = malloc(sizeof(t_poster) * MAP.num_poster);
+	PIC[0].poz.x = 10;
+	PIC[0].poz.y = 50;
+	PIC[0].texture = 10;
+	write(fd, PIC, sizeof(t_poster) * MAP.num_poster);
+}
+
 void	default_sprite(t_main *m, int fd)
 {
 	MAP.num_sprite = 1;
-	write(fd, &MAP.num_sprite, sizeof(double));
+	write(fd, &MAP.num_sprite, sizeof(unsigned));
 	OBJ = malloc(sizeof(t_sprite) * MAP.num_sprite);
-	OBJ[0].x = 50;
-	OBJ[0].y = 50;
+	OBJ[0].poz.x = 40;
+	OBJ[0].poz.y = 40;
 	OBJ[0].texture = 11;
 	write(fd, OBJ, sizeof(t_sprite) * MAP.num_sprite);
 }

@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/14 16:16:59 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/20 14:38:37 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,45 @@ void	render_startend(t_main *m, int s)
 			REND.txtr_id = SECT[REND.now.sectorno].texture[s];
 			scaler_init(m, REND.ya, REND.cya, REND.yb, 0, 1024);
 			vline2(m, x, REND.cya, REND.cyb, REND.txtx); // Walls
-			REND.txtr_id = 10; // Posters
-			if (REND.now.sectorno == 0 && s == 5
-			&& x > (REND.beginx + 150) && x < (REND.endx - 150))
-				draw_poster(m, x, REND.cya + 100, REND.cyb - 100, REND.txtx);
 		}
 	}
 }
 
 void	render_init5(t_main *m, int x)
 {
+	int		y;
+
 	REND.z = ((x - REND.x1) * (REND.tz2 - REND.tz1) / (REND.x2 - REND.x1) + REND.tz1) * 8;
-	SREND.ZBuffer[x] = REND.z;
 	REND.ya = (x - REND.x1) * (REND.y2a - REND.y1a) / (REND.x2 - REND.x1) + REND.y1a;
 	REND.yb = (x - REND.x1) * (REND.y2b - REND.y1b) / (REND.x2 - REND.x1) + REND.y1b;
 	REND.cya = CLAMP(REND.ya, REND.ytop[x], REND.ybottom[x]);
 	REND.cyb = CLAMP(REND.yb, REND.ytop[x], REND.ybottom[x]);
-	REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 1];
-	vline(m, x, REND.ytop[x], REND.cya - 1); // Ceiling
-	REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints];
-	vline(m, x, REND.cyb + 1, REND.ybottom[x]); // Floor
+	y = REND.ytop[x] - 1;
+	while (++y <= REND.ybottom[x])
+	{
+		if(y >= REND.cya && y <= REND.cyb)
+		{
+			y = REND.cyb;
+			continue ;
+		}
+		REND.hei = y < REND.cya ? REND.yceil : REND.yfloor;
+		REND.mapx = 0;
+		REND.mapz = 0;
+		coord_to_texture(m, x, y);
+		unsigned txtx = (REND.mapx * 256);
+		unsigned txtz = (REND.mapz * 256);
+		if (y < REND.cya)
+		{
+			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 1]; // c
+			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtz % 1024, txtx % 1024);
+		}
+		else
+		{
+			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints];
+			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtz % 1024, txtx % 1024);
+		}
+		((int*) SDL.sur->pixels)[y * WIN_W + x] = REND.pel;
+	}
 }
 
 void	render_init6(t_main *m, int x)
@@ -78,4 +97,17 @@ void	render_last(t_main *m)
 			if (++REND.head == REND.queue + MAXQUEUE)
 				REND.head = REND.queue;
 		}
+}
+
+void	coord_to_texture(t_main *m, int x, int y)
+{
+	float	rtx;
+	float	rtz;
+
+	REND.mapz = REND.hei * WIN_H * VFOV / ((WIN_H / 2 - (float)y) - USER.yaw * WIN_H * VFOV);
+	REND.mapx = REND.mapz * (WIN_W / 2 - (float)x) / (WIN_W * HFOV);
+	rtx = REND.mapz * REND.pcos + REND.mapx * REND.psin;
+	rtz = REND.mapz * REND.psin - REND.mapx * REND.pcos;
+	REND.mapx = rtx + USER.where.x;
+	REND.mapz = rtz + USER.where.y;
 }

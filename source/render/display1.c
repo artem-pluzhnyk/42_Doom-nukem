@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/10 09:49:48 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/20 13:42:23 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	render_all(t_main *m)
 {
-	unsigned	x;
+	int		x;
 
 	REND.head = REND.queue;
 	REND.tail = REND.queue;
-	REND.ytop = malloc(sizeof(int) * WIN_W);
-	REND.ybottom = malloc(sizeof(int) * WIN_W);
-	REND.rend_sect = malloc(sizeof(int) * MAP.num_s);
 	x = -1;
-	while (++x < WIN_W)
+	while (++x < (int)WIN_W)
+	{
+		REND.ytop[x] = 0;
 		REND.ybottom[x] = WIN_H - 1;
+	}
 	x = -1;
-	while (++x < MAP.num_s)
+	while (++x < (int)MAP.num_s)
 		REND.rend_sect[x] = 0;
 	REND.head->sectorno = USER.sector;
 	REND.head->sx1 = 0;
@@ -52,10 +52,10 @@ void	render_loop(t_main *m)
 
 void	render_npoints(t_main *m)
 {
-	unsigned	s;
+	int		s;
 
 	s = -1;
-	while (++s < REND.sect->npoints)
+	while (++s < (int)REND.sect->npoints)
 	{
 		REND.u0 = 0;
 		REND.u1 = 1023;

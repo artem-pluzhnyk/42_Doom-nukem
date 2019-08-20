@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 12:14:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/07 15:24:08 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/15 15:46:37 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,9 @@ void	vline2(t_main *m, int x, int y1, int y2, unsigned txtx)
 	while (++y <= y2)
 	{
 		txty = scaler_next(&SCAL);
-		*pix = ft_get_pixel(SDL.texture[REND.txtr_id], txtx % SDL.texture[REND.txtr_id]->w, txty % SDL.texture[REND.txtr_id]->h);
+		*pix = ft_get_pixel(SDL.texture[REND.txtr_id],
+		txtx % SDL.texture[REND.txtr_id]->w,
+		txty % SDL.texture[REND.txtr_id]->h);
 		pix += WIN_W;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 19:21:17 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/12 18:23:27 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/20 17:21:52 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	gameplay(t_main *m)
 {
 	render_all(m);
-	draw_sprite(m); // Sprites
+	// draw_poster(m); // Posters
+	// draw_sprite(m); // Sprites
 	if (HUD.hud)
 		;//draw_hud(m, SDL.texture[5]);
 	else

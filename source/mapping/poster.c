@@ -6,29 +6,21 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:24:24 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/14 16:16:32 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/15 17:12:17 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "doom.h"
 
-void	draw_poster(t_main *m, int x, int y1, int y2, unsigned txtx)
+void	draw_poster(t_main *m)
 {
-	int			*pix;
-	int			y;
-	unsigned	txty;
+	unsigned	i;
 
-	pix = (int*) SDL.sur->pixels;
-	y1 = CLAMP(y1, 0, (int)WIN_H - 1);
-	y2 = CLAMP(y2, 0, (int)WIN_H - 1);
-	pix += y1 * WIN_W + x;
-	y = y1 - 1;
-	while (++y <= y2)
+	i = -1;
+	while (++i < MAP.num_poster)
 	{
-		txty = scaler_next(&SCAL);
-		*pix = ft_get_pixel(SDL.texture[REND.txtr_id],
-		txtx % SDL.texture[REND.txtr_id]->w,
-		txty % SDL.texture[REND.txtr_id]->h);
-		pix += WIN_W;
+		PIC[i].texture = PIC[i].texture;
+		PIC[i].poz.x = PIC[i].poz.x;
+		PIC[i].poz.y = PIC[i].poz.y;
 	}
 }

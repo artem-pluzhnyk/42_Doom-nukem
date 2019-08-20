@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/14 16:26:46 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/20 13:59:23 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define SECT		MAP.sectors
 # define USER		MAP.player
 # define OBJ		MAP.obj
+# define PIC		MAP.pic
 # define REND		m->rend
 # define SREND		m->srend
 # define IS			REND.is
@@ -44,6 +45,8 @@
 # define MAXQUEUE	32
 # define H_FOV		(0.73f * WIN_H)
 # define V_FOV		(.2f * WIN_H)
+# define HFOV		(1.0 * 0.73f * WIN_H / WIN_W)
+# define VFOV		(1.0 * .2f)
 # define YAW(y,z)	(y + z * USER.yaw)
 
 typedef struct s_intersect	t_intersect;
@@ -54,6 +57,7 @@ typedef struct s_sector		t_sector;
 typedef struct s_player		t_player;
 typedef struct s_rend		t_rend;
 typedef struct s_srend		t_srend;
+typedef struct s_poster		t_poster;
 typedef struct s_sprite		t_sprite;
 typedef struct s_map		t_map;
 typedef struct s_cfg		t_cfg;
@@ -63,7 +67,6 @@ typedef struct s_main		t_main;
 
 struct				s_srend
 {
-	double			*ZBuffer;
 	double			dir_x;
 	double			dir_y;
 	double			plane_x;
@@ -97,10 +100,12 @@ struct				s_map
 	unsigned		num_v;
 	unsigned		num_s;
 	unsigned		num_sprite;
+	unsigned		num_poster;
 	t_xy			*vert;
 	t_sector		*sectors;
 	t_player		player;
 	t_sprite		*obj;
+	t_poster		*pic;
 };
 
 struct				s_item
@@ -110,10 +115,15 @@ struct				s_item
 	int				sx2;
 };
 
+struct				s_poster
+{
+	t_xy			poz;
+	int				texture;
+};
+
 struct				s_sprite
 {
-	double			x;
-	double			y;
+	t_xy			poz;
 	int				texture;
 };
 
@@ -200,6 +210,10 @@ struct				s_rend
 	int				txtx;
 	int				txtr_id;
 	t_scaler		ty;
+	int				pel;
+	float			hei;
+	float			mapx;
+	float			mapz;
 };
 
 struct				s_move
@@ -253,6 +267,7 @@ struct				s_sdl
 	SDL_Color		red;
 	SDL_Color		blue;
 	SDL_Color		yellow;
+	SDL_Color		gray;
 	SDL_Rect		rect;
 };
 
@@ -266,6 +281,7 @@ struct				s_main
 	int				state;
 	t_hud			hud;
 	t_srend			srend;
+	int				map_tab;
 };
 
 /*
@@ -314,6 +330,7 @@ void				create_map(t_main *m, char *file);
 void				default_vertex(t_main *m, int fd);
 void				default_sector(t_main *m, int fd);
 void				default_player(t_main *m, int fd);
+void				default_poster(t_main *m, int fd);
 void				default_sprite(t_main *m, int fd);
 
 /*
@@ -359,6 +376,7 @@ void				render_startend(t_main *m, int s);
 void				render_init5(t_main *m, int x);
 void				render_init6(t_main *m, int x);
 void				render_last(t_main *m);
+void				coord_to_texture(t_main *m, int x, int y);
 
 /*
 ** pixels.c
@@ -445,7 +463,7 @@ void				draw_hud(t_main *m, SDL_Surface *sur);
 /*
 ** poster.c
 */
-void				draw_poster(t_main *m, int x, int y1, int y2, unsigned txtx);
+void				draw_poster(t_main *m);
 
 /*
 ** sprites.c
