@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/20 14:38:37 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/20 20:29:43 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ void	render_init5(t_main *m, int x)
 		if (y < REND.cya)
 		{
 			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 1]; // c
-			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtz % 1024, txtx % 1024);
+			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtz % 255, txtx % 255);
 		}
 		else
 		{
 			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints];
-			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtz % 1024, txtx % 1024);
+			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtz % 255, txtx % 255);
 		}
 		((int*) SDL.sur->pixels)[y * WIN_W + x] = REND.pel;
 	}
@@ -104,7 +104,7 @@ void	coord_to_texture(t_main *m, int x, int y)
 	float	rtx;
 	float	rtz;
 
-	REND.mapz = REND.hei * WIN_H * VFOV / ((WIN_H / 2 - (float)y) - USER.yaw * WIN_H * VFOV);
+	REND.mapz = REND.hei * WIN_H * VFOV  / ((WIN_H / 2 - (float)y) - USER.yaw * WIN_H * VFOV);
 	REND.mapx = REND.mapz * (WIN_W / 2 - (float)x) / (WIN_W * HFOV);
 	rtx = REND.mapz * REND.pcos + REND.mapx * REND.psin;
 	rtz = REND.mapz * REND.psin - REND.mapx * REND.pcos;
