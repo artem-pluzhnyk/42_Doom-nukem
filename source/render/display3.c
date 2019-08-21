@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/20 20:29:43 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/21 13:32:24 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ void	render_startend(t_main *m, int s)
 
 void	render_init5(t_main *m, int x)
 {
-	int		y;
+	int			y;
+	unsigned	txtx;
+	unsigned	txtz;
 
 	REND.z = ((x - REND.x1) * (REND.tz2 - REND.tz1) / (REND.x2 - REND.x1) + REND.tz1) * 8;
 	REND.ya = (x - REND.x1) * (REND.y2a - REND.y1a) / (REND.x2 - REND.x1) + REND.y1a;
@@ -54,17 +56,17 @@ void	render_init5(t_main *m, int x)
 		REND.mapx = 0;
 		REND.mapz = 0;
 		coord_to_texture(m, x, y);
-		unsigned txtx = (REND.mapx * 256);
-		unsigned txtz = (REND.mapz * 256);
+		txtx = REND.mapx * 256;
+		txtz = REND.mapz * 256;
 		if (y < REND.cya)
 		{
-			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 1]; // c
-			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtz % 255, txtx % 255);
+			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 1]; // Ceiling
+			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtx % SDL.texture[REND.txtr_id]->w, txtz % SDL.texture[REND.txtr_id]->h);
 		}
 		else
 		{
-			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints];
-			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtz % 255, txtx % 255);
+			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints]; // Floor
+			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtx % SDL.texture[REND.txtr_id]->w, txtz % SDL.texture[REND.txtr_id]->h);
 		}
 		((int*) SDL.sur->pixels)[y * WIN_W + x] = REND.pel;
 	}

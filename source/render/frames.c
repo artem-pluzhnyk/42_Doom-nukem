@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:45:51 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/20 13:47:54 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/21 15:39:51 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	game_loop(t_main *m)
 	{
 		SDL_FillRect(SDL.sur, NULL, 0x000000);
 		select_window(m);
+		events(m);
 		while (SDL_PollEvent(&SDL.event))
 			events_sdl(m);
 		SDL_UpdateWindowSurface(SDL.win);
-		events(m);
 	}
 }
 

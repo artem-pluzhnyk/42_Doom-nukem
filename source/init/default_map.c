@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:23:43 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/20 17:21:48 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/21 15:06:28 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,19 @@ void	default_vertex(t_main *m, int fd)
 	MAP.vert[0].y = 0;
 	MAP.vert[0].x = 0;
 	MAP.vert[1].y = 0;
-	MAP.vert[1].x = 50;
-	MAP.vert[2].y = 50;
+	MAP.vert[1].x = 15;
+	MAP.vert[2].y = 10;
 	MAP.vert[2].x = 0;
-	MAP.vert[3].y = 50;
-	MAP.vert[3].x = 20;
-	MAP.vert[4].y = 50;
-	MAP.vert[4].x = 30;
-	MAP.vert[5].y = 50;
-	MAP.vert[5].x = 50;
-	MAP.vert[6].y = 80;
+	MAP.vert[3].y = 10;
+	MAP.vert[3].x = 5;
+	MAP.vert[4].y = 10;
+	MAP.vert[4].x = 10;
+	MAP.vert[5].y = 10;
+	MAP.vert[5].x = 15;
+	MAP.vert[6].y = 20;
 	MAP.vert[6].x = 0;
-	MAP.vert[7].y = 80;
-	MAP.vert[7].x = 50;
+	MAP.vert[7].y = 20;
+	MAP.vert[7].x = 15;
 	write(fd, MAP.vert, sizeof(t_xy) * MAP.num_v);
 }
 
@@ -53,6 +53,7 @@ void	default_sector(t_main *m, int fd)
 	MAP.num_s = 2;
 	write(fd, &MAP.num_s, sizeof(int));
 	SECT = malloc(sizeof(t_sector) * MAP.num_s);
+
 	SECT[0].floor = 0;
 	SECT[0].ceil = 20;
 	SECT[0].npoints = 6;
@@ -79,12 +80,13 @@ void	default_sector(t_main *m, int fd)
 	SECT[0].texture[4] = -1;
 	SECT[0].texture[5] = 13;
 	SECT[0].texture[6] = 12; // floor
-	SECT[0].texture[7] = 12; // ceiling
+	SECT[0].texture[7] = 14; // ceiling
 	SECT[0].texture[8] = 7; // lower
 	SECT[0].texture[9] = 8; // upper
 
+
 	SECT[1].floor = 2;
-	SECT[1].ceil = 18;
+	SECT[1].ceil = 15;
 	SECT[1].npoints = 6;
 	SECT[1].neighbors = malloc(sizeof(signed char) * SECT[1].npoints);
 	SECT[1].neighbors[0] = -1;
@@ -109,7 +111,7 @@ void	default_sector(t_main *m, int fd)
 	SECT[1].texture[4] = 13;
 	SECT[1].texture[5] = 13;
 	SECT[1].texture[6] = 12; // floor
-	SECT[1].texture[7] = 12; // ceiling
+	SECT[1].texture[7] = 14; // ceiling
 	SECT[1].texture[8] = 7; // lower
 	SECT[1].texture[9] = 8; // upper
 
@@ -126,8 +128,8 @@ void	default_sector(t_main *m, int fd)
 
 void	default_player(t_main *m, int fd)
 {
-	USER.where.x = 25;
-	USER.where.y = 15;
+	USER.where.x = 5;
+	USER.where.y = 5;
 	USER.velocity.x = 0;
 	USER.velocity.y = 0;
 	USER.velocity.z = 0;

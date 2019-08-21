@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:10:27 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/13 17:01:21 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/21 17:21:49 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	move_player(t_main *m, float dx, float dy)
 	t_sector	*sect;
 	t_xy		*vert;
 
-	s = -1;
 	px = USER.where.x;
 	py = USER.where.y;
 	sect = &MAP.sectors[USER.sector];
 	vert = sect->vertex;
+	s = -1;
 	while (++s < sect->npoints)
 		if (sect->neighbors[s] >= 0
 		&& ISB(px, py, px + dx, py + dy, vert[s + 0].x, vert[s + 0].y,
@@ -70,7 +70,7 @@ void	event_falling(t_main *m)
 	}
 	if (MOVE.falling)
 	{
-		USER.where.z = USER.velocity.z;
+		USER.where.z += USER.velocity.z;
 		MOVE.moving = 1;
 	}
 }
@@ -79,7 +79,6 @@ void	event_moving(t_main *m)
 {
 	unsigned	s;
 
-	s = -1;
 	if(MOVE.moving)
 	{
 		MOVE.px = USER.where.x;
@@ -87,12 +86,12 @@ void	event_moving(t_main *m)
 		MOVE.dx = USER.velocity.x;
 		MOVE.dy = USER.velocity.y;
 		MOVE.sect = &MAP.sectors[USER.sector];
-		MOVE.vert = MOVE.sect->vertex;
+		s = -1;
 		while (++s < MOVE.sect->npoints)
-			if (ISB(MOVE.px, MOVE.py, MOVE.px + MOVE.dx, MOVE.py + MOVE.dy, MOVE.vert[s + 0].x,
-			MOVE.vert[s + 0].y, MOVE.vert[s + 1].x, MOVE.vert[s + 1].y)
-			&& PS(MOVE.px + MOVE.dx, MOVE.py + MOVE.dy, MOVE.vert[s + 0].x, MOVE.vert[s + 0].y,
-			MOVE.vert[s + 1].x, MOVE.vert[s + 1].y) < 0)
+			if (ISB(MOVE.px, MOVE.py, MOVE.px + MOVE.dx, MOVE.py + MOVE.dy, MOVE.sect->vertex[s + 0].x,
+			MOVE.sect->vertex[s + 0].y, MOVE.sect->vertex[s + 1].x, MOVE.sect->vertex[s + 1].y)
+			&& PS(MOVE.px + MOVE.dx, MOVE.py + MOVE.dy, MOVE.sect->vertex[s + 0].x, MOVE.sect->vertex[s + 0].y,
+			MOVE.sect->vertex[s + 1].x, MOVE.sect->vertex[s + 1].y) < 0)
 			{
 				MOVE.hole_low = MOVE.sect->neighbors[s] < 0 ?  9e9 : MAX(MOVE.sect->floor,
 				MAP.sectors[MOVE.sect->neighbors[s]].floor);
@@ -101,11 +100,11 @@ void	event_moving(t_main *m)
 				if(MOVE.hole_high < USER.where.z + HEAD_MARG
 				|| MOVE.hole_low  > USER.where.z - EYE_H + KNEE_H)
 				{
-					MOVE.xd = MOVE.vert[s + 1].x - MOVE.vert[s + 0].x;
-					MOVE.yd = MOVE.vert[s + 1].y - MOVE.vert[s + 0].y;
-					MOVE.dx = MOVE.xd * (MOVE.dx * MOVE.xd + MOVE.yd * MOVE.dy)
+					MOVE.xd = MOVE.sect->vertex[s + 1].x - MOVE.sect->vertex[s].x;
+					MOVE.yd = MOVE.sect->vertex[s + 1].y - MOVE.sect->vertex[s].y;
+					USER.velocity.x = MOVE.xd * (MOVE.dx * MOVE.xd + MOVE.yd * MOVE.dy)
 					/ (MOVE.xd * MOVE.xd + MOVE.yd * MOVE.yd);
-					MOVE.dy = MOVE.yd * (MOVE.dx * MOVE.xd + MOVE.yd * MOVE.dy)
+					USER.velocity.y = MOVE.yd * (MOVE.dx * MOVE.xd + MOVE.yd * MOVE.dy)
 					/ (MOVE.xd * MOVE.xd + MOVE.yd * MOVE.yd);
 					MOVE.moving = 0;
 				}
@@ -123,8 +122,8 @@ void	mouse_rotation(t_main *m)
 	double	old_plane_x;
 
 	SDL_GetRelativeMouseState(&x,&y);
-	USER.angle += x * 0.01f;
-	MOVE.yaw = CLAMP(MOVE.yaw + y * 0.02f, -5, 5);
+	USER.angle += x * 0.03f;
+	MOVE.yaw = CLAMP(MOVE.yaw + y * 0.05f, -5, 5);
 	USER.yaw = MOVE.yaw - USER.velocity.z * 0.5f;
 	move_player(m, 0,0);
 	MOVE.move_vec[0] = 0.f;
@@ -139,23 +138,23 @@ void	mouse_rotation(t_main *m)
 
 	if (MOVE.wsad[0])
 	{
-		MOVE.move_vec[0] += USER.anglecos * 0.1f;
-		MOVE.move_vec[1] += USER.anglesin * 0.1f;
+		MOVE.move_vec[0] += USER.anglecos * 0.2f;
+		MOVE.move_vec[1] += USER.anglesin * 0.2f;
 	}
 	if (MOVE.wsad[1])
 	{
-		MOVE.move_vec[0] -= USER.anglecos * 0.1f;
-		MOVE.move_vec[1] -= USER.anglesin * 0.1f;
+		MOVE.move_vec[0] -= USER.anglecos * 0.2f;
+		MOVE.move_vec[1] -= USER.anglesin * 0.2f;
 	}
 	if (MOVE.wsad[2])
 	{
-		MOVE.move_vec[0] += USER.anglesin * 0.1f;
-		MOVE.move_vec[1] -= USER.anglecos * 0.1f;
+		MOVE.move_vec[0] += USER.anglesin * 0.2f;
+		MOVE.move_vec[1] -= USER.anglecos * 0.2f;
 	}
 	if (MOVE.wsad[3])
 	{
-		MOVE.move_vec[0] -= USER.anglesin * 0.1f;
-		MOVE.move_vec[1] += USER.anglecos * 0.1f;
+		MOVE.move_vec[0] -= USER.anglesin * 0.2f;
+		MOVE.move_vec[1] += USER.anglecos * 0.2f;
 	}
 
 	MOVE.pushing = MOVE.wsad[0] || MOVE.wsad[1] || MOVE.wsad[2] || MOVE.wsad[3];
