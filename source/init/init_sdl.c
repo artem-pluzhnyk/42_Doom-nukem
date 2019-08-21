@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 14:15:34 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/11 10:35:22 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/21 18:31:23 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ void	init_sdl(t_main *m)
 		ft_exit("☢ SDL_CreateWindow error.");
 	if (!(SDL.sur = SDL_GetWindowSurface(SDL.win)))
 		ft_exit("☢ SDL_GetWindowSurface error.");
-	SDL_SetWindowGrab(SDL.win, SDL_TRUE);
 	SDL_CaptureMouse(SDL_TRUE);
 }
