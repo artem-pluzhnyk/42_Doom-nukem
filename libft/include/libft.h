@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 15:08:34 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/07/17 13:03:14 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/31 13:04:29 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 */
 # include <unistd.h>
 # include <stdlib.h>
-# include <mlx.h>
 # include <fcntl.h>
 # include <math.h>
 # include <pthread.h>
