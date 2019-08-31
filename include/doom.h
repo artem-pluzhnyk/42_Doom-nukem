@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/20 13:59:23 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/08/31 16:51:44 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -322,6 +322,11 @@ void				load_font(t_main *m);
 */
 void				load_map(t_main *m);
 void				read_map(t_main *m, int fd);
+
+/*
+** load_sounds.c
+*/
+void				load_sounds(t_main *m);
 
 /*
 ** default_map.c

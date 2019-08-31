@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/08/17 13:31:54 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/08/31 16:50:49 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC =	main.c						\
 		init/load_textures.c		\
 		init/load_font.c			\
 		init/load_map.c				\
+		init/load_sounds.c			\
 		init/default_map.c			\
 		\
 		settings/settings.c			\
