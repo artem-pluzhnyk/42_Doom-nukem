@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 19:21:17 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/31 13:09:43 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/01 17:35:16 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	gameplay(t_main *m)
 {
+	Mix_PauseMusic();
 	render_all(m);
 	// draw_poster(m); // Posters
 	// draw_sprite(m); // Sprites

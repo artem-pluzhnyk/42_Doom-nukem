@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 19:51:39 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/21 15:07:37 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/01 18:21:17 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	menu(t_main *m)
 {
+	Mix_ResumeMusic();
 	SDL_ShowCursor(SDL_ENABLE);
 	SDL_SetRelativeMouseMode(SDL_FALSE);
 	draw_background(m, SDL.texture[0]);

@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/31 16:51:44 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/01 17:26:36 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -262,6 +262,7 @@ struct				s_sdl
 	SDL_Surface		*texture[50];
 	TTF_Font		*ttf_50;
 	TTF_Font		*ttf_28;
+	Mix_Music		*sound[50];
 	SDL_Color		white;
 	SDL_Color		green;
 	SDL_Color		red;
