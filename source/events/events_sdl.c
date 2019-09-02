@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 18:53:58 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/01 11:50:30 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/02 19:30:06 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ void	events_moves(t_main *m)
 	if (SDL.event.key.type == SDL_KEYUP || SDL.event.key.type == SDL_KEYDOWN)
 	{
 		if (SDL.event.key.keysym.sym == 'w')
-			MOVE.wsad[0] = SDL.event.type==SDL_KEYDOWN;
+			MOVE.wsad[0] = SDL.event.type == SDL_KEYDOWN;
 		if (SDL.event.key.keysym.sym == 's')
-			MOVE.wsad[1] = SDL.event.type==SDL_KEYDOWN;
+			MOVE.wsad[1] = SDL.event.type == SDL_KEYDOWN;
 		if (SDL.event.key.keysym.sym == 'a')
-			MOVE.wsad[2] = SDL.event.type==SDL_KEYDOWN;
+			MOVE.wsad[2] = SDL.event.type == SDL_KEYDOWN;
 		if (SDL.event.key.keysym.sym == 'd')
-			MOVE.wsad[3] = SDL.event.type==SDL_KEYDOWN;
+			MOVE.wsad[3] = SDL.event.type == SDL_KEYDOWN;
 		if (SDL.event.key.keysym.sym == ' ')
 			if (MOVE.ground)
 			{
@@ -67,7 +67,7 @@ void	events_moves(t_main *m)
 		if (SDL.event.key.keysym.sym == SDLK_LCTRL
 		|| SDL.event.key.keysym.sym == SDLK_RCTRL)
 		{
-			MOVE.ducking = SDL.event.type==SDL_KEYDOWN;
+			MOVE.ducking = SDL.event.type == SDL_KEYDOWN;
 			MOVE.falling = 1;
 		}
 	}

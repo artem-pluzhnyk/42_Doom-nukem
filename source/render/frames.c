@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:45:51 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/21 15:39:51 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/02 13:59:14 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	select_window(t_main *m)
 		loading_screen(m);
 	if (m->state == 1)
 		menu(m);
+	else
+		Mix_HaltMusic();
 	if (m->state == 3)
 		settings_window(m);
 	if (m->state == 4)

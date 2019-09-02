@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/08/31 16:50:49 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/09/02 19:25:39 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,6 +134,8 @@ debug: $(NAME)
 	@echo "\033[1;34m$(NAME): \033[32mNo compile errors.\033[0m"
 	@echo "\033[1;34m$(NAME): \033[5;31mDeleting map...\033[0m"
 	@rm -f ./resources/maps/level0.map
+	@echo "\033[1;34m$(NAME): \033[5;31mDeleting settings...\033[0m"
+	@rm -f setting.cfg
 	@echo "\033[1;34m$(NAME): \033[5;32mStarting Doom 2077...\033[0m"
 	@./$(NAME)
 
