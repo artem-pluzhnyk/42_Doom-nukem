@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/01 17:26:36 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/03 11:52:45 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,9 @@ struct				s_player
 	float			anglecos;
 	float			yaw;
 	unsigned		sector;
+	double			speed;
+	double			health;
+	double			armor;
 };
 
 struct				s_sector

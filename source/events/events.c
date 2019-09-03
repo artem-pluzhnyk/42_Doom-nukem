@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:10:27 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/02 19:28:56 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/03 12:08:12 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,28 +136,27 @@ void	mouse_rotation(t_main *m)
 	SREND.plane_x = SREND.plane_x * cos(0.01f) - SREND.plane_y * sin(0.01f);
 	SREND.plane_y = old_plane_x * sin(0.01f) + SREND.plane_y * cos(0.01f);
 
-	// Mix_PlayingMusic();
-	// Mix_PlayMusic(SDL.sound[1], -1);
-	// Mix_HaltMusic();
 	if (MOVE.wsad[0])
 	{
-		MOVE.move_vec[0] += USER.anglecos * 0.2f;
-		MOVE.move_vec[1] += USER.anglesin * 0.2f;
+		if (Mix_PlayingMusic() == 0)
+			Mix_PlayMusic(SDL.sound[1], 1);
+		MOVE.move_vec[0] += USER.anglecos * USER.speed;
+		MOVE.move_vec[1] += USER.anglesin * USER.speed;
 	}
 	if (MOVE.wsad[1])
 	{
-		MOVE.move_vec[0] -= USER.anglecos * 0.2f;
-		MOVE.move_vec[1] -= USER.anglesin * 0.2f;
+		MOVE.move_vec[0] -= USER.anglecos * USER.speed;
+		MOVE.move_vec[1] -= USER.anglesin * USER.speed;
 	}
 	if (MOVE.wsad[2])
 	{
-		MOVE.move_vec[0] += USER.anglesin * 0.2f;
-		MOVE.move_vec[1] -= USER.anglecos * 0.2f;
+		MOVE.move_vec[0] += USER.anglesin * USER.speed;
+		MOVE.move_vec[1] -= USER.anglecos * USER.speed;
 	}
 	if (MOVE.wsad[3])
 	{
-		MOVE.move_vec[0] -= USER.anglesin * 0.2f;
-		MOVE.move_vec[1] += USER.anglecos * 0.2f;
+		MOVE.move_vec[0] -= USER.anglesin * USER.speed;
+		MOVE.move_vec[1] += USER.anglecos * USER.speed;
 	}
 
 	MOVE.pushing = MOVE.wsad[0] || MOVE.wsad[1] || MOVE.wsad[2] || MOVE.wsad[3];

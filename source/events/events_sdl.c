@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 18:53:58 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/02 19:30:06 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/03 12:06:02 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	events_moves(t_main *m)
 			MOVE.wsad[2] = SDL.event.type == SDL_KEYDOWN;
 		if (SDL.event.key.keysym.sym == 'd')
 			MOVE.wsad[3] = SDL.event.type == SDL_KEYDOWN;
+		if (SDL.event.key.keysym.sym == SDLK_LSHIFT)
+			USER.speed = SDL.event.type == SDL_KEYDOWN ? 0.6f : 0.3f;
 		if (SDL.event.key.keysym.sym == ' ')
 			if (MOVE.ground)
 			{
