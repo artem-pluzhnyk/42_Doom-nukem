@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:23:43 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/03 13:03:01 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/05 13:04:17 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	default_sector(t_main *m, int fd)
 	SECT[0].neighbors[1] = -1;
 	SECT[0].neighbors[2] = -1;
 	SECT[0].neighbors[3] = -1;
-	SECT[0].neighbors[4] = -1;
+	SECT[0].neighbors[4] = 1;
 	SECT[0].neighbors[5] = -1;
 	SECT[0].vertex = malloc(sizeof(t_xy) * (SECT[0].npoints + 1));
 	SECT[0].vertex[1] = MAP.vert[0];
