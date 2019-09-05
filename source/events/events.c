@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:10:27 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/03 13:00:53 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/05 16:54:11 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,9 @@ void	event_moving(t_main *m)
 				{
 					MOVE.xd = MOVE.sect->vertex[s + 1].x - MOVE.sect->vertex[s].x;
 					MOVE.yd = MOVE.sect->vertex[s + 1].y - MOVE.sect->vertex[s].y;
-					USER.velocity.x = MOVE.xd * (MOVE.dx * MOVE.xd + MOVE.yd * MOVE.dy)
+					MOVE.dx = MOVE.xd * (MOVE.dx * MOVE.xd + MOVE.yd * MOVE.dy)
 					/ (MOVE.xd * MOVE.xd + MOVE.yd * MOVE.yd);
-					USER.velocity.y = MOVE.yd * (MOVE.dx * MOVE.xd + MOVE.yd * MOVE.dy)
+					MOVE.dy = MOVE.yd * (MOVE.dx * MOVE.xd + MOVE.yd * MOVE.dy)
 					/ (MOVE.xd * MOVE.xd + MOVE.yd * MOVE.yd);
 					MOVE.moving = 0;
 				}
