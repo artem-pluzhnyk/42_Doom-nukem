@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 18:53:58 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/04 17:15:33 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/06 14:57:52 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void	events_moves(t_main *m)
 			{
 				USER.velocity.z += 0.5;
 				MOVE.falling = 1;
+				// if (!(Mix_PlayingMusic()))
+					// Mix_PlayMusic(SDL.sound[0], -1);
 			}
 		if (SDL.event.key.keysym.sym == SDLK_LCTRL
 		|| SDL.event.key.keysym.sym == SDLK_RCTRL)

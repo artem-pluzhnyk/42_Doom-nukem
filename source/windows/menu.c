@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 19:51:39 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/03 12:09:03 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/07 12:38:02 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ void	play_btn(t_main *m)
 	&& SDL.event.button.x <= (rect.x + rect.w)
 	&& SDL.event.button.y >= rect.y
 	&& SDL.event.button.y <= (rect.x + rect.h))
-		m->state = 2;
+		{
+			m->state = 2;
+			Mix_HaltMusic();
+		}
 }
 
 void	setting_btn(t_main *m)
@@ -65,7 +68,10 @@ void	setting_btn(t_main *m)
 	&& SDL.event.button.x <= (rect.x + rect.w)
 	&& SDL.event.button.y >= rect.y
 	&& SDL.event.button.y <= (rect.x + rect.h))
-		m->state = 3;
+		{
+			m->state = 3;
+			Mix_HaltMusic();
+		}
 }
 
 void	map_edit_btn(t_main *m)
@@ -83,5 +89,8 @@ void	map_edit_btn(t_main *m)
 	&& SDL.event.button.x <= (rect.x + rect.w)
 	&& SDL.event.button.y >= rect.y
 	&& SDL.event.button.y <= (rect.x + rect.h))
-		m->state = 4;
+		{
+			m->state = 4;
+			Mix_HaltMusic();
+		}
 }

@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:22:02 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 15:59:44 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/07 14:19:19 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,16 @@ void	aim_distance(t_main *m)
 	sur = TTF_RenderText_Solid(SDL.ttf_28, str, SDL.white);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
 	SDL_FreeSurface(sur);
+}
+
+void	draw_aim(t_main *m, SDL_Surface *sur)
+{
+	SDL_Rect	rect;
+
+	rect.x = 0;
+	rect.y = 0;
+	rect.h = WIN_H;
+	rect.w = WIN_W;
+	SDL_SetColorKey(sur, SDL_TRUE, SDL_MapRGB(sur->format, 255, 255, 255));
+	SDL_BlitScaled(sur, NULL, SDL.sur, &rect);
 }

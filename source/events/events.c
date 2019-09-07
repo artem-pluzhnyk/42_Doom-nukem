@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:10:27 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/05 16:54:11 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/06 14:47:26 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,8 +138,6 @@ void	mouse_rotation(t_main *m)
 
 	if (MOVE.wsad[0])
 	{
-		if (Mix_PlayingMusic() == 0)
-			Mix_PlayMusic(SDL.sound[1], 1);
 		MOVE.move_vec[0] += USER.anglecos * USER.speed;
 		MOVE.move_vec[1] += USER.anglesin * USER.speed;
 	}

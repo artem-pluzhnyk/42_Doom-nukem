@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/09/02 19:25:39 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/09/07 14:15:29 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ SRC =	main.c						\
 		\
 		interface/aim.c				\
 		interface/hud.c				\
+		interface/gun.c				\
 		\
 		mapping/poster.c			\
 		mapping/sprites.c			\

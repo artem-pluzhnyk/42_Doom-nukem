@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/03 11:52:45 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/07 14:19:50 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -459,11 +459,18 @@ void				mouse_rotation(t_main *m);
 ** aim.c
 */
 void				aim_distance(t_main *m);
+void				draw_aim(t_main *m, SDL_Surface *sur);
+
 
 /*
 ** hud.c
 */
-void				draw_hud(t_main *m, SDL_Surface *sur);
+void				draw_hud(t_main *m);
+
+/*
+** gun.c
+*/
+void				draw_gun(t_main *m, SDL_Surface *sur);
 
 /*
 ** ./mapping/##################################################################|
