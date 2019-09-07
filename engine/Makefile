@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/09/07 18:31:52 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/09/07 18:50:04 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,9 +57,7 @@ SRC =	main.c						\
 		interface/gun.c				\
 		\
 		mapping/poster.c			\
-		mapping/sprites.c			\
-		\
-		map_editor/map_editor.c
+		mapping/sprites.c
 
 OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
 INC = $(addprefix $(INC_DIR),$(addsuffix .h,doom))
@@ -94,7 +92,6 @@ $(OBJ_DIR):
 	@mkdir $(OBJ_DIR)/render
 	@mkdir $(OBJ_DIR)/windows
 	@mkdir $(OBJ_DIR)/events
-	@mkdir $(OBJ_DIR)/map_editor
 	@mkdir $(OBJ_DIR)/interface
 	@mkdir $(OBJ_DIR)/mapping
 	@echo "\033[1;34m$(NAME): \033[5;36mCompiling source...\033[0m"

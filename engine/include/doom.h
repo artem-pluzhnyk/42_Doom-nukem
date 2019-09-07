@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/07 18:31:04 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/07 18:49:46 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -484,17 +484,6 @@ void				draw_poster(t_main *m);
 ** sprites.c
 */
 void				draw_sprite(t_main *m);
-
-/*
-** ./map_editor/###############################################################|
-*/
-
-/*
-** map_editor.c
-*/
-void				map_editor(t_main *m);
-void				draw_grid(t_main *m);
-void				map_tabs(t_main *m);
 
 /*
 ** ./##########################################################################|
