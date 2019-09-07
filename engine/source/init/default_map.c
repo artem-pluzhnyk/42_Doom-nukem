@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:23:43 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/05 13:04:17 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/07 18:45:11 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	create_map(t_main *m, char *file)
 
 void	default_vertex(t_main *m, int fd)
 {
-	MAP.num_v = 8;
+	MAP.num_v = 8;	// number of points (vert)
 	write(fd, &MAP.num_v, sizeof(int));
-	MAP.vert = malloc(sizeof(t_xy) * MAP.num_v);
+	MAP.vert = malloc(sizeof(t_xy) * MAP.num_v);	// vertex
 	MAP.vert[0].y = 0;
 	MAP.vert[0].x = 0;
 	MAP.vert[1].y = 0;
@@ -50,21 +50,21 @@ void	default_vertex(t_main *m, int fd)
 
 void	default_sector(t_main *m, int fd)
 {
-	MAP.num_s = 2;
+	MAP.num_s = 2;	// number of sectors
 	write(fd, &MAP.num_s, sizeof(int));
 	SECT = malloc(sizeof(t_sector) * MAP.num_s);
 
 	SECT[0].floor = 0;
 	SECT[0].ceil = 20;
-	SECT[0].npoints = 6;
-	SECT[0].neighbors = malloc(sizeof(signed char) * SECT[0].npoints);
+	SECT[0].npoints = 6;	// number of walls (and points)
+	SECT[0].neighbors = malloc(sizeof(signed char) * SECT[0].npoints);	// neighbors sectors
 	SECT[0].neighbors[0] = -1;
 	SECT[0].neighbors[1] = -1;
 	SECT[0].neighbors[2] = -1;
 	SECT[0].neighbors[3] = -1;
 	SECT[0].neighbors[4] = 1;
 	SECT[0].neighbors[5] = -1;
-	SECT[0].vertex = malloc(sizeof(t_xy) * (SECT[0].npoints + 1));
+	SECT[0].vertex = malloc(sizeof(t_xy) * (SECT[0].npoints + 1));	// walls (must be in same order)
 	SECT[0].vertex[1] = MAP.vert[0];
 	SECT[0].vertex[2] = MAP.vert[1];
 	SECT[0].vertex[3] = MAP.vert[5];
@@ -72,7 +72,7 @@ void	default_sector(t_main *m, int fd)
 	SECT[0].vertex[5] = MAP.vert[3];
 	SECT[0].vertex[6] = MAP.vert[2];
 	SECT[0].vertex[0] = SECT[0].vertex[6];
-	SECT[0].texture = malloc(sizeof(int) * (SECT[0].npoints + 4));
+	SECT[0].texture = malloc(sizeof(int) * (SECT[0].npoints + 4));	// id of texture fot every wall (in same order, like vertex) and other
 	SECT[0].texture[0] = 13;
 	SECT[0].texture[1] = 13;
 	SECT[0].texture[2] = 13;
@@ -85,7 +85,7 @@ void	default_sector(t_main *m, int fd)
 	SECT[0].texture[9] = 8; // upper
 
 
-	SECT[1].floor = 2;
+	SECT[1].floor = 2;	// next sector
 	SECT[1].ceil = 15;
 	SECT[1].npoints = 6;
 	SECT[1].neighbors = malloc(sizeof(signed char) * SECT[1].npoints);
@@ -115,7 +115,7 @@ void	default_sector(t_main *m, int fd)
 	SECT[1].texture[8] = 7; // lower
 	SECT[1].texture[9] = 8; // upper
 
-	write(fd, SECT, sizeof(t_sector) * MAP.num_s);
+	write(fd, SECT, sizeof(t_sector) * MAP.num_s);	// write all data about sector
 
 	write(fd, SECT[0].neighbors, sizeof(signed char) * SECT[0].npoints);
 	write(fd, SECT[0].vertex, sizeof(t_xy) * (SECT[0].npoints + 1));
@@ -128,21 +128,21 @@ void	default_sector(t_main *m, int fd)
 
 void	default_player(t_main *m, int fd)
 {
-	USER.where.x = 5;
+	USER.where.x = 5;	// player position
 	USER.where.y = 5;
-	USER.velocity.x = 0;
-	USER.velocity.y = 0;
-	USER.velocity.z = 0;
-	USER.angle = 0;
-	USER.anglesin = 0;
-	USER.anglecos = 0;
-	USER.yaw = 0;
-	USER.sector = 0;
-	USER.where.z = MAP.sectors[USER.sector].floor + EYE_H;
+	USER.velocity.x = 0;	// must be zero
+	USER.velocity.y = 0;	// must be zero
+	USER.velocity.z = 0;	// must be zero
+	USER.angle = 0;	// must be zero (player rotation)
+	USER.anglesin = 0;	// must be zero
+	USER.anglecos = 0;	// must be zero
+	USER.yaw = 0;	// must be zero
+	USER.sector = 0;	// sector for spawn player
+	USER.where.z = MAP.sectors[USER.sector].floor + EYE_H;	// player position (height)
 	write(fd, &USER, sizeof(t_player));
 }
 
-void	default_poster(t_main *m, int fd)
+void	default_poster(t_main *m, int fd)	// unused
 {
 	MAP.num_poster = 1;
 	write(fd, &MAP.num_poster, sizeof(unsigned));
@@ -153,7 +153,7 @@ void	default_poster(t_main *m, int fd)
 	write(fd, PIC, sizeof(t_poster) * MAP.num_poster);
 }
 
-void	default_sprite(t_main *m, int fd)
+void	default_sprite(t_main *m, int fd)	// unused
 {
 	MAP.num_sprite = 1;
 	write(fd, &MAP.num_sprite, sizeof(unsigned));
