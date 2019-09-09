@@ -6,9 +6,17 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/09 12:55:06 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/09 19:21:08 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** TO DO LIST:
+** save game
+** rip text
+** restart
+** map choose
+*/
 
 #ifndef DOOM_H
 # define DOOM_H
@@ -95,7 +103,7 @@ struct				s_sector
 	signed char		*neighbors;
 	unsigned		npoints;
 	int				*texture;
-	int				*texture2;
+	int				gas;
 };
 
 struct				s_map
@@ -277,6 +285,7 @@ struct				s_sdl
 
 struct				s_main
 {
+	int				fd;
 	t_sdl			sdl;
 	t_cfg			cfg;
 	t_map			map;
@@ -325,7 +334,7 @@ void				load_font(t_main *m);
 ** load_map.c
 */
 void				load_map(t_main *m);
-void				read_map(t_main *m, int fd);
+void				read_map(t_main *m);
 
 /*
 ** load_sounds.c
@@ -336,11 +345,11 @@ void				load_sounds(t_main *m);
 ** default_map.c
 */
 void				create_map(t_main *m, char *file);
-void				default_vertex(t_main *m, int fd);
-void				default_sector(t_main *m, int fd);
-void				default_player(t_main *m, int fd);
-void				default_poster(t_main *m, int fd);
-void				default_sprite(t_main *m, int fd);
+void				default_vertex(t_main *m);
+void				default_sector(t_main *m);
+void				default_player(t_main *m);
+void				default_poster(t_main *m);
+void				default_sprite(t_main *m);
 
 /*
 ** ./settings/#################################################################|
@@ -432,6 +441,11 @@ void				map_edit_btn(t_main *m);
 void				settings_window(t_main *m);
 
 /*
+** endgame.c
+*/
+void				endgame(t_main *m);
+
+/*
 ** ./events/###################################################################|
 */
 
@@ -467,7 +481,6 @@ void				draw_aim(t_main *m, SDL_Surface *sur);
 */
 void				draw_hud(t_main *m);
 void				draw_hud_back(t_main *m);
-void				draw_shield_separator(t_main *m);
 
 /*
 ** gun.c
@@ -491,5 +504,16 @@ void				draw_sprite(t_main *m);
 /*
 ** ./##########################################################################|
 */
+
+/*
+** regeneration.c
+*/
+void				healing_player(t_main *m);
+void				radiation(t_main *m);
+
+/*
+** savegame.c
+*/
+void				save_game(t_main *m);
 
 #endif

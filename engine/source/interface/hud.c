@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:22:00 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/09 13:08:51 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/09 18:35:16 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	draw_hud(t_main *m)
 	armor.x = WIN_W - 400;
 	armor.y = armor.h * 1.5 + health.y;
 	SDL_FillRect(SDL.sur, &armor, 0xCACACA);
-	draw_shield_separator(m);
 }
 
 void	draw_hud_back(t_main *m)
@@ -46,9 +45,4 @@ void	draw_hud_back(t_main *m)
 	rect2.y = rect2.h * 1.5 + rect1.y;
 	SDL_FillRect(SDL.sur, &rect1, 0x424242);
 	SDL_FillRect(SDL.sur, &rect2, 0x424242);
-}
-
-void	draw_shield_separator(t_main *m)
-{
-	(void)m;
 }

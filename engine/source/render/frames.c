@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:45:51 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/09 09:42:03 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/09 19:00:28 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	select_window(t_main *m)
 		loading_screen(m);
 	if (m->state == 1)
 		menu(m);
+	if (m->state == 2)
+		gameplay(m);
 	if (m->state == 3)
 		settings_window(m);
 	if (m->state == 4)
@@ -41,6 +43,6 @@ void	select_window(t_main *m)
 		system("../map-editor/./map-editor");
 		escape(m);
 	}
-	if (m->state == 2)
-		gameplay(m);
+	if (m->state == 5)
+		endgame(m);
 }

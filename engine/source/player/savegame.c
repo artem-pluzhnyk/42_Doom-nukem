@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gun.c                                              :+:      :+:    :+:   */
+/*   savegame.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 15:22:00 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/09 18:42:25 by apluzhni         ###   ########.fr       */
+/*   Created: 2019/09/09 19:11:49 by apluzhni          #+#    #+#             */
+/*   Updated: 2019/09/09 19:17:27 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "doom.h"
+# include "doom.h"
 
-void	draw_gun(t_main *m, SDL_Surface *sur)
+void	save_game(t_main *m)
 {
-	SDL_Rect	rect;
-	SDL_Rect	t_rect;
-
-	t_rect.x = 0;
-	t_rect.y = 0;
-	t_rect.h = 150;
-	t_rect.w = 149;
-	rect.h = t_rect.h * 3;
-	rect.w = t_rect.w * 3;
-	rect.x = WIN_W / 2;
-	rect.y = WIN_H - rect.h;
-	SDL_BlitScaled(sur, &t_rect, SDL.sur, &rect);
+	write(m->fd, &USER, sizeof(t_player));
 }

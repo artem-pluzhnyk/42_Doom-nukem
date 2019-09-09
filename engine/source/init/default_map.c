@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:23:43 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/09 12:52:11 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/09 19:18:26 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 void	create_map(t_main *m, char *file)
 {
-	int		fd;
-
-	fd = open(file, O_CREAT | O_RDWR);
-	default_vertex(m, fd);
-	default_sector(m, fd);
-	default_player(m, fd);
-	default_poster(m, fd);
-	default_sprite(m, fd);
+	m->fd = open(file, O_CREAT | O_RDWR);
+	default_vertex(m);
+	default_sector(m);
+	default_player(m);
+	default_poster(m);
+	default_sprite(m);
 }
 
-void	default_vertex(t_main *m, int fd)
+void	default_vertex(t_main *m)
 {
 	MAP.num_v = 8;	// number of points (vert)
-	write(fd, &MAP.num_v, sizeof(int));
+	write(m->fd, &MAP.num_v, sizeof(int));
 	MAP.vert = malloc(sizeof(t_xy) * MAP.num_v);	// vertex
 	MAP.vert[0].y = 0;
 	MAP.vert[0].x = 0;
@@ -45,13 +43,13 @@ void	default_vertex(t_main *m, int fd)
 	MAP.vert[6].x = 0;
 	MAP.vert[7].y = 20;
 	MAP.vert[7].x = 15;
-	write(fd, MAP.vert, sizeof(t_xy) * MAP.num_v);
+	write(m->fd, MAP.vert, sizeof(t_xy) * MAP.num_v);
 }
 
-void	default_sector(t_main *m, int fd)
+void	default_sector(t_main *m)
 {
 	MAP.num_s = 2;	// number of sectors
-	write(fd, &MAP.num_s, sizeof(int));
+	write(m->fd, &MAP.num_s, sizeof(int));
 	SECT = malloc(sizeof(t_sector) * MAP.num_s);
 
 	SECT[0].floor = 0;
@@ -83,7 +81,7 @@ void	default_sector(t_main *m, int fd)
 	SECT[0].texture[7] = 14; // ceiling
 	SECT[0].texture[8] = 7; // lower
 	SECT[0].texture[9] = 8; // upper
-
+	SECT[0].gas = 0;
 
 	SECT[1].floor = 2;	// next sector
 	SECT[1].ceil = 15;
@@ -114,19 +112,20 @@ void	default_sector(t_main *m, int fd)
 	SECT[1].texture[7] = 14; // ceiling
 	SECT[1].texture[8] = 7; // lower
 	SECT[1].texture[9] = 8; // upper
+	SECT[1].gas = 1;
 
-	write(fd, SECT, sizeof(t_sector) * MAP.num_s);	// write all data about sector
+	write(m->fd, SECT, sizeof(t_sector) * MAP.num_s);	// write all data about sector
 
-	write(fd, SECT[0].neighbors, sizeof(signed char) * SECT[0].npoints);
-	write(fd, SECT[0].vertex, sizeof(t_xy) * (SECT[0].npoints + 1));
-	write(fd, SECT[0].texture, sizeof(int) * (SECT[0].npoints + 4));
+	write(m->fd, SECT[0].neighbors, sizeof(signed char) * SECT[0].npoints);
+	write(m->fd, SECT[0].vertex, sizeof(t_xy) * (SECT[0].npoints + 1));
+	write(m->fd, SECT[0].texture, sizeof(int) * (SECT[0].npoints + 4));
 
-	write(fd, SECT[1].neighbors, sizeof(signed char) * SECT[1].npoints);
-	write(fd, SECT[1].vertex, sizeof(t_xy) * (SECT[1].npoints + 1));
-	write(fd, SECT[1].texture, sizeof(int) * (SECT[1].npoints + 4));
+	write(m->fd, SECT[1].neighbors, sizeof(signed char) * SECT[1].npoints);
+	write(m->fd, SECT[1].vertex, sizeof(t_xy) * (SECT[1].npoints + 1));
+	write(m->fd, SECT[1].texture, sizeof(int) * (SECT[1].npoints + 4));
 }
 
-void	default_player(t_main *m, int fd)
+void	default_player(t_main *m)
 {
 	USER.where.x = 5;	// player position
 	USER.where.y = 5;
@@ -142,27 +141,27 @@ void	default_player(t_main *m, int fd)
 	USER.speed = 0.3f;
 	USER.health = 90;
 	USER.armor = 75;
-	write(fd, &USER, sizeof(t_player));
+	write(m->fd, &USER, sizeof(t_player));
 }
 
-void	default_poster(t_main *m, int fd)	// unused
+void	default_poster(t_main *m)	// unused
 {
 	MAP.num_poster = 1;
-	write(fd, &MAP.num_poster, sizeof(unsigned));
+	write(m->fd, &MAP.num_poster, sizeof(unsigned));
 	PIC = malloc(sizeof(t_poster) * MAP.num_poster);
 	PIC[0].poz.x = 10;
 	PIC[0].poz.y = 50;
 	PIC[0].texture = 10;
-	write(fd, PIC, sizeof(t_poster) * MAP.num_poster);
+	write(m->fd, PIC, sizeof(t_poster) * MAP.num_poster);
 }
 
-void	default_sprite(t_main *m, int fd)	// unused
+void	default_sprite(t_main *m)	// unused
 {
 	MAP.num_sprite = 1;
-	write(fd, &MAP.num_sprite, sizeof(unsigned));
+	write(m->fd, &MAP.num_sprite, sizeof(unsigned));
 	OBJ = malloc(sizeof(t_sprite) * MAP.num_sprite);
 	OBJ[0].poz.x = 40;
 	OBJ[0].poz.y = 40;
 	OBJ[0].texture = 11;
-	write(fd, OBJ, sizeof(t_sprite) * MAP.num_sprite);
+	write(m->fd, OBJ, sizeof(t_sprite) * MAP.num_sprite);
 }
