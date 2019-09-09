@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/09/07 18:50:04 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/09/09 10:35:56 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,6 @@ FLAGS = -Wall -Wextra -Werror $(OPTIM) $(DEBUG)
 SRC_DIR = ./source/
 OBJ_DIR = ./object/
 INC_DIR = ./include/
-LIB_DIR = ../libft/
-
-LIBFT = -L $(LIB_DIR) -lft
 
 SRC =	main.c						\
 		\
@@ -62,6 +59,13 @@ SRC =	main.c						\
 OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
 INC = $(addprefix $(INC_DIR),$(addsuffix .h,doom))
 
+LFT = -L $(LFT_DIR) -lft
+LFT_DIR = ../libft/
+LZIP = -L ../libzip/ -lzip
+LZIP_DIR = ../libzip/
+LZIP_P = ../libzip/bin/
+LZIP_INC = -I ../libzip/lib/
+
 SDL_INC =	-I ../frameworks/SDL2.framework/Headers/			\
 			-I ../frameworks/SDL2_mixer.framework/Headers/	\
 			-I ../frameworks/SDL2_ttf.framework/Headers/
@@ -73,7 +77,7 @@ all: $(NAME)
 
 $(NAME): lib $(OBJ_DIR) $(OBJ)
 	@echo "\033[1;34m$(NAME): \033[5;36mLinking files...\033[0m"
-	@gcc $(FLAGS) $(LIBFT) -I $(INC_DIR) -I $(LIB_DIR)/include $(SDL_INC) $(SDL_PATH) $(FRAMEWORKS) $(addprefix $(SRC_DIR),$(SRC)) -o $(NAME)
+	@gcc $(FLAGS) $(LFT) -I $(INC_DIR) -I $(LFT_DIR)/include $(SDL_INC) $(SDL_PATH) $(FRAMEWORKS) $(addprefix $(SRC_DIR),$(SRC)) -o $(NAME)
 	@echo "\033[1;34m$(NAME): \033[32mComplete!\033[0m"
 	@echo "\033[1;34m$(NAME): \033[32mExecutable file is ready!\033[0m"
 	@echo "\033[1;33mUsage: ./$(NAME)\033[0m"
@@ -81,7 +85,7 @@ $(NAME): lib $(OBJ_DIR) $(OBJ)
 lib:
 	@echo "\033[1;34m$(NAME): \033[5;36mMaking lib...\033[0m"
 	@echo "\033[1;35m╔════════════════════════════════════╗\033[0m"
-	@make -C $(LIB_DIR)
+	@make -C $(LFT_DIR)
 	@echo "\033[1;35m╚════════════════════════════════════╝\033[0m"
 
 $(OBJ_DIR):
@@ -97,12 +101,12 @@ $(OBJ_DIR):
 	@echo "\033[1;34m$(NAME): \033[5;36mCompiling source...\033[0m"
 
 $(OBJ_DIR)%.o:$(SRC_DIR)%.c
-	@gcc $(FLAGS) -I $(INC_DIR) -I $(LIB_DIR)/include $(SDL_INC) -o $@ -c $<
+	@gcc $(FLAGS) -I $(INC_DIR) -I $(LFT_DIR)/include $(SDL_INC) -o $@ -c $<
 
 clean:
 	@echo "\033[1;34m$(NAME): \033[5;31mCleaning lib...\033[0m"
 	@echo "\033[1;35m╔════════════════════════════════════╗\033[0m"
-	@make -C $(LIB_DIR) clean
+	@make -C $(LFT_DIR) clean
 	@echo "\033[1;35m╚════════════════════════════════════╝\033[0m"
 	@echo "\033[1;34m$(NAME): \033[5;31mDeleting object files...\033[0m"
 	@rm -rf $(OBJ_DIR)
@@ -113,7 +117,7 @@ clean:
 fclean: clean
 	@echo "\033[1;34m$(NAME): \033[5;31mDeleting lib...\033[0m"
 	@echo "\033[1;35m╔════════════════════════════════════╗\033[0m"
-	@make -C $(LIB_DIR) fclean
+	@make -C $(LFT_DIR) fclean
 	@echo "\033[1;35m╚════════════════════════════════════╝\033[0m"
 	@echo "\033[1;34m$(NAME): \033[5;31mDeleting settings...\033[0m"
 	@rm -f setting.cfg
