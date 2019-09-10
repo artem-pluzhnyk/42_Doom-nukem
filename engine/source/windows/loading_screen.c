@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 19:40:31 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/10 12:47:36 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/10 14:29:50 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	loading_text(t_main *m)
 	rect.y = WIN_H - WIN_H / 8;
 	rect.w = 0;
 	rect.h = 0;
-	sur = TTF_RenderText_Solid(SDL.ttf_50,"Doom 2077 is loaded", SDL.red);
+	sur = TTF_RenderText_Solid(SDL.ttf_50,"Doom 2077 is loaded", SDL.blue);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
 	rect.y += 30;
-	sur = TTF_RenderText_Solid(SDL.ttf_50,"Press Enter to continue", SDL.red);
+	sur = TTF_RenderText_Solid(SDL.ttf_50,"Press Enter to continue", SDL.blue);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
 	SDL_FreeSurface(sur);
 }
