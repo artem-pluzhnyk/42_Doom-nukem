@@ -6,15 +6,9 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/10 14:35:47 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/10 18:50:24 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** TO DO LIST:
-** restart
-** map choose
-*/
 
 #ifndef DOOM_H
 # define DOOM_H
