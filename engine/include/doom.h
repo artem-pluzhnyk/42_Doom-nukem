@@ -6,13 +6,12 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/10 10:29:15 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/10 13:17:09 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** TO DO LIST:
-** save game
 ** rip text
 ** restart
 ** map choose
