@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 18:36:10 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/10 10:12:41 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/11 18:21:39 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	healing_player(t_main *m)
 {
-	if (!(SECT[USER.sector].gas))
+	if (!(SECT[USER.sector].gas) && USER.armor <= 125)
 		USER.armor += 0.05;
 }
 

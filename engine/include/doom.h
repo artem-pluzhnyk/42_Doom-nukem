@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/10 18:50:24 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/11 18:30:59 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ struct				s_player
 	double			speed;
 	double			health;
 	double			armor;
+	unsigned		spawn_sect;
+	t_xyz			spawn;
 };
 
 struct				s_sector

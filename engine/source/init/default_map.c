@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:23:43 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/10 18:49:27 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/11 18:34:56 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,10 @@ void	default_player(t_main *m)
 	USER.speed = 0.3f;
 	USER.health = 100;
 	USER.armor = 125;
+	USER.spawn_sect = 0; // home sector (const: don't modify in game)
+	USER.spawn.x = 5; // spawn position (const: don't modify in game)
+	USER.spawn.y = 5;
+	USER.spawn.z = MAP.sectors[USER.spawn_sect].floor + EYE_H;
 	write(m->fd, &USER, sizeof(t_player));
 }
 

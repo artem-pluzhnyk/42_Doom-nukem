@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 19:00:57 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/10 19:31:21 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/11 18:33:37 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,22 @@ void	endgame(t_main *m)
 	sur = TTF_RenderText_Solid(SDL.ttf_28,
 	"Forever and ever, my brother, hail and farewell.", SDL.red);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
+	rect.y += 50;
+	rect.x += 25;
+	sur = TTF_RenderText_Solid(SDL.ttf_50,
+	"Press Enter for respawn.", SDL.green);
+	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
 	SDL_FreeSurface(sur);
 
 	if (SDL.event.key.type == SDL_KEYDOWN
 	&& SDL.event.key.keysym.sym == SDLK_RETURN)
 	{
-		m->state = 1;
+		m->state = 2;
 		USER.health = 100;
 		USER.armor = 125;
-		USER.sector = 0;
-		USER.where.x = 5;
-		USER.where.y = 5;
-		USER.where.z = MAP.sectors[USER.sector].floor + EYE_H;
+		USER.sector = USER.spawn_sect;
+		USER.where.x = USER.spawn.x;
+		USER.where.y = USER.spawn.y;
+		USER.where.z = USER.spawn.z;
 	}
 }
-// save defoult position
-// respawn text
-// map choose
