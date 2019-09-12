@@ -24,7 +24,10 @@
 # define GRAY		0x808080
 
 typedef struct s_sdl		t_sdl;
+typedef struct s_map		t_map;
 typedef struct s_main		t_main;
+typedef struct s_xy			t_xy;
+typedef struct s_vert		t_vert;
 
 struct				s_sdl
 {
@@ -37,10 +40,22 @@ struct				s_sdl
 	SDL_Color		yellow;
 };
 
+struct				s_vert
+{
+	t_xy			*coord;
+};
+
+struct				s_xy
+{
+	int				x;
+	int				y;
+};
+
 struct				s_main
 {
 	t_sdl			sdl;
 	int				map_tab;
+	int				i; //количество точек
 };
 
 void				init_sdl(t_main *m);
@@ -49,3 +64,4 @@ void				map_editor(t_main *m);
 void				draw_grid(t_main *m);
 void				map_tabs(t_main *m);
 void				ft_put_pixel(t_main *m, int x, int y, int pixel);
+void				get_mouse(t_main *m);

@@ -44,6 +44,35 @@ void	init_sdl(t_main *m)
 	SDL.yellow.r = 255;
 	SDL.yellow.g = 255;
 	SDL.yellow.b = 0;
+	m->i = 0;
+}
+
+void	get_mouse(t_main *m)
+{
+	SDL_Rect	rect;
+	t_vert		v;
+	int		x;
+	int		y;
+
+	rect.w = WIN_W; // WIN_W
+	rect.h = WIN_H; // WIN_H
+	rect.y = 0; // 0
+	rect.x = 250; // 250
+	SDL_GetMouseState(&x, &y);
+	if (SDL.event.type == SDL_MOUSEBUTTONDOWN
+	&& SDL.event.button.button == SDL_BUTTON_LEFT
+	&& SDL.event.button.x >= rect.x
+	&& SDL.event.button.x <= rect.w
+	&& SDL.event.button.y >= rect.y
+	&& SDL.event.button.y <= rect.h)
+	{
+		v.coord[m->i].x = SDL.event.button.x;
+		v.coord[m->i].y = SDL.event.button.y;
+		if (SDL.event.button.x != v.coord[m->i].x || SDL.event.button.y != v.coord[m->i].y)
+			m->i += 1;
+
+		printf("x1 = %d\ny1 = %d\ni = %d\n", v.coord[m->i].x, v.coord[m->i].y, m->i);
+	}
 }
 
 void	loop(t_main *m)
@@ -52,6 +81,7 @@ void	loop(t_main *m)
 	{
 		SDL_FillRect(SDL.sur, NULL, 0x000000);
 		map_editor(m);
+		get_mouse(m);
 		while (SDL_PollEvent(&SDL.event))
 			if ((SDL.event.type == SDL_QUIT) ||
 			(SDL.event.key.type == SDL_KEYDOWN
@@ -96,10 +126,10 @@ void	map_tabs(t_main *m)
 	SDL_Surface		*sur;
 	SDL_Rect		rect;
 
-	rect.w = 0;
-	rect.h = 0;
-	rect.y = 10;
-	rect.x = 10;
+	rect.w = 0; // WIN_W
+	rect.h = 0; // WIN_H
+	rect.y = 10; // 0
+	rect.x = 10; // 250
 	sur = TTF_RenderText_Solid(SDL.ttf, "Sector", (m->map_tab) ? SDL.white : SDL.yellow);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
 	SDL_FreeSurface(sur);
