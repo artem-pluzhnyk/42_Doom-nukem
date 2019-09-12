@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:15:35 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/12 18:20:24 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/12 18:28:16 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	settings_window(t_main *m)
 	map_choose(m);
 	switch_music(m);
 	screen_resolution(m);
-	restart_message(m);
 	rect.x = WIN_W / 24;
 	rect.y = WIN_H / 1.1;
 	rect.w = 0;
