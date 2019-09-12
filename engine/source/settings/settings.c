@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 16:55:29 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/02 18:33:11 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/12 17:59:14 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,34 @@ void	load_settings(t_main *m)
 	int		fd;
 
 	fd = 0;
-	if ((fd = open("setting.cfg", O_DIRECTORY) >= 0))
+	if ((fd = open("../resources/setting.cfg", O_DIRECTORY) >= 0))
 		ft_exit("☣ Error ☣");
-	if ((fd = open("setting.cfg", O_RDONLY)) < 0)
+	if ((fd = open("../resources/setting.cfg", O_RDONLY)) < 0)
 		default_setings(m);
 	else
 		read(fd, &CFG, sizeof(t_cfg));
 	close(fd);
+	m->loaded_map = CFG.map;
 }
 
 void	default_setings(t_main *m)
 {
 	int		fd;
 
-	fd = open("setting.cfg", O_CREAT | O_RDWR);
+	fd = open("../resources/setting.cfg", O_CREAT | O_RDWR);
 	CFG.win_width = 1500;
 	CFG.win_height = 1000;
+	CFG.music = 1;
+	CFG.map = 1;
+	write(fd, &CFG, sizeof(t_cfg));
+	close(fd);
+}
+
+void	save_settings(t_main *m)
+{
+	int		fd;
+
+	fd = open("../resources/setting.cfg", O_RDWR);
 	write(fd, &CFG, sizeof(t_cfg));
 	close(fd);
 }

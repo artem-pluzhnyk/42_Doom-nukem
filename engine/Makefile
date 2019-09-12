@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/09/09 19:15:05 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/09/12 18:24:57 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRC =	main.c						\
 		init/default_map.c			\
 		\
 		settings/settings.c			\
+		settings/savegame.c			\
 		\
 		render/frames.c				\
 		render/display1.c			\
@@ -57,8 +58,7 @@ SRC =	main.c						\
 		mapping/poster.c			\
 		mapping/sprites.c			\
 		\
-		player/regeneration.c		\
-		player/savegame.c
+		player/regeneration.c
 
 OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
 INC = $(addprefix $(INC_DIR),$(addsuffix .h,doom))
@@ -125,7 +125,10 @@ fclean: clean
 	@make -C $(LFT_DIR) fclean
 	@echo "\033[1;35m╚════════════════════════════════════╝\033[0m"
 	@echo "\033[1;34m$(NAME): \033[5;31mDeleting settings...\033[0m"
-	@rm -f setting.cfg
+	@rm -f ../resources/setting.cfg
+	@echo "\033[1;34m$(NAME): \033[5;31mDeleting maps...\033[0m"
+	@rm -f ../resources/maps/default.map
+	@rm -f ../resources/maps/custom.map
 	@echo "\033[1;34m$(NAME): \033[5;31mDeleting exe file...\033[0m"
 	@rm -f $(NAME)
 	@echo "\033[1;34m$(NAME): \033[32mDeleted!\033[0m"
@@ -136,18 +139,3 @@ kill:
 	@echo "\033[1;34m$(NAME): \033[5;31mKilling proces...\033[0m"
 	@pkill $(NAME)
 	@echo "\033[1;34m$(NAME): \033[32mKilled!\033[0m"
-
-debug: $(NAME)
-	@echo "\033[1;34m$(NAME): \033[32mNo compile errors.\033[0m"
-	@echo "\033[1;34m$(NAME): \033[5;31mDeleting map...\033[0m"
-	@rm -f ./resources/maps/level0.map
-	@echo "\033[1;34m$(NAME): \033[5;31mDeleting settings...\033[0m"
-	@rm -f setting.cfg
-	@echo "\033[1;34m$(NAME): \033[5;32mStarting Doom 2077...\033[0m"
-	@./$(NAME)
-
-git: fclean
-	@git add *
-	@git add .vscode
-	@git commit -m "update"
-	@git push

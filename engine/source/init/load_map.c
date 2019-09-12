@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:22:04 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/09 19:18:11 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/12 18:01:27 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	load_map(t_main *m)
 {
 	char	*file;
 
-	file = "../resources/maps/default.map";
+	if (m->loaded_map)
+		file = "../resources/maps/default.map";
+	else
+		file = "../resources/maps/custom.map";
 	if ((m->fd = open(file, O_DIRECTORY) >= 0))
 		ft_exit("☣ Error ☣");
 	if ((m->fd = open(file, O_RDONLY)) < 0)

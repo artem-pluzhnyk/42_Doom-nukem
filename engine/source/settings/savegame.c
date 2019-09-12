@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 19:11:49 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/11 18:17:09 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/12 17:58:20 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	save_game(t_main *m)
 {
-	system("rm -f ../resources/maps/default.map");
-	m->fd = open("../resources/maps/default.map", O_CREAT | O_RDWR);
+	if (m->loaded_map)
+		m->fd = open("../resources/maps/default.map", O_RDWR);
+	else
+		m->fd = open("../resources/maps/custom.map", O_RDWR);
 	write(m->fd, &MAP.num_v, sizeof(int));
 	write(m->fd, MAP.vert, sizeof(t_xy) * MAP.num_v);
 	write(m->fd, &MAP.num_s, sizeof(int));

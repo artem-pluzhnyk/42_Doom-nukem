@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 19:21:17 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/09 18:59:18 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/12 18:16:32 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	gameplay(t_main *m)
 	radiation(m);
 	if (USER.health <= 0)
 		m->state = 5;
-	// draw_poster(m); // Posters
-	// draw_sprite(m); // Sprites
 	if (HUD.hud)
 		draw_gun(m, SDL.texture[15]);
 	else

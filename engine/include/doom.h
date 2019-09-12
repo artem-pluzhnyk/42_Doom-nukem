@@ -6,9 +6,18 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/11 18:30:59 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/12 18:22:47 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// off gravitation in settings
+// save player stat in settings
+// changee screen resolution in settings
+// add aim
+// add fire (and damage info)
+// add light
+// add sounds
+// # include <zip.h>
 
 #ifndef DOOM_H
 # define DOOM_H
@@ -17,7 +26,6 @@
 # include <SDL.h>
 # include <SDL_mixer.h>
 # include <SDL_ttf.h>
-// # include <zip.h>
 
 # define SDL		m->sdl
 # define CFG		m->cfg
@@ -250,6 +258,8 @@ struct				s_cfg
 {
 	unsigned		win_width;
 	unsigned		win_height;
+	int				music;
+	int				map;
 };
 
 struct				s_hud
@@ -289,6 +299,7 @@ struct				s_main
 	t_hud			hud;
 	t_srend			srend;
 	int				map_tab;
+	int				loaded_map;
 };
 
 /*
@@ -354,6 +365,13 @@ void				default_sprite(t_main *m);
 */
 void				load_settings(t_main *m);
 void				default_setings(t_main *m);
+void				save_settings(t_main *m);
+void				screen_resolution(t_main *m);
+
+/*
+** savegame.c
+*/
+void				save_game(t_main *m);
 
 /*
 ** ./render/###################################################################|
@@ -433,6 +451,9 @@ void				map_edit_btn(t_main *m);
 ** settings.c
 */
 void				settings_window(t_main *m);
+void				map_choose(t_main *m);
+void				switch_music(t_main *m);
+void				screen_resolution(t_main *m);
 
 /*
 ** endgame.c
@@ -504,10 +525,5 @@ void				draw_sprite(t_main *m);
 */
 void				healing_player(t_main *m);
 void				radiation(t_main *m);
-
-/*
-** savegame.c
-*/
-void				save_game(t_main *m);
 
 #endif
