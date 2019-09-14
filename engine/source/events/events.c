@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:10:27 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/06 14:47:26 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/14 15:12:33 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	events(t_main *m)
 {
 	MOVE.eyeheight = MOVE.ducking  ? DUCK_H : EYE_H;
-	MOVE.ground = !MOVE.falling;
+	if (CFG.fly)
+		MOVE.ground = !MOVE.falling;
 	if (MOVE.falling)
 		event_falling(m);
 	if (MOVE.moving)

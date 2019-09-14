@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 14:46:35 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/14 15:16:25 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@
 // sprites
 // # include <zip.h>
 
-// animation of closing past sector and/or opening next
+// changee screen resolution in settings
 // pick up items in some sectors
+// save player stat in settings
 // add fire (and damage info)
+// animation of closing past sector and/or opening next
 // add light
 // add sounds
-// save player stat in settings
-// changee screen resolution in settings
-// off gravitation in settings
-// add aim
 
 #ifndef DOOM_H
 # define DOOM_H
@@ -267,6 +265,7 @@ struct				s_cfg
 	unsigned		win_height;
 	int				music;
 	int				map;
+	int				fly;
 };
 
 struct				s_hud
@@ -461,6 +460,7 @@ void				settings_window(t_main *m);
 void				map_choose(t_main *m);
 void				switch_music(t_main *m);
 void				screen_resolution(t_main *m);
+void				switch_gravitation(t_main *m);
 
 /*
 ** endgame.c
