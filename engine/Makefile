@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/09/12 18:24:57 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/09/14 14:42:19 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRC =	main.c						\
 		events/events.c				\
 		\
 		interface/aim.c				\
+		interface/aiming.c			\
 		interface/hud.c				\
 		interface/gun.c				\
 		\
@@ -70,7 +71,7 @@ LFT = -L $(LFT_DIR) -lft
 # LZIP = -L $(LZIP_DIR) -lzip
 # LZIP_INC = -I $(LZIP_DIR)lib/
 
-SDL_INC =	-I ../frameworks/SDL2.framework/Headers/			\
+SDL_INC =	-I ../frameworks/SDL2.framework/Headers/		\
 			-I ../frameworks/SDL2_mixer.framework/Headers/	\
 			-I ../frameworks/SDL2_ttf.framework/Headers/
 

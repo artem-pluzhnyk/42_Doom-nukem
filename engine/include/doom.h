@@ -6,18 +6,25 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/12 18:22:47 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/14 14:46:35 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// off gravitation in settings
-// save player stat in settings
-// changee screen resolution in settings
-// add aim
+// transparent walls
+// skybox
+// paints
+// sprites
+// # include <zip.h>
+
+// animation of closing past sector and/or opening next
+// pick up items in some sectors
 // add fire (and damage info)
 // add light
 // add sounds
-// # include <zip.h>
+// save player stat in settings
+// changee screen resolution in settings
+// off gravitation in settings
+// add aim
 
 #ifndef DOOM_H
 # define DOOM_H
@@ -487,8 +494,13 @@ void				mouse_rotation(t_main *m);
 /*
 ** aim.c
 */
+void				main_aim(t_main *m);
+
+/*
+** aiming.c
+*/
 void				aim_distance(t_main *m);
-void				draw_aim(t_main *m, SDL_Surface *sur);
+void				draw_aim(t_main *m);
 
 
 /*

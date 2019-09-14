@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:10:00 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/12 17:31:27 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/14 14:41:11 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ void	load_textures(t_main *m)
 	if (!(SDL.texture[18] = SDL_LoadBMP("../resources/textures/volume_off.bmp")))
 		ft_exit("☣ Error ☣");
 	if (!(SDL.texture[19] = SDL_LoadBMP("../resources/textures/volume_on.bmp")))
+		ft_exit("☣ Error ☣");
+	if (!(SDL.texture[20] = SDL_LoadBMP("../resources/textures/small-aim.bmp")))
 		ft_exit("☣ Error ☣");
 }
