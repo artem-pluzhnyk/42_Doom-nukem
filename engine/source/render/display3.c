@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/21 13:32:24 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/14 19:36:25 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	render_startend(t_main *m, int s)
 		{
 			REND.txtr_id = SECT[REND.now.sectorno].texture[s];
 			scaler_init(m, REND.ya, REND.cya, REND.yb, 0, 1024);
-			vline2(m, x, REND.cya, REND.cyb, REND.txtx); // Walls
+			vline(m, x, REND.cya, REND.cyb, REND.txtx); // Walls
 		}
 	}
 }
@@ -61,12 +61,16 @@ void	render_init5(t_main *m, int x)
 		if (y < REND.cya)
 		{
 			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 1]; // Ceiling
-			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtx % SDL.texture[REND.txtr_id]->w, txtz % SDL.texture[REND.txtr_id]->h);
+			REND.pel = color_transoform(ft_get_pixel(SDL.texture[REND.txtr_id],
+			txtx % SDL.texture[REND.txtr_id]->w, txtz % SDL.texture[REND.txtr_id]->h),
+			percentage(255, 0, REND.z));
 		}
 		else
 		{
 			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints]; // Floor
-			REND.pel = ft_get_pixel(SDL.texture[REND.txtr_id], txtx % SDL.texture[REND.txtr_id]->w, txtz % SDL.texture[REND.txtr_id]->h);
+			REND.pel = color_transoform(ft_get_pixel(SDL.texture[REND.txtr_id],
+			txtx % SDL.texture[REND.txtr_id]->w, txtz % SDL.texture[REND.txtr_id]->h),
+			percentage(255, 0, REND.z));
 		}
 		((int*) SDL.sur->pixels)[y * WIN_W + x] = REND.pel;
 	}
@@ -80,11 +84,11 @@ void	render_init6(t_main *m, int x)
 	REND.cnyb = CLAMP(REND.nyb, REND.ytop[x], REND.ybottom[x]);
 	REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 2];
 	scaler_init(m, REND.ya, REND.cya, REND.yb, 0, 1023);
-	vline2(m, x, REND.cya, REND.cnya - 1, REND.txtx); // Lower
+	vline(m, x, REND.cya, REND.cnya - 1, REND.txtx); // Lower
 	REND.ytop[x] = CLAMP(MAX(REND.cya, REND.cnya), REND.ytop[x], (int)WIN_H - 1);
 	REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 3];
 	scaler_init(m, REND.ya, REND.cnyb + 1, REND.yb, 0, 1023);
-	vline2(m, x, REND.cnyb + 1, REND.cyb, REND.txtx); // Upper
+	vline(m, x, REND.cnyb + 1, REND.cyb, REND.txtx); // Upper
 	REND.ybottom[x] = CLAMP(MIN(REND.cyb, REND.cnyb), 0, REND.ybottom[x]);
 }
 

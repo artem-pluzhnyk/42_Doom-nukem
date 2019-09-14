@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 17:50:47 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/14 19:53:00 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 // pick up items in some sectors
 // save player stat in settings
 // animation of closing past sector and/or opening next
-// add light
 // add sounds
 
 #ifndef DOOM_H
@@ -419,9 +418,10 @@ void				coord_to_texture(t_main *m, int x, int y);
 */
 void				ft_put_pixel(t_main *m, int x, int y, int pixel);
 int					ft_get_pixel(SDL_Surface *sur, int32_t x, int32_t y);
-void				vline(t_main *m, int x, int y1, int y2);
-void				vline2(t_main *m, int x, int y1, int y2, unsigned txtx);
+void				vline(t_main *m, int x, int y1, int y2, unsigned txtx);
 void				draw_background(t_main *m, SDL_Surface *sur);
+float				percentage(int start, int end, int curr);
+int					color_transoform(int color, float percent);
 
 /*
 ** additions.c

@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 16:55:29 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 14:58:05 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/14 19:22:37 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	default_setings(t_main *m)
 	CFG.win_height = 1000;
 	CFG.music = 1;
 	CFG.map = 1;
-	CFG.fly = 0;
+	CFG.fly = 1;
 	write(fd, &CFG, sizeof(t_cfg));
 	close(fd);
 }
