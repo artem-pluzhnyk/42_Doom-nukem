@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 19:21:17 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 14:45:48 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/14 17:40:51 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	gameplay(t_main *m)
 	if (HUD.hud)
 	{
 		main_aim(m);
-		draw_gun(m, SDL.texture[15]);
+		if (!(SDL.gun.x))
+			draw_gun(m);
 	}
 	else
 	{

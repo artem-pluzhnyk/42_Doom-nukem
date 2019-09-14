@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 18:53:58 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 15:11:09 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/14 17:49:45 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	events_sdl(t_main *m)
 	if (SDL.event.key.type == SDL_KEYDOWN
 	&& SDL.event.key.keysym.sym == SDLK_RETURN
 	&& m->state == 0)
+	{
 		m->state = 1;
+		SDL_Delay(100);
+	}
 	if (SDL.event.type == SDL_QUIT)
 		escape(m);
 	if (SDL.event.key.type == SDL_KEYDOWN
@@ -34,10 +37,10 @@ void	events_sdl(t_main *m)
 
 void	mouse_buttons(t_main *m)
 {
-	if (SDL.event.type == SDL_MOUSEBUTTONDOWN)
+	if (SDL.event.type == SDL_MOUSEBUTTONDOWN && m->state == 2)
 	{
-		if (SDL.event.button.button == SDL_BUTTON_LEFT)
-			;
+		if (SDL.event.button.button == SDL_BUTTON_LEFT && HUD.hud)
+			gun_animation(m);
 		if (SDL.event.button.button == SDL_BUTTON_RIGHT)
 		{
 			HUD.hud = HUD.hud ? 0 : 1;
@@ -48,7 +51,9 @@ void	mouse_buttons(t_main *m)
 
 void	events_moves(t_main *m)
 {
-	if (SDL.event.key.type == SDL_KEYUP || SDL.event.key.type == SDL_KEYDOWN)
+	if ((SDL.event.key.type == SDL_KEYUP
+	|| SDL.event.key.type == SDL_KEYDOWN)
+	&& m->state == 2)
 	{
 		if (SDL.event.key.keysym.sym == 'w')
 			MOVE.wsad[0] = SDL.event.type == SDL_KEYDOWN;

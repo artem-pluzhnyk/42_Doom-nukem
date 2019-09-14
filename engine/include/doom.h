@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 15:16:25 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/14 17:50:47 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 // changee screen resolution in settings
 // pick up items in some sectors
 // save player stat in settings
-// add fire (and damage info)
 // animation of closing past sector and/or opening next
 // add light
 // add sounds
@@ -291,6 +290,7 @@ struct				s_sdl
 	SDL_Color		yellow;
 	SDL_Color		gray;
 	SDL_Rect		rect;
+	SDL_Rect		gun;
 };
 
 struct				s_main
@@ -512,7 +512,8 @@ void				draw_hud_back(t_main *m);
 /*
 ** gun.c
 */
-void				draw_gun(t_main *m, SDL_Surface *sur);
+void				draw_gun(t_main *m);
+void				gun_animation(t_main *m);
 
 /*
 ** ./mapping/##################################################################|
