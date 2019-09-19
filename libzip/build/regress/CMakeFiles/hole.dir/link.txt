@@ -1,1 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/hole.dir/hole.c.o CMakeFiles/hole.dir/source_hole.c.o  -o hole -Wl,-rpath,/Users/apluzhni/Desktop/doom-nukem/libzip/build/lib ../lib/libzip.5.0.dylib /usr/lib/libz.dylib /usr/lib/libbz2.dylib 

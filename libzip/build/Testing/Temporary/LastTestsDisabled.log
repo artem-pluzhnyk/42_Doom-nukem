@@ -1,7 +1,0 @@
-21:clone-fs-add.test
-22:clone-fs-delete.test
-23:clone-fs-replace.test
-42:encryption-nonrandom-aes128.test
-43:encryption-nonrandom-aes192.test
-44:encryption-nonrandom-aes256.test
-93:preload.test
