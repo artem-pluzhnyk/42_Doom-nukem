@@ -1,0 +1,1923 @@
+Start testing: Sep 16 13:09 EEST
+----------------------------------------------------------
+1/128 Testing: add_dir.test
+1/128 Test: add_dir.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_dir.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_dir.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Passed.
+"add_dir.test" end time: Sep 16 13:09 EEST
+"add_dir.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/128 Testing: add_from_buffer.test
+2/128 Test: add_from_buffer.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_buffer.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_buffer.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_buffer.test" end time: Sep 16 13:09 EEST
+"add_from_buffer.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/128 Testing: add_from_file.test
+3/128 Test: add_from_file.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_file.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_file.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_file.test" end time: Sep 16 13:09 EEST
+"add_from_file.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/128 Testing: add_from_file_duplicate.test
+4/128 Test: add_from_file_duplicate.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_file_duplicate.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_file_duplicate.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_file_duplicate.test" end time: Sep 16 13:09 EEST
+"add_from_file_duplicate.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/128 Testing: add_from_file_twice_duplicate.test
+5/128 Test: add_from_file_twice_duplicate.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_file_twice_duplicate.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_file_twice_duplicate.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_file_twice_duplicate.test" end time: Sep 16 13:09 EEST
+"add_from_file_twice_duplicate.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/128 Testing: add_from_filep.test
+6/128 Test: add_from_filep.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_filep.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_filep.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_filep.test" end time: Sep 16 13:09 EEST
+"add_from_filep.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/128 Testing: add_from_stdin.test
+7/128 Test: add_from_stdin.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_stdin.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_stdin.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_stdin.test" end time: Sep 16 13:09 EEST
+"add_from_stdin.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/128 Testing: add_from_zip_closed.test
+8/128 Test: add_from_zip_closed.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_zip_closed.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_zip_closed.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_zip_closed.test" end time: Sep 16 13:09 EEST
+"add_from_zip_closed.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/128 Testing: add_from_zip_deflated.test
+9/128 Test: add_from_zip_deflated.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_zip_deflated.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_zip_deflated.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_zip_deflated.test" end time: Sep 16 13:09 EEST
+"add_from_zip_deflated.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/128 Testing: add_from_zip_deflated2.test
+10/128 Test: add_from_zip_deflated2.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_zip_deflated2.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_zip_deflated2.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_zip_deflated2.test" end time: Sep 16 13:09 EEST
+"add_from_zip_deflated2.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/128 Testing: add_from_zip_partial_deflated.test
+11/128 Test: add_from_zip_partial_deflated.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_zip_partial_deflated.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_zip_partial_deflated.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_zip_partial_deflated.test" end time: Sep 16 13:09 EEST
+"add_from_zip_partial_deflated.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/128 Testing: add_from_zip_partial_stored.test
+12/128 Test: add_from_zip_partial_stored.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_zip_partial_stored.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_zip_partial_stored.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_zip_partial_stored.test" end time: Sep 16 13:09 EEST
+"add_from_zip_partial_stored.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/128 Testing: add_from_zip_stored.test
+13/128 Test: add_from_zip_stored.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_zip_stored.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_from_zip_stored.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_from_zip_stored.test" end time: Sep 16 13:09 EEST
+"add_from_zip_stored.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/128 Testing: add_stored.test
+14/128 Test: add_stored.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_stored.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_stored.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_stored.test" end time: Sep 16 13:09 EEST
+"add_stored.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/128 Testing: add_stored_in_memory.test
+15/128 Test: add_stored_in_memory.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_stored_in_memory.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"add_stored_in_memory.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"add_stored_in_memory.test" end time: Sep 16 13:09 EEST
+"add_stored_in_memory.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/128 Testing: buffer-fragment-read.test
+16/128 Test: buffer-fragment-read.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/buffer-fragment-read.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"buffer-fragment-read.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"buffer-fragment-read.test" end time: Sep 16 13:09 EEST
+"buffer-fragment-read.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/128 Testing: buffer-fragment-write.test
+17/128 Test: buffer-fragment-write.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/buffer-fragment-write.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"buffer-fragment-write.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"buffer-fragment-write.test" end time: Sep 16 13:09 EEST
+"buffer-fragment-write.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/128 Testing: clone-buffer-add.test
+18/128 Test: clone-buffer-add.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/clone-buffer-add.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"clone-buffer-add.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"clone-buffer-add.test" end time: Sep 16 13:09 EEST
+"clone-buffer-add.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/128 Testing: clone-buffer-delete.test
+19/128 Test: clone-buffer-delete.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/clone-buffer-delete.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"clone-buffer-delete.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"clone-buffer-delete.test" end time: Sep 16 13:09 EEST
+"clone-buffer-delete.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/128 Testing: clone-buffer-replace.test
+20/128 Test: clone-buffer-replace.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/clone-buffer-replace.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"clone-buffer-replace.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"clone-buffer-replace.test" end time: Sep 16 13:09 EEST
+"clone-buffer-replace.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/128 Testing: clone-fs-add.test
+21/128 Test: clone-fs-add.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/clone-fs-add.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"clone-fs-add.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"clone-fs-add.test" end time: Sep 16 13:09 EEST
+"clone-fs-add.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/128 Testing: clone-fs-delete.test
+22/128 Test: clone-fs-delete.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/clone-fs-delete.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"clone-fs-delete.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"clone-fs-delete.test" end time: Sep 16 13:09 EEST
+"clone-fs-delete.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/128 Testing: clone-fs-replace.test
+23/128 Test: clone-fs-replace.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/clone-fs-replace.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"clone-fs-replace.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"clone-fs-replace.test" end time: Sep 16 13:09 EEST
+"clone-fs-replace.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/128 Testing: cm-default.test
+24/128 Test: cm-default.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/cm-default.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"cm-default.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"cm-default.test" end time: Sep 16 13:09 EEST
+"cm-default.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/128 Testing: count_entries.test
+25/128 Test: count_entries.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/count_entries.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"count_entries.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   1.47 sec
+----------------------------------------------------------
+Test Passed.
+"count_entries.test" end time: Sep 16 13:09 EEST
+"count_entries.test" time elapsed: 00:00:01
+----------------------------------------------------------
+
+26/128 Testing: decrypt-correct-password-aes128.test
+26/128 Test: decrypt-correct-password-aes128.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/decrypt-correct-password-aes128.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"decrypt-correct-password-aes128.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"decrypt-correct-password-aes128.test" end time: Sep 16 13:09 EEST
+"decrypt-correct-password-aes128.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/128 Testing: decrypt-correct-password-aes192.test
+27/128 Test: decrypt-correct-password-aes192.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/decrypt-correct-password-aes192.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"decrypt-correct-password-aes192.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"decrypt-correct-password-aes192.test" end time: Sep 16 13:09 EEST
+"decrypt-correct-password-aes192.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/128 Testing: decrypt-correct-password-aes256.test
+28/128 Test: decrypt-correct-password-aes256.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/decrypt-correct-password-aes256.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"decrypt-correct-password-aes256.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"decrypt-correct-password-aes256.test" end time: Sep 16 13:09 EEST
+"decrypt-correct-password-aes256.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/128 Testing: decrypt-correct-password-pkware.test
+29/128 Test: decrypt-correct-password-pkware.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/decrypt-correct-password-pkware.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"decrypt-correct-password-pkware.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"decrypt-correct-password-pkware.test" end time: Sep 16 13:09 EEST
+"decrypt-correct-password-pkware.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/128 Testing: decrypt-no-password-aes256.test
+30/128 Test: decrypt-no-password-aes256.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/decrypt-no-password-aes256.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"decrypt-no-password-aes256.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"decrypt-no-password-aes256.test" end time: Sep 16 13:09 EEST
+"decrypt-no-password-aes256.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/128 Testing: decrypt-wrong-password-aes128.test
+31/128 Test: decrypt-wrong-password-aes128.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/decrypt-wrong-password-aes128.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"decrypt-wrong-password-aes128.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"decrypt-wrong-password-aes128.test" end time: Sep 16 13:09 EEST
+"decrypt-wrong-password-aes128.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/128 Testing: decrypt-wrong-password-aes192.test
+32/128 Test: decrypt-wrong-password-aes192.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/decrypt-wrong-password-aes192.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"decrypt-wrong-password-aes192.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"decrypt-wrong-password-aes192.test" end time: Sep 16 13:09 EEST
+"decrypt-wrong-password-aes192.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/128 Testing: decrypt-wrong-password-aes256.test
+33/128 Test: decrypt-wrong-password-aes256.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/decrypt-wrong-password-aes256.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"decrypt-wrong-password-aes256.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"decrypt-wrong-password-aes256.test" end time: Sep 16 13:09 EEST
+"decrypt-wrong-password-aes256.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/128 Testing: decrypt-wrong-password-pkware.test
+34/128 Test: decrypt-wrong-password-pkware.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/decrypt-wrong-password-pkware.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"decrypt-wrong-password-pkware.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"decrypt-wrong-password-pkware.test" end time: Sep 16 13:09 EEST
+"decrypt-wrong-password-pkware.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/128 Testing: delete_add_same.test
+35/128 Test: delete_add_same.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/delete_add_same.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"delete_add_same.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"delete_add_same.test" end time: Sep 16 13:09 EEST
+"delete_add_same.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/128 Testing: delete_invalid.test
+36/128 Test: delete_invalid.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/delete_invalid.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"delete_invalid.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"delete_invalid.test" end time: Sep 16 13:09 EEST
+"delete_invalid.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/128 Testing: delete_last.test
+37/128 Test: delete_last.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/delete_last.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"delete_last.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"delete_last.test" end time: Sep 16 13:09 EEST
+"delete_last.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/128 Testing: delete_multiple_last.test
+38/128 Test: delete_multiple_last.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/delete_multiple_last.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"delete_multiple_last.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"delete_multiple_last.test" end time: Sep 16 13:09 EEST
+"delete_multiple_last.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/128 Testing: delete_multiple_partial.test
+39/128 Test: delete_multiple_partial.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/delete_multiple_partial.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"delete_multiple_partial.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"delete_multiple_partial.test" end time: Sep 16 13:09 EEST
+"delete_multiple_partial.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/128 Testing: delete_renamed_rename.test
+40/128 Test: delete_renamed_rename.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/delete_renamed_rename.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"delete_renamed_rename.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"delete_renamed_rename.test" end time: Sep 16 13:09 EEST
+"delete_renamed_rename.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/128 Testing: encrypt.test
+41/128 Test: encrypt.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/encrypt.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"encrypt.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"encrypt.test" end time: Sep 16 13:09 EEST
+"encrypt.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/128 Testing: encryption-nonrandom-aes128.test
+42/128 Test: encryption-nonrandom-aes128.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/encryption-nonrandom-aes128.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"encryption-nonrandom-aes128.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"encryption-nonrandom-aes128.test" end time: Sep 16 13:09 EEST
+"encryption-nonrandom-aes128.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/128 Testing: encryption-nonrandom-aes192.test
+43/128 Test: encryption-nonrandom-aes192.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/encryption-nonrandom-aes192.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"encryption-nonrandom-aes192.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"encryption-nonrandom-aes192.test" end time: Sep 16 13:09 EEST
+"encryption-nonrandom-aes192.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/128 Testing: encryption-nonrandom-aes256.test
+44/128 Test: encryption-nonrandom-aes256.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/encryption-nonrandom-aes256.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"encryption-nonrandom-aes256.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"encryption-nonrandom-aes256.test" end time: Sep 16 13:09 EEST
+"encryption-nonrandom-aes256.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/128 Testing: encryption-remove.test
+45/128 Test: encryption-remove.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/encryption-remove.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"encryption-remove.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"encryption-remove.test" end time: Sep 16 13:09 EEST
+"encryption-remove.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/128 Testing: extra_add.test
+46/128 Test: extra_add.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_add.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_add.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"extra_add.test" end time: Sep 16 13:09 EEST
+"extra_add.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/128 Testing: extra_add_multiple.test
+47/128 Test: extra_add_multiple.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_add_multiple.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_add_multiple.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"extra_add_multiple.test" end time: Sep 16 13:09 EEST
+"extra_add_multiple.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/128 Testing: extra_count.test
+48/128 Test: extra_count.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_count.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_count.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"extra_count.test" end time: Sep 16 13:09 EEST
+"extra_count.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/128 Testing: extra_count_by_id.test
+49/128 Test: extra_count_by_id.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_count_by_id.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_count_by_id.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"extra_count_by_id.test" end time: Sep 16 13:09 EEST
+"extra_count_by_id.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/128 Testing: extra_count_ignore_zip64.test
+50/128 Test: extra_count_ignore_zip64.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_count_ignore_zip64.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_count_ignore_zip64.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"extra_count_ignore_zip64.test" end time: Sep 16 13:09 EEST
+"extra_count_ignore_zip64.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/128 Testing: extra_delete.test
+51/128 Test: extra_delete.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_delete.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_delete.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"extra_delete.test" end time: Sep 16 13:09 EEST
+"extra_delete.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/128 Testing: extra_delete_by_id.test
+52/128 Test: extra_delete_by_id.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_delete_by_id.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_delete_by_id.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"extra_delete_by_id.test" end time: Sep 16 13:09 EEST
+"extra_delete_by_id.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/128 Testing: extra_field_align.test
+53/128 Test: extra_field_align.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_field_align.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_field_align.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"extra_field_align.test" end time: Sep 16 13:09 EEST
+"extra_field_align.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/128 Testing: extra_get.test
+54/128 Test: extra_get.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_get.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_get.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"extra_get.test" end time: Sep 16 13:09 EEST
+"extra_get.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/128 Testing: extra_get_by_id.test
+55/128 Test: extra_get_by_id.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_get_by_id.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_get_by_id.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"extra_get_by_id.test" end time: Sep 16 13:09 EEST
+"extra_get_by_id.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/128 Testing: extra_set.test
+56/128 Test: extra_set.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_set.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_set.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"extra_set.test" end time: Sep 16 13:09 EEST
+"extra_set.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/128 Testing: extra_set_modify_c.test
+57/128 Test: extra_set_modify_c.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_set_modify_c.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_set_modify_c.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"extra_set_modify_c.test" end time: Sep 16 13:09 EEST
+"extra_set_modify_c.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/128 Testing: extra_set_modify_l.test
+58/128 Test: extra_set_modify_l.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/extra_set_modify_l.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"extra_set_modify_l.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"extra_set_modify_l.test" end time: Sep 16 13:09 EEST
+"extra_set_modify_l.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/128 Testing: fdopen_ok.test
+59/128 Test: fdopen_ok.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/fdopen_ok.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"fdopen_ok.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"fdopen_ok.test" end time: Sep 16 13:09 EEST
+"fdopen_ok.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/128 Testing: file_comment_encmismatch.test
+60/128 Test: file_comment_encmismatch.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/file_comment_encmismatch.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"file_comment_encmismatch.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"file_comment_encmismatch.test" end time: Sep 16 13:09 EEST
+"file_comment_encmismatch.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/128 Testing: fopen_unchanged.test
+61/128 Test: fopen_unchanged.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/fopen_unchanged.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"fopen_unchanged.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"fopen_unchanged.test" end time: Sep 16 13:09 EEST
+"fopen_unchanged.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/128 Testing: fread.test
+62/128 Test: fread.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/fread.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"fread.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"fread.test" end time: Sep 16 13:09 EEST
+"fread.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/128 Testing: fseek_deflated.test
+63/128 Test: fseek_deflated.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/fseek_deflated.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"fseek_deflated.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"fseek_deflated.test" end time: Sep 16 13:09 EEST
+"fseek_deflated.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+64/128 Testing: fseek_fail.test
+64/128 Test: fseek_fail.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/fseek_fail.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"fseek_fail.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"fseek_fail.test" end time: Sep 16 13:09 EEST
+"fseek_fail.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+65/128 Testing: fseek_ok.test
+65/128 Test: fseek_ok.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/fseek_ok.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"fseek_ok.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"fseek_ok.test" end time: Sep 16 13:09 EEST
+"fseek_ok.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+66/128 Testing: get_comment.test
+66/128 Test: get_comment.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/get_comment.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"get_comment.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"get_comment.test" end time: Sep 16 13:09 EEST
+"get_comment.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+67/128 Testing: junk_at_end.test
+67/128 Test: junk_at_end.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/junk_at_end.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"junk_at_end.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"junk_at_end.test" end time: Sep 16 13:09 EEST
+"junk_at_end.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+68/128 Testing: junk_at_start.test
+68/128 Test: junk_at_start.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/junk_at_start.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"junk_at_start.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"junk_at_start.test" end time: Sep 16 13:09 EEST
+"junk_at_start.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+69/128 Testing: name_locate.test
+69/128 Test: name_locate.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/name_locate.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"name_locate.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"name_locate.test" end time: Sep 16 13:09 EEST
+"name_locate.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+70/128 Testing: open_cons_extrabytes.test
+70/128 Test: open_cons_extrabytes.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_cons_extrabytes.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_cons_extrabytes.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_cons_extrabytes.test" end time: Sep 16 13:09 EEST
+"open_cons_extrabytes.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+71/128 Testing: open_empty.test
+71/128 Test: open_empty.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_empty.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_empty.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_empty.test" end time: Sep 16 13:09 EEST
+"open_empty.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+72/128 Testing: open_empty_2.test
+72/128 Test: open_empty_2.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_empty_2.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_empty_2.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_empty_2.test" end time: Sep 16 13:09 EEST
+"open_empty_2.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+73/128 Testing: open_extrabytes.test
+73/128 Test: open_extrabytes.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_extrabytes.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_extrabytes.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_extrabytes.test" end time: Sep 16 13:09 EEST
+"open_extrabytes.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+74/128 Testing: open_file_count.test
+74/128 Test: open_file_count.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_file_count.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_file_count.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"open_file_count.test" end time: Sep 16 13:09 EEST
+"open_file_count.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+75/128 Testing: open_filename_duplicate.test
+75/128 Test: open_filename_duplicate.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_filename_duplicate.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_filename_duplicate.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_filename_duplicate.test" end time: Sep 16 13:09 EEST
+"open_filename_duplicate.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+76/128 Testing: open_filename_duplicate_consistency.test
+76/128 Test: open_filename_duplicate_consistency.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_filename_duplicate_consistency.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_filename_duplicate_consistency.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_filename_duplicate_consistency.test" end time: Sep 16 13:09 EEST
+"open_filename_duplicate_consistency.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+77/128 Testing: open_filename_duplicate_empty.test
+77/128 Test: open_filename_duplicate_empty.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_filename_duplicate_empty.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_filename_duplicate_empty.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_filename_duplicate_empty.test" end time: Sep 16 13:09 EEST
+"open_filename_duplicate_empty.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+78/128 Testing: open_filename_duplicate_empty_consistency.test
+78/128 Test: open_filename_duplicate_empty_consistency.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_filename_duplicate_empty_consistency.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_filename_duplicate_empty_consistency.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_filename_duplicate_empty_consistency.test" end time: Sep 16 13:09 EEST
+"open_filename_duplicate_empty_consistency.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+79/128 Testing: open_filename_empty.test
+79/128 Test: open_filename_empty.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_filename_empty.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_filename_empty.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_filename_empty.test" end time: Sep 16 13:09 EEST
+"open_filename_empty.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+80/128 Testing: open_incons.test
+80/128 Test: open_incons.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_incons.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_incons.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"open_incons.test" end time: Sep 16 13:09 EEST
+"open_incons.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+81/128 Testing: open_many_fail.test
+81/128 Test: open_many_fail.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_many_fail.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_many_fail.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   5.10 sec
+----------------------------------------------------------
+Test Passed.
+"open_many_fail.test" end time: Sep 16 13:09 EEST
+"open_many_fail.test" time elapsed: 00:00:05
+----------------------------------------------------------
+
+82/128 Testing: open_many_ok.test
+82/128 Test: open_many_ok.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_many_ok.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_many_ok.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   7.06 sec
+----------------------------------------------------------
+Test Passed.
+"open_many_ok.test" end time: Sep 16 13:09 EEST
+"open_many_ok.test" time elapsed: 00:00:07
+----------------------------------------------------------
+
+83/128 Testing: open_multidisk.test
+83/128 Test: open_multidisk.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_multidisk.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_multidisk.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_multidisk.test" end time: Sep 16 13:09 EEST
+"open_multidisk.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+84/128 Testing: open_new_but_exists.test
+84/128 Test: open_new_but_exists.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_new_but_exists.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_new_but_exists.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"open_new_but_exists.test" end time: Sep 16 13:09 EEST
+"open_new_but_exists.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+85/128 Testing: open_new_ok.test
+85/128 Test: open_new_ok.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_new_ok.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_new_ok.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_new_ok.test" end time: Sep 16 13:09 EEST
+"open_new_ok.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+86/128 Testing: open_nonarchive.test
+86/128 Test: open_nonarchive.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_nonarchive.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_nonarchive.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_nonarchive.test" end time: Sep 16 13:09 EEST
+"open_nonarchive.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+87/128 Testing: open_nosuchfile.test
+87/128 Test: open_nosuchfile.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_nosuchfile.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_nosuchfile.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_nosuchfile.test" end time: Sep 16 13:09 EEST
+"open_nosuchfile.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+88/128 Testing: open_ok.test
+88/128 Test: open_ok.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_ok.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_ok.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_ok.test" end time: Sep 16 13:09 EEST
+"open_ok.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+89/128 Testing: open_too_short.test
+89/128 Test: open_too_short.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_too_short.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_too_short.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_too_short.test" end time: Sep 16 13:09 EEST
+"open_too_short.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+90/128 Testing: open_truncate.test
+90/128 Test: open_truncate.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_truncate.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_truncate.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_truncate.test" end time: Sep 16 13:09 EEST
+"open_truncate.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+91/128 Testing: open_zip64_3mf.test
+91/128 Test: open_zip64_3mf.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_zip64_3mf.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_zip64_3mf.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"open_zip64_3mf.test" end time: Sep 16 13:09 EEST
+"open_zip64_3mf.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+92/128 Testing: open_zip64_ok.test
+92/128 Test: open_zip64_ok.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/open_zip64_ok.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"open_zip64_ok.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"open_zip64_ok.test" end time: Sep 16 13:09 EEST
+"open_zip64_ok.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+93/128 Testing: preload.test
+93/128 Test: preload.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/preload.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"preload.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"preload.test" end time: Sep 16 13:09 EEST
+"preload.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+94/128 Testing: progress.test
+94/128 Test: progress.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/progress.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"progress.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"progress.test" end time: Sep 16 13:09 EEST
+"progress.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+95/128 Testing: rename_ascii.test
+95/128 Test: rename_ascii.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/rename_ascii.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"rename_ascii.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"rename_ascii.test" end time: Sep 16 13:09 EEST
+"rename_ascii.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+96/128 Testing: rename_cp437.test
+96/128 Test: rename_cp437.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/rename_cp437.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"rename_cp437.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"rename_cp437.test" end time: Sep 16 13:09 EEST
+"rename_cp437.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+97/128 Testing: rename_deleted.test
+97/128 Test: rename_deleted.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/rename_deleted.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"rename_deleted.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"rename_deleted.test" end time: Sep 16 13:09 EEST
+"rename_deleted.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+98/128 Testing: rename_fail.test
+98/128 Test: rename_fail.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/rename_fail.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"rename_fail.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"rename_fail.test" end time: Sep 16 13:09 EEST
+"rename_fail.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+99/128 Testing: rename_ok.test
+99/128 Test: rename_ok.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/rename_ok.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"rename_ok.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"rename_ok.test" end time: Sep 16 13:09 EEST
+"rename_ok.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+100/128 Testing: rename_utf8.test
+100/128 Test: rename_utf8.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/rename_utf8.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"rename_utf8.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"rename_utf8.test" end time: Sep 16 13:09 EEST
+"rename_utf8.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+101/128 Testing: rename_utf8_encmismatch.test
+101/128 Test: rename_utf8_encmismatch.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/rename_utf8_encmismatch.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"rename_utf8_encmismatch.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"rename_utf8_encmismatch.test" end time: Sep 16 13:09 EEST
+"rename_utf8_encmismatch.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+102/128 Testing: set_comment_all.test
+102/128 Test: set_comment_all.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_comment_all.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_comment_all.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"set_comment_all.test" end time: Sep 16 13:09 EEST
+"set_comment_all.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+103/128 Testing: set_comment_localonly.test
+103/128 Test: set_comment_localonly.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_comment_localonly.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_comment_localonly.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"set_comment_localonly.test" end time: Sep 16 13:09 EEST
+"set_comment_localonly.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+104/128 Testing: set_comment_removeglobal.test
+104/128 Test: set_comment_removeglobal.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_comment_removeglobal.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_comment_removeglobal.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"set_comment_removeglobal.test" end time: Sep 16 13:09 EEST
+"set_comment_removeglobal.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+105/128 Testing: set_comment_revert.test
+105/128 Test: set_comment_revert.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_comment_revert.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_comment_revert.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"set_comment_revert.test" end time: Sep 16 13:09 EEST
+"set_comment_revert.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+106/128 Testing: set_compression_bzip2_to_deflate.test
+106/128 Test: set_compression_bzip2_to_deflate.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_compression_bzip2_to_deflate.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_compression_bzip2_to_deflate.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"set_compression_bzip2_to_deflate.test" end time: Sep 16 13:09 EEST
+"set_compression_bzip2_to_deflate.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+107/128 Testing: set_compression_deflate_to_bzip2.test
+107/128 Test: set_compression_deflate_to_bzip2.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_compression_deflate_to_bzip2.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_compression_deflate_to_bzip2.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"set_compression_deflate_to_bzip2.test" end time: Sep 16 13:09 EEST
+"set_compression_deflate_to_bzip2.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+108/128 Testing: set_compression_deflate_to_deflate.test
+108/128 Test: set_compression_deflate_to_deflate.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_compression_deflate_to_deflate.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_compression_deflate_to_deflate.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"set_compression_deflate_to_deflate.test" end time: Sep 16 13:09 EEST
+"set_compression_deflate_to_deflate.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+109/128 Testing: set_compression_deflate_to_store.test
+109/128 Test: set_compression_deflate_to_store.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_compression_deflate_to_store.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_compression_deflate_to_store.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"set_compression_deflate_to_store.test" end time: Sep 16 13:09 EEST
+"set_compression_deflate_to_store.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+110/128 Testing: set_compression_store_to_bzip2.test
+110/128 Test: set_compression_store_to_bzip2.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_compression_store_to_bzip2.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_compression_store_to_bzip2.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"set_compression_store_to_bzip2.test" end time: Sep 16 13:09 EEST
+"set_compression_store_to_bzip2.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+111/128 Testing: set_compression_store_to_deflate.test
+111/128 Test: set_compression_store_to_deflate.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_compression_store_to_deflate.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_compression_store_to_deflate.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"set_compression_store_to_deflate.test" end time: Sep 16 13:09 EEST
+"set_compression_store_to_deflate.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+112/128 Testing: set_compression_store_to_store.test
+112/128 Test: set_compression_store_to_store.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_compression_store_to_store.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_compression_store_to_store.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"set_compression_store_to_store.test" end time: Sep 16 13:09 EEST
+"set_compression_store_to_store.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+113/128 Testing: set_compression_unknown.test
+113/128 Test: set_compression_unknown.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/set_compression_unknown.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"set_compression_unknown.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"set_compression_unknown.test" end time: Sep 16 13:09 EEST
+"set_compression_unknown.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+114/128 Testing: stat_index_cp437_guess.test
+114/128 Test: stat_index_cp437_guess.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_cp437_guess.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_cp437_guess.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_cp437_guess.test" end time: Sep 16 13:09 EEST
+"stat_index_cp437_guess.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+115/128 Testing: stat_index_cp437_raw.test
+115/128 Test: stat_index_cp437_raw.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_cp437_raw.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_cp437_raw.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_cp437_raw.test" end time: Sep 16 13:09 EEST
+"stat_index_cp437_raw.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+116/128 Testing: stat_index_cp437_strict.test
+116/128 Test: stat_index_cp437_strict.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_cp437_strict.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_cp437_strict.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_cp437_strict.test" end time: Sep 16 13:09 EEST
+"stat_index_cp437_strict.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+117/128 Testing: stat_index_fileorder.test
+117/128 Test: stat_index_fileorder.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_fileorder.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_fileorder.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_fileorder.test" end time: Sep 16 13:09 EEST
+"stat_index_fileorder.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+118/128 Testing: stat_index_streamed.test
+118/128 Test: stat_index_streamed.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_streamed.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_streamed.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_streamed.test" end time: Sep 16 13:09 EEST
+"stat_index_streamed.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+119/128 Testing: stat_index_streamed_zip64.test
+119/128 Test: stat_index_streamed_zip64.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_streamed_zip64.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_streamed_zip64.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_streamed_zip64.test" end time: Sep 16 13:09 EEST
+"stat_index_streamed_zip64.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+120/128 Testing: stat_index_utf8_guess.test
+120/128 Test: stat_index_utf8_guess.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_utf8_guess.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_utf8_guess.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_utf8_guess.test" end time: Sep 16 13:09 EEST
+"stat_index_utf8_guess.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+121/128 Testing: stat_index_utf8_raw.test
+121/128 Test: stat_index_utf8_raw.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_utf8_raw.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_utf8_raw.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_utf8_raw.test" end time: Sep 16 13:09 EEST
+"stat_index_utf8_raw.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+122/128 Testing: stat_index_utf8_strict.test
+122/128 Test: stat_index_utf8_strict.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_utf8_strict.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_utf8_strict.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_utf8_strict.test" end time: Sep 16 13:09 EEST
+"stat_index_utf8_strict.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+123/128 Testing: stat_index_utf8_unmarked_strict.test
+123/128 Test: stat_index_utf8_unmarked_strict.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_utf8_unmarked_strict.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_utf8_unmarked_strict.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_utf8_unmarked_strict.test" end time: Sep 16 13:09 EEST
+"stat_index_utf8_unmarked_strict.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+124/128 Testing: stat_index_zip64.test
+124/128 Test: stat_index_zip64.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/stat_index_zip64.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"stat_index_zip64.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   1.15 sec
+----------------------------------------------------------
+Test Passed.
+"stat_index_zip64.test" end time: Sep 16 13:09 EEST
+"stat_index_zip64.test" time elapsed: 00:00:01
+----------------------------------------------------------
+
+125/128 Testing: utf-8-standardization.test
+125/128 Test: utf-8-standardization.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/utf-8-standardization.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"utf-8-standardization.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"utf-8-standardization.test" end time: Sep 16 13:09 EEST
+"utf-8-standardization.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+126/128 Testing: zip-in-archive-comment.test
+126/128 Test: zip-in-archive-comment.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/zip-in-archive-comment.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"zip-in-archive-comment.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"zip-in-archive-comment.test" end time: Sep 16 13:09 EEST
+"zip-in-archive-comment.test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+127/128 Testing: zip64_creation.test
+127/128 Test: zip64_creation.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/zip64_creation.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"zip64_creation.test" start time: Sep 16 13:09 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =  17.98 sec
+----------------------------------------------------------
+Test Passed.
+"zip64_creation.test" end time: Sep 16 13:10 EEST
+"zip64_creation.test" time elapsed: 00:00:17
+----------------------------------------------------------
+
+128/128 Testing: zip64_stored_creation.test
+128/128 Test: zip64_stored_creation.test
+Command: "/usr/bin/perl" "/Users/apluzhni/Desktop/doom-nukem/libzip/build/regress/runtest" "/Users/apluzhni/Desktop/doom-nukem/libzip/regress/zip64_stored_creation.test"
+Directory: /Users/apluzhni/Desktop/doom-nukem/libzip/build/regress
+"zip64_stored_creation.test" start time: Sep 16 13:10 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =  11.88 sec
+----------------------------------------------------------
+Test Passed.
+"zip64_stored_creation.test" end time: Sep 16 13:10 EEST
+"zip64_stored_creation.test" time elapsed: 00:00:11
+----------------------------------------------------------
+
+End testing: Sep 16 13:10 EEST

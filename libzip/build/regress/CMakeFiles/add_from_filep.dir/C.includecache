@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/zip.h
+zipconf.h
+-
+stdio.h
+-
+sys/types.h
+-
+time.h
+-
+
+/Users/apluzhni/Desktop/doom-nukem/libzip/regress/add_from_filep.c
+errno.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+zip.h
+/Users/apluzhni/Desktop/doom-nukem/libzip/regress/zip.h
+
+zipconf.h
+stdint.h
+-
+

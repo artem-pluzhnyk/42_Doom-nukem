@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/fopen_unchanged.dir/fopen_unchanged.c.o  -o fopen_unchanged -Wl,-rpath,/Users/apluzhni/Desktop/doom-nukem/libzip/build/lib ../lib/libzip.5.0.dylib /usr/lib/libz.dylib /usr/lib/libbz2.dylib 

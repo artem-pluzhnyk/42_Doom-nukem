@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/apluzhni/Desktop/doom-nukem/libzip/regress/can_clone_file.c
+errno.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+config.h
+/Users/apluzhni/Desktop/doom-nukem/libzip/regress/config.h
+sys/attr.h
+-
+sys/mount.h
+-
+sys/param.h
+-
+unistd.h
+-
+linux/fs.h
+-
+sys/ioctl.h
+-
+unistd.h
+-
+
+config.h
+zipconf.h
+zipconf.h
+
+zipconf.h
+stdint.h
+-
+
