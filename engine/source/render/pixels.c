@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 12:14:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/18 19:44:13 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 16:57:06 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,23 +66,24 @@ void	draw_background(t_main *m, SDL_Surface *sur)
 	SDL_BlitScaled(sur, NULL, SDL.sur, &rect);
 }
 
-float	percentage(int start, int end, int curr)
+void	draw_sky(t_main *m)
 {
-	float place;
-	float dist;
+	SDL_Rect	win;
 
-	place = curr - start;
-	dist = end - start;
-	return ((dist == 0) ? 1.0 : (place / dist));
+	win.x = 0;
+	win.y = 0;
+	win.h = WIN_H;
+	win.w = WIN_W;
+	SDL_BlitScaled(SDL.texture[6], &SDL.view, SDL.sur, &win);
 }
 
-int		color_transoform(int color, float percent)
+void	move_sky(t_main *m, int x, int y)
 {
-	int		rgb[3];
+	SDL.view.x += x * 25;
+	SDL.view.y += y / 2;
 
-	rgb[0] = ((color >> 16) & 0xFF) * percent;
-	rgb[1] = ((color >> 8) & 0xFF) * percent;
-	rgb[2] = ((color) & 0xFF) * percent;
-	color = ((rgb[0] << 16) | (rgb[1] << 8) | rgb[2]);
-	return (color);
+	SDL.view.x = (SDL.view.x < 0) ? SDL.texture[6]->w - SDL.view.w : SDL.view.x;
+	SDL.view.y = (SDL.view.y < 0) ? 0 : SDL.view.y;
+	SDL.view.x = (SDL.view.x > SDL.texture[6]->w - SDL.view.w) ? 0 : SDL.view.x;
+	SDL.view.y = (SDL.view.y > SDL.texture[6]->h - SDL.view.h) ? SDL.texture[6]->h - SDL.view.h : SDL.view.y;
 }

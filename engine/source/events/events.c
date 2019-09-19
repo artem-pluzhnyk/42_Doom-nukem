@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:10:27 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/18 18:55:44 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 16:07:50 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ void	mouse_rotation(t_main *m)
 	double	old_plane_x;
 
 	SDL_GetRelativeMouseState(&x,&y);
+	move_sky(m, x, y);
 	USER.angle += x * 0.03f;
 	MOVE.yaw = CLAMP(MOVE.yaw + y * 0.05f, -5, 5);
 	USER.yaw = MOVE.yaw - USER.velocity.z * 0.5f;

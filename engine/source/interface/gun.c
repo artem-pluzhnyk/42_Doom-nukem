@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:22:00 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 17:50:08 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:28:30 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	draw_gun(t_main *m)
 
 void	gun_animation(t_main *m)
 {
+	if (!(Mix_Playing(3)))
+		Mix_PlayChannel(3, SDL.fire, 0);
 	while (SDL.gun.x != 600)
 	{
 		SDL.gun.x += 150;

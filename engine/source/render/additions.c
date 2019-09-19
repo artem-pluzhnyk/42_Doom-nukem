@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 14:27:43 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/08/06 14:16:45 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 15:47:02 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,25 @@ int		scaler_next(t_scaler *i)
 		i->cache -= i->ca;
 	}
 	return (i->result);
+}
+
+float	percentage(int start, int end, int curr)
+{
+	float place;
+	float dist;
+
+	place = curr - start;
+	dist = end - start;
+	return ((dist == 0) ? 1.0 : (place / dist));
+}
+
+int		color_transoform(int color, float percent)
+{
+	int		rgb[3];
+
+	rgb[0] = ((color >> 16) & 0xFF) * percent;
+	rgb[1] = ((color >> 8) & 0xFF) * percent;
+	rgb[2] = ((color) & 0xFF) * percent;
+	color = ((rgb[0] << 16) | (rgb[1] << 8) | rgb[2]);
+	return (color);
 }

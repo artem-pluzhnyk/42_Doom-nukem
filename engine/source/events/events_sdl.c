@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 18:53:58 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 17:49:45 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:30:18 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	events_sdl(t_main *m)
 
 void	mouse_buttons(t_main *m)
 {
-	if (SDL.event.type == SDL_MOUSEBUTTONDOWN && m->state == 2)
+	if (SDL.event.type == SDL_MOUSEBUTTONDOWN && m->state == 2  && USER.gun)
 	{
 		if (SDL.event.button.button == SDL_BUTTON_LEFT && HUD.hud)
 			gun_animation(m);
@@ -64,12 +64,18 @@ void	events_moves(t_main *m)
 		if (SDL.event.key.keysym.sym == 'd')
 			MOVE.wsad[3] = SDL.event.type == SDL_KEYDOWN;
 		if (SDL.event.key.keysym.sym == SDLK_LSHIFT)
+		{
 			USER.speed = SDL.event.type == SDL_KEYDOWN ? 0.6f : 0.3f;
+			if (!(Mix_Playing(3)))
+					Mix_PlayChannel(3, SDL.run, 0);
+		}
 		if (SDL.event.key.keysym.sym == ' ')
 			if (MOVE.ground)
 			{
 				USER.velocity.z += 0.5;
 				MOVE.falling = 1;
+				if (!(Mix_Playing(3)))
+					Mix_PlayChannel(3, SDL.jump, 0);
 			}
 		if (SDL.event.key.keysym.sym == SDLK_LCTRL
 		|| SDL.event.key.keysym.sym == SDLK_RCTRL)

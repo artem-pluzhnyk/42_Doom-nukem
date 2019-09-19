@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 18:36:10 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/11 18:40:54 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 15:08:08 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,21 @@ void	radiation(t_main *m)
 {
 	if (SECT[USER.sector].gas)
 	{
+		radiation_sign(m);
 		if (USER.armor >= 0.5)
 			USER.armor -= 0.5;
 		else
 			USER.health -= 1;
 	}
+}
+
+void	radiation_sign(t_main *m)
+{
+	SDL_Rect	rect;
+
+	rect.h = SDL.texture[23]->h;
+	rect.w = SDL.texture[23]->w;
+	rect.x = 0;
+	rect.y = 0;
+	SDL_BlitSurface(SDL.texture[23], NULL, SDL.sur, &rect);
 }

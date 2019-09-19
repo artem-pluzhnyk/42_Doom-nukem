@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 16:43:23 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/12 17:40:04 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:26:38 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	escape(t_main *m)
 	TTF_CloseFont(SDL.ttf_28);
 	TTF_Quit();
 	SDL_Quit();
-	Mix_FreeMusic(SDL.sound[0]);
-	Mix_FreeMusic(SDL.sound[1]);
+	Mix_FreeMusic(SDL.sound);
 	exit(EXIT_SUCCESS);
 }

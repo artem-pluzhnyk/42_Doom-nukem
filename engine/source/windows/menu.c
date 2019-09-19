@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 19:51:39 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 17:31:11 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:26:52 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	menu(t_main *m)
 {
 	if (!(Mix_PlayingMusic()) && CFG.music)
-		Mix_PlayMusic(SDL.sound[0], -1);
+		Mix_PlayMusic(SDL.sound, -1);
 	SDL_ShowCursor(SDL_ENABLE);
 	SDL_SetRelativeMouseMode(SDL_FALSE);
 	draw_background(m, SDL.texture[0]);
@@ -27,7 +27,7 @@ void	menu(t_main *m)
 void	play_btn(t_main *m)
 {
 	SDL_Rect	rect;
-	SDL_Surface		*sur;
+	SDL_Surface	*sur;
 
 	rect.h = WIN_H / 10;
 	rect.w = WIN_W / 5;

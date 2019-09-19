@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 19:00:57 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/12 09:46:05 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 16:58:50 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	endgame(t_main *m)
 		m->state = 2;
 		USER.health = 100;
 		USER.armor = 125;
+		USER.gun = 0;
 		USER.sector = USER.spawn_sect;
 		USER.where.x = USER.spawn.x;
 		USER.where.y = USER.spawn.y;

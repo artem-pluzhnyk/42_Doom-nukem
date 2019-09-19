@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:06:48 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 17:20:46 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 16:33:48 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,8 @@ void	init_data(t_main *m)
 	USER.health = 100;
 	USER.armor = 125;
 	SDL.gun.x = 0;
+	SDL.view.h = 500;
+	SDL.view.w = 1000;
+	SDL.view.x = 0;
+	SDL.view.y = 0;
 }

@@ -6,16 +6,9 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 14:45:44 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:19:36 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// radiation sign
-// dynamic skybox
-// add sounds
-
-// LEAKS
-// NORME
 
 #ifndef DOOM_H
 # define DOOM_H
@@ -24,7 +17,6 @@
 # include <SDL.h>
 # include <SDL_mixer.h>
 # include <SDL_ttf.h>
-// # include <zip.h>
 
 # define SDL		m->sdl
 # define CFG		m->cfg
@@ -111,8 +103,6 @@ struct				s_map
 {
 	unsigned		num_v;
 	unsigned		num_s;
-	unsigned		num_sprite;
-	unsigned		num_poster;
 	t_xy			*vert;
 	t_sector		*sectors;
 	t_player		player;
@@ -265,7 +255,10 @@ struct				s_sdl
 	SDL_Surface		*texture[50];
 	TTF_Font		*ttf_50;
 	TTF_Font		*ttf_28;
-	Mix_Music		*sound[50];
+	Mix_Music		*sound;
+	Mix_Chunk		*fire;
+	Mix_Chunk		*run;
+	Mix_Chunk		*jump;
 	SDL_Color		white;
 	SDL_Color		green;
 	SDL_Color		red;
@@ -274,6 +267,7 @@ struct				s_sdl
 	SDL_Color		gray;
 	SDL_Rect		rect;
 	SDL_Rect		gun;
+	SDL_Rect		view;
 };
 
 struct				s_main
@@ -401,8 +395,8 @@ void				ft_put_pixel(t_main *m, int x, int y, int pixel);
 int					ft_get_pixel(SDL_Surface *sur, int32_t x, int32_t y);
 void				vline(t_main *m, int x, int y1, int y2, unsigned txtx);
 void				draw_background(t_main *m, SDL_Surface *sur);
-float				percentage(int start, int end, int curr);
-int					color_transoform(int color, float percent);
+void				draw_sky(t_main *m);
+void				move_sky(t_main *m, int x, int y);
 
 /*
 ** additions.c
@@ -410,6 +404,8 @@ int					color_transoform(int color, float percent);
 t_xy				intersect(t_main *m);
 void				scaler_init(t_main *m, int a, int b, int c, int d, int f);
 int					scaler_next(t_scaler *i);
+float				percentage(int start, int end, int curr);
+int					color_transoform(int color, float percent);
 
 /*
 ** ./windows/##################################################################|
@@ -507,5 +503,6 @@ void				gun_animation(t_main *m);
 */
 void				healing_player(t_main *m);
 void				radiation(t_main *m);
+void				radiation_sign(t_main *m);
 
 #endif
