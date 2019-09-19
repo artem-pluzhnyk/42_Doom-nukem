@@ -6,21 +6,16 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 19:53:00 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/19 14:45:44 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// transparent walls
-// skybox
-// paints
-// sprites
-// # include <zip.h>
-
-// changee screen resolution in settings
-// pick up items in some sectors
-// save player stat in settings
-// animation of closing past sector and/or opening next
+// radiation sign
+// dynamic skybox
 // add sounds
+
+// LEAKS
+// NORME
 
 #ifndef DOOM_H
 # define DOOM_H
@@ -29,6 +24,7 @@
 # include <SDL.h>
 # include <SDL_mixer.h>
 # include <SDL_ttf.h>
+// # include <zip.h>
 
 # define SDL		m->sdl
 # define CFG		m->cfg
@@ -68,8 +64,6 @@ typedef struct s_sector		t_sector;
 typedef struct s_player		t_player;
 typedef struct s_rend		t_rend;
 typedef struct s_srend		t_srend;
-typedef struct s_poster		t_poster;
-typedef struct s_sprite		t_sprite;
 typedef struct s_map		t_map;
 typedef struct s_cfg		t_cfg;
 typedef struct s_hud		t_hud;
@@ -98,6 +92,7 @@ struct				s_player
 	double			armor;
 	unsigned		spawn_sect;
 	t_xyz			spawn;
+	int				gun;
 };
 
 struct				s_sector
@@ -109,6 +104,7 @@ struct				s_sector
 	unsigned		npoints;
 	int				*texture;
 	int				gas;
+	int				gun;
 };
 
 struct				s_map
@@ -120,8 +116,6 @@ struct				s_map
 	t_xy			*vert;
 	t_sector		*sectors;
 	t_player		player;
-	t_sprite		*obj;
-	t_poster		*pic;
 };
 
 struct				s_item
@@ -129,18 +123,6 @@ struct				s_item
 	int				sectorno;
 	int				sx1;
 	int				sx2;
-};
-
-struct				s_poster
-{
-	t_xy			poz;
-	int				texture;
-};
-
-struct				s_sprite
-{
-	t_xy			poz;
-	int				texture;
 };
 
 struct				s_scaler
@@ -264,6 +246,8 @@ struct				s_cfg
 	int				music;
 	int				map;
 	int				fly;
+	int				sky;
+	int				walls;
 };
 
 struct				s_hud
@@ -358,8 +342,6 @@ void				create_map(t_main *m, char *file);
 void				default_vertex(t_main *m);
 void				default_sector(t_main *m);
 void				default_player(t_main *m);
-void				default_poster(t_main *m);
-void				default_sprite(t_main *m);
 
 /*
 ** ./settings/#################################################################|
@@ -371,7 +353,6 @@ void				default_sprite(t_main *m);
 void				load_settings(t_main *m);
 void				default_setings(t_main *m);
 void				save_settings(t_main *m);
-void				screen_resolution(t_main *m);
 
 /*
 ** savegame.c
@@ -461,6 +442,8 @@ void				map_choose(t_main *m);
 void				switch_music(t_main *m);
 void				screen_resolution(t_main *m);
 void				switch_gravitation(t_main *m);
+void				switch_sky(t_main *m);
+void				switch_walls(t_main *m);
 
 /*
 ** endgame.c
@@ -514,20 +497,6 @@ void				draw_hud_back(t_main *m);
 */
 void				draw_gun(t_main *m);
 void				gun_animation(t_main *m);
-
-/*
-** ./mapping/##################################################################|
-*/
-
-/*
-** poster.c
-*/
-void				draw_poster(t_main *m);
-
-/*
-** sprites.c
-*/
-void				draw_sprite(t_main *m);
 
 /*
 ** ./##########################################################################|

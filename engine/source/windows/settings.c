@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:15:35 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 15:08:04 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/18 19:13:20 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ void	settings_window(t_main *m)
 	draw_background(m, SDL.texture[0]);
 	map_choose(m);
 	switch_music(m);
-	screen_resolution(m);
 	switch_gravitation(m);
+	switch_sky(m);
+	switch_walls(m);
 	rect.x = WIN_W / 24;
 	rect.y = WIN_H / 1.1;
 	rect.w = 0;
@@ -78,11 +79,6 @@ void	map_choose(t_main *m)
 	}
 }
 
-void	screen_resolution(t_main *m)
-{
-	(void)m;
-}
-
 void	switch_gravitation(t_main *m)
 {
 	SDL_Surface	*sur;
@@ -96,7 +92,6 @@ void	switch_gravitation(t_main *m)
 	sur = TTF_RenderText_Solid(SDL.ttf_50, "Gravitation", SDL.yellow);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
 	TTF_SizeText(SDL.ttf_50, "Gravitation", &len, NULL);
-
 	rect.h = SDL.texture[CFG.fly + 21]->h / 3;
 	rect.w = SDL.texture[CFG.fly + 21]->w / 3;
 	rect.x += len + rect.w / 2;
@@ -111,5 +106,62 @@ void	switch_gravitation(t_main *m)
 		CFG.fly = CFG.fly ? 0 : 1;
 		SDL_Delay(100);
 	}
+}
 
+void	switch_sky(t_main *m)
+{
+	SDL_Surface	*sur;
+	SDL_Rect	rect;
+	int			len;
+
+	rect.x = WIN_W / 2;
+	rect.y = WIN_H / 24;
+	rect.w = 0;
+	rect.h = 0;
+	sur = TTF_RenderText_Solid(SDL.ttf_50, "Skybox", SDL.yellow);
+	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
+	TTF_SizeText(SDL.ttf_50, "Skybox", &len, NULL);
+	rect.h = SDL.texture[CFG.sky + 21]->h / 3;
+	rect.w = SDL.texture[CFG.sky + 21]->w / 3;
+	rect.x += len + rect.w / 2;
+	SDL_BlitScaled(SDL.texture[CFG.sky + 21], NULL, SDL.sur, &rect);
+	if (SDL.event.type == SDL_MOUSEBUTTONDOWN
+	&& SDL.event.button.button == SDL_BUTTON_LEFT
+	&& SDL.event.button.x >= rect.x
+	&& SDL.event.button.x <= (rect.x + rect.w)
+	&& SDL.event.button.y >= rect.y
+	&& SDL.event.button.y <= (rect.x + rect.h))
+	{
+		CFG.sky = CFG.sky ? 0 : 1;
+		SDL_Delay(100);
+	}
+}
+
+void	switch_walls(t_main *m)
+{
+	SDL_Surface	*sur;
+	SDL_Rect	rect;
+	int			len;
+
+	rect.x = WIN_W / 2;
+	rect.y = WIN_H / 8;
+	rect.w = 0;
+	rect.h = 0;
+	sur = TTF_RenderText_Solid(SDL.ttf_50, "Walls", SDL.yellow);
+	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
+	TTF_SizeText(SDL.ttf_50, "Walls", &len, NULL);
+	rect.h = SDL.texture[CFG.walls + 21]->h / 3;
+	rect.w = SDL.texture[CFG.walls + 21]->w / 3;
+	rect.x += len + rect.w / 2;
+	SDL_BlitScaled(SDL.texture[CFG.walls + 21], NULL, SDL.sur, &rect);
+	if (SDL.event.type == SDL_MOUSEBUTTONDOWN
+	&& SDL.event.button.button == SDL_BUTTON_LEFT
+	&& SDL.event.button.x >= rect.x
+	&& SDL.event.button.x <= (rect.x + rect.w)
+	&& SDL.event.button.y >= rect.y
+	&& SDL.event.button.y <= (rect.x + rect.h))
+	{
+		CFG.walls = CFG.walls ? 0 : 1;
+		SDL_Delay(100);
+	}
 }

@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/09/14 14:42:19 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/09/19 14:00:57 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,9 +56,6 @@ SRC =	main.c						\
 		interface/hud.c				\
 		interface/gun.c				\
 		\
-		mapping/poster.c			\
-		mapping/sprites.c			\
-		\
 		player/regeneration.c
 
 OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
@@ -66,10 +63,6 @@ INC = $(addprefix $(INC_DIR),$(addsuffix .h,doom))
 
 LFT_DIR = ../libft/
 LFT = -L $(LFT_DIR) -lft
-
-# LZIP_DIR = ../libzip/
-# LZIP = -L $(LZIP_DIR) -lzip
-# LZIP_INC = -I $(LZIP_DIR)lib/
 
 SDL_INC =	-I ../frameworks/SDL2.framework/Headers/		\
 			-I ../frameworks/SDL2_mixer.framework/Headers/	\
@@ -102,7 +95,6 @@ $(OBJ_DIR):
 	@mkdir $(OBJ_DIR)/windows
 	@mkdir $(OBJ_DIR)/events
 	@mkdir $(OBJ_DIR)/interface
-	@mkdir $(OBJ_DIR)/mapping
 	@mkdir $(OBJ_DIR)/player
 	@echo "\033[1;34m$(NAME): \033[5;36mCompiling source...\033[0m"
 

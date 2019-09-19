@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 12:14:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 19:52:55 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/18 19:44:13 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	vline(t_main *m, int x, int y1, int y2, unsigned txtx)
 	int			*pix;
 	int			y;
 	unsigned	txty;
+	int			color;
 
 	pix = (int*) SDL.sur->pixels;
 	y1 = CLAMP(y1, 0, (int)WIN_H - 1);
@@ -46,9 +47,10 @@ void	vline(t_main *m, int x, int y1, int y2, unsigned txtx)
 	while (++y <= y2)
 	{
 		txty = scaler_next(&SCAL);
-		*pix = color_transoform(ft_get_pixel(SDL.texture[REND.txtr_id],
+		color = color_transoform(ft_get_pixel(SDL.texture[REND.txtr_id],
 		txtx % SDL.texture[REND.txtr_id]->w, txty % SDL.texture[REND.txtr_id]->h),
 		percentage(255, 0, REND.z));
+		*pix = (!(CFG.walls) && color <= 0x010101) ? *pix : color;
 		pix += WIN_W;
 	}
 }

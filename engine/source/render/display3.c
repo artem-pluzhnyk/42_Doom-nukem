@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/14 19:36:25 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/18 19:31:11 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,15 @@ void	render_init5(t_main *m, int x)
 		txtz = REND.mapz * 256;
 		if (y < REND.cya)
 		{
-			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 1]; // Ceiling
-			REND.pel = color_transoform(ft_get_pixel(SDL.texture[REND.txtr_id],
-			txtx % SDL.texture[REND.txtr_id]->w, txtz % SDL.texture[REND.txtr_id]->h),
-			percentage(255, 0, REND.z));
+			if (!(CFG.sky))
+			{
+				REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 1]; // Ceiling
+				REND.pel = color_transoform(ft_get_pixel(SDL.texture[REND.txtr_id],
+				txtx % SDL.texture[REND.txtr_id]->w, txtz % SDL.texture[REND.txtr_id]->h),
+				percentage(255, 0, REND.z));
+			}
+			else
+				REND.pel = ((int*) SDL.sur->pixels)[y * WIN_W + x];
 		}
 		else
 		{
