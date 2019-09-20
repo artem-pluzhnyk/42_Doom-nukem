@@ -6,17 +6,9 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/20 18:31:36 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 20:06:39 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// events		-
-// init			-
-// interface	-
-// player		+
-// render		-
-// settings		+
-// windows		-
 
 #ifndef DOOM_H
 # define DOOM_H
@@ -213,6 +205,10 @@ struct				s_rend
 	float			hei;
 	float			mapx;
 	float			mapz;
+	int				x;
+	int				y;
+	unsigned		txtx2;
+	unsigned		txtz2;
 };
 
 struct				s_move
@@ -353,8 +349,14 @@ void				unload_sounds(t_main *m);
 */
 void				create_map(t_main *m, char *file);
 void				default_vertex(t_main *m);
-void				default_sector(t_main *m);
 void				default_player(t_main *m);
+
+/*
+** default_sectors.c
+*/
+void				default_sectors(t_main *m);
+void				default_sector0(t_main *m);
+void				default_sector1(t_main *m);
 
 /*
 ** ./settings/#################################################################|
@@ -395,6 +397,7 @@ void				render_init1(t_main *m, unsigned s);
 */
 void				render_2(t_main *m);
 void				render_init2(t_main *m);
+void				render_if(t_main *m);
 void				render_init3(t_main *m);
 void				render_init4(t_main *m, unsigned s);
 
@@ -402,20 +405,26 @@ void				render_init4(t_main *m, unsigned s);
 ** display3.c
 */
 void				render_startend(t_main *m, int s);
-void				render_init5(t_main *m, int x);
 void				render_init6(t_main *m, int x);
 void				render_last(t_main *m);
 void				coord_to_texture(t_main *m, int x, int y);
+
+/*
+** display0.c
+*/
+void				render_init5(t_main *m, int x);
+void				norm_kostyl1(t_main *m);
+void				norm_kostyl2(t_main *m);
+void				norm_kostyl3(t_main *m);
+void				norm_kostyl4(t_main *m);
 
 /*
 ** pixels.c
 */
 void				ft_put_pixel(t_main *m, int x, int y, int pixel);
 int					ft_get_pixel(SDL_Surface *sur, int32_t x, int32_t y);
-void				vline(t_main *m, int x, int y1, int y2, unsigned txtx);
+void				vline(t_main *m, int x, int y1, int y2);
 void				draw_background(t_main *m, SDL_Surface *sur);
-void				draw_sky(t_main *m);
-void				move_sky(t_main *m, int x, int y);
 
 /*
 ** additions.c
@@ -434,6 +443,7 @@ int					color_transoform(int color, float percent);
 ** gameplay.c
 */
 void				gameplay(t_main *m);
+void				features(t_main *m);
 
 /*
 ** loading_screen.c
@@ -447,6 +457,7 @@ void				loading_text(t_main *m);
 void				menu(t_main *m);
 void				play_btn(t_main *m);
 void				setting_btn(t_main *m);
+void				start_game(t_main *m, SDL_Rect rect);
 
 /*
 ** settings.c
@@ -455,11 +466,24 @@ void				settings_window(t_main *m);
 void				map_choose(t_main *m);
 void				switch_music(t_main *m);
 void				screen_resolution(t_main *m);
+
+/*
+** switches.c
+*/
 void				switch_gravitation(t_main *m);
 void				switch_sky(t_main *m);
 void				switch_walls(t_main *m);
 void				switch_texture(t_main *m);
 void				tall_towers(t_main *m);
+
+/*
+** switches2.c
+*/
+void				switch_gravitation2(t_main *m, SDL_Rect rect);
+void				switch_sky2(t_main *m, SDL_Rect rect);
+void				switch_walls2(t_main *m, SDL_Rect rect);
+void				switch_texture2(t_main *m, SDL_Rect rect);
+void				tall_towers2(t_main *m, SDL_Rect rect);
 
 /*
 ** endgame.c
@@ -485,8 +509,20 @@ void				key(t_main *m);
 void				events(t_main *m);
 void				move_player(t_main *m, float dx, float dy);
 void				event_falling(t_main *m);
+
+/*
+** event_moving.c
+*/
 void				event_moving(t_main *m);
+void				event_moving2(t_main *m, unsigned s);
+void				event_moving3(t_main *m, unsigned s);
+
+/*
+** mouse_rotation.c
+*/
 void				mouse_rotation(t_main *m);
+void				mouse_rotation2(t_main *m);
+void				mouse_rotation3(t_main *m);
 
 /*
 ** ./interface/################################################################|
@@ -514,6 +550,12 @@ void				draw_hud_back(t_main *m);
 */
 void				draw_gun(t_main *m);
 void				gun_animation(t_main *m);
+
+/*
+** skybox.c
+*/
+void				draw_sky(t_main *m);
+void				move_sky(t_main *m, int x, int y);
 
 /*
 ** ./##########################################################################|

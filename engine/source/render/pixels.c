@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 12:14:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 16:57:06 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 19:34:12 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_get_pixel(SDL_Surface *sur, int32_t x, int32_t y)
 	return (*pixel);
 }
 
-void	vline(t_main *m, int x, int y1, int y2, unsigned txtx)
+void	vline(t_main *m, int x, int y1, int y2)
 {
 	int			*pix;
 	int			y;
@@ -48,7 +48,7 @@ void	vline(t_main *m, int x, int y1, int y2, unsigned txtx)
 	{
 		txty = scaler_next(&SCAL);
 		color = color_transoform(ft_get_pixel(SDL.texture[REND.txtr_id],
-		txtx % SDL.texture[REND.txtr_id]->w, txty
+		REND.txtx % SDL.texture[REND.txtr_id]->w, txty
 			% SDL.texture[REND.txtr_id]->h),
 		percentage(255, 0, REND.z));
 		*pix = (!(CFG.walls) && color <= 0x010101) ? *pix : color;
@@ -65,26 +65,4 @@ void	draw_background(t_main *m, SDL_Surface *sur)
 	rect.h = WIN_H;
 	rect.w = WIN_W;
 	SDL_BlitScaled(sur, NULL, SDL.sur, &rect);
-}
-
-void	draw_sky(t_main *m)
-{
-	SDL_Rect	win;
-
-	win.x = 0;
-	win.y = 0;
-	win.h = WIN_H;
-	win.w = WIN_W;
-	SDL_BlitScaled(SDL.texture[6], &SDL.view, SDL.sur, &win);
-}
-
-void	move_sky(t_main *m, int x, int y)
-{
-	SDL.view.x += x * 25;
-	SDL.view.y += y / 2;
-	SDL.view.x = (SDL.view.x < 0) ? SDL.texture[6]->w - SDL.view.w : SDL.view.x;
-	SDL.view.y = (SDL.view.y < 0) ? 0 : SDL.view.y;
-	SDL.view.x = (SDL.view.x > SDL.texture[6]->w - SDL.view.w) ? 0 : SDL.view.x;
-	SDL.view.y = (SDL.view.y > SDL.texture[6]->h - SDL.view.h)
-		? SDL.texture[6]->h - SDL.view.h : SDL.view.y;
 }

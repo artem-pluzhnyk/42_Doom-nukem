@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 19:51:39 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/20 17:58:18 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 19:25:46 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,7 @@ void	play_btn(t_main *m)
 	sur = TTF_RenderText_Solid(SDL.ttf_50, "Play", SDL.white);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
 	SDL_FreeSurface(sur);
-	if ((SDL.event.type == SDL_MOUSEBUTTONDOWN
-	&& SDL.event.button.button == SDL_BUTTON_LEFT
-	&& SDL.event.button.x >= rect.x
-	&& SDL.event.button.x <= (rect.x + rect.w)
-	&& SDL.event.button.y >= rect.y
-	&& SDL.event.button.y <= (rect.x + rect.h))
-	|| (SDL.event.key.type == SDL_KEYDOWN
-	&& SDL.event.key.keysym.sym == SDLK_RETURN))
-	{
-		m->state = 2;
-		Mix_HaltMusic();
-		SDL_Delay(100);
-	}
+	start_game(m, rect);
 }
 
 void	setting_btn(t_main *m)
@@ -72,6 +60,23 @@ void	setting_btn(t_main *m)
 	&& SDL.event.button.y <= (rect.x + rect.h))
 	{
 		m->state = 3;
+		Mix_HaltMusic();
+		SDL_Delay(100);
+	}
+}
+
+void	start_game(t_main *m, SDL_Rect rect)
+{
+	if ((SDL.event.type == SDL_MOUSEBUTTONDOWN
+	&& SDL.event.button.button == SDL_BUTTON_LEFT
+	&& SDL.event.button.x >= rect.x
+	&& SDL.event.button.x <= (rect.x + rect.w)
+	&& SDL.event.button.y >= rect.y
+	&& SDL.event.button.y <= (rect.x + rect.h))
+	|| (SDL.event.key.type == SDL_KEYDOWN
+	&& SDL.event.key.keysym.sym == SDLK_RETURN))
+	{
+		m->state = 2;
 		Mix_HaltMusic();
 		SDL_Delay(100);
 	}

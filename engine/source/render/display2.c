@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/05 09:35:14 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 19:39:36 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,7 @@ void	render_2(t_main *m)
 	if (REND.tz1 <= 0 || REND.tz2 <= 0)
 	{
 		render_init2(m);
-		if (REND.tz1 < 1e-4f)
-		{
-			if (REND.i1.y > 0)
-			{
-				REND.tx1 = REND.i1.x;
-				REND.tz1 = REND.i1.y;
-			}
-			else
-			{
-				REND.tx1 = REND.i2.x;
-				REND.tz1 = REND.i2.y;
-			}
-		}
-		if (REND.tz2 < 1e-4f)
-		{
-			if (REND.i1.y > 0)
-			{
-				REND.tx2 = REND.i1.x;
-				REND.tz2 = REND.i1.y;
-			}
-			else
-			{
-				REND.tx2 = REND.i2.x;
-				REND.tz2 = REND.i2.y;
-			}
-		}
+		render_if(m);
 		if (fabsf(REND.tx2 - REND.tx1) > fabsf(REND.tz2 - REND.tz1))
 		{
 			REND.u0 = (REND.tx1 - REND.org1.x) * 1023
@@ -78,6 +53,20 @@ void	render_init2(t_main *m)
 	REND.org1.y = REND.tz1;
 	REND.org2.x = REND.tx2;
 	REND.org2.y = REND.tz2;
+}
+
+void	render_if(t_main *m)
+{
+	if (REND.tz1 < 1e-4f)
+	{
+		REND.tx1 = (REND.i1.y > 0) ? REND.i1.x : REND.i2.x;
+		REND.tz1 = (REND.i1.y > 0) ? REND.i1.y : REND.i2.y;
+	}
+	if (REND.tz2 < 1e-4f)
+	{
+		REND.tx2 = (REND.i1.y > 0) ? REND.i1.x : REND.i2.x;
+		REND.tz2 = (REND.i1.y > 0) ? REND.i1.y : REND.i2.y;
+	}
 }
 
 void	render_init3(t_main *m)
