@@ -1,15 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map-editor.h                                       :+:      :+:    :+:   */
+/*   map_editor.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akrivosh <akrivosh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: isavchen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 17:35:57 by akrivosh          #+#    #+#             */
-/*   Updated: 2019/09/07 18:13:57 by akrivosh         ###   ########.fr       */
+/*   Created: 2019/09/20 14:36:18 by isavchen          #+#    #+#             */
+/*   Updated: 2019/09/20 14:36:19 by isavchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MAP_EDITOR_H
+# define MAP_EDITOR_H
 # include <SDL.h>
 # include <SDL_mixer.h>
 # include <SDL_ttf.h>
@@ -27,7 +29,6 @@ typedef struct s_sdl		t_sdl;
 typedef struct s_map		t_map;
 typedef struct s_main		t_main;
 typedef struct s_xy			t_xy;
-typedef struct s_vert		t_vert;
 
 struct				s_sdl
 {
@@ -40,11 +41,6 @@ struct				s_sdl
 	SDL_Color		yellow;
 };
 
-struct				s_vert
-{
-	t_xy			*coord;
-};
-
 struct				s_xy
 {
 	int				x;
@@ -55,7 +51,6 @@ struct				s_main
 {
 	t_sdl			sdl;
 	int				map_tab;
-	int				i; //количество точек
 };
 
 void				init_sdl(t_main *m);
@@ -63,5 +58,6 @@ void				loop(t_main *m);
 void				map_editor(t_main *m);
 void				draw_grid(t_main *m);
 void				map_tabs(t_main *m);
+void				map_tabs2(t_main *m, SDL_Rect rect);
 void				ft_put_pixel(t_main *m, int x, int y, int pixel);
-void				get_mouse(t_main *m);
+#endif

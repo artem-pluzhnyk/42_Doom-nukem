@@ -24,7 +24,7 @@ LIB_DIR = ../libft/
 
 LIBFT = -L $(LIB_DIR) -lft
 
-SRC =	main.c
+SRC =	main.c grid.c
 
 OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
 INC =	$(addprefix $(INC_DIR),$(addsuffix .h,map-editor))
