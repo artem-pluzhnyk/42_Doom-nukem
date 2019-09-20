@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 18:53:58 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 19:50:45 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 15:30:14 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	events_sdl(t_main *m)
 
 void	mouse_buttons(t_main *m)
 {
-	if (SDL.event.type == SDL_MOUSEBUTTONDOWN && m->state == 2  && USER.gun)
+	if (SDL.event.type == SDL_MOUSEBUTTONDOWN && m->state == 2 && USER.gun)
 	{
 		if (SDL.event.button.button == SDL_BUTTON_LEFT)
 		{
@@ -72,7 +72,7 @@ void	events_moves(t_main *m)
 		{
 			USER.speed = SDL.event.type == SDL_KEYDOWN ? 0.6f : 0.3f;
 			if (!(Mix_Playing(3)))
-					Mix_PlayChannel(3, SDL.run, 0);
+				Mix_PlayChannel(3, SDL.run, 0);
 		}
 		if (SDL.event.key.keysym.sym == ' ')
 			if (MOVE.ground)

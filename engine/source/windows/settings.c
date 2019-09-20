@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:15:35 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/18 19:13:20 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 14:45:05 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	settings_window(t_main *m)
 	sur = TTF_RenderText_Solid(SDL.ttf_50,
 	"For save selected settings you must restart game.", SDL.blue);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
+	SDL_FreeSurface(sur);
 }
 
 void	switch_music(t_main *m)
@@ -67,6 +68,7 @@ void	map_choose(t_main *m)
 	else
 		sur = TTF_RenderText_Solid(SDL.ttf_50, "Custom map", SDL.yellow);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
+	SDL_FreeSurface(sur);
 	if (SDL.event.type == SDL_MOUSEBUTTONDOWN
 	&& SDL.event.button.button == SDL_BUTTON_LEFT
 	&& SDL.event.button.x >= rect.x
@@ -91,6 +93,7 @@ void	switch_gravitation(t_main *m)
 	rect.h = 0;
 	sur = TTF_RenderText_Solid(SDL.ttf_50, "Gravitation", SDL.yellow);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
+	SDL_FreeSurface(sur);
 	TTF_SizeText(SDL.ttf_50, "Gravitation", &len, NULL);
 	rect.h = SDL.texture[CFG.fly + 21]->h / 3;
 	rect.w = SDL.texture[CFG.fly + 21]->w / 3;
@@ -120,6 +123,7 @@ void	switch_sky(t_main *m)
 	rect.h = 0;
 	sur = TTF_RenderText_Solid(SDL.ttf_50, "Skybox", SDL.yellow);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
+	SDL_FreeSurface(sur);
 	TTF_SizeText(SDL.ttf_50, "Skybox", &len, NULL);
 	rect.h = SDL.texture[CFG.sky + 21]->h / 3;
 	rect.w = SDL.texture[CFG.sky + 21]->w / 3;
@@ -149,6 +153,7 @@ void	switch_walls(t_main *m)
 	rect.h = 0;
 	sur = TTF_RenderText_Solid(SDL.ttf_50, "Walls", SDL.yellow);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
+	SDL_FreeSurface(sur);
 	TTF_SizeText(SDL.ttf_50, "Walls", &len, NULL);
 	rect.h = SDL.texture[CFG.walls + 21]->h / 3;
 	rect.w = SDL.texture[CFG.walls + 21]->w / 3;

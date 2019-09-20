@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:22:02 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/18 19:06:11 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 15:25:38 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,15 @@ void	aim_distance(t_main *m)
 	char			*str;
 
 	str = malloc(sizeof(char) * (ft_nbrlen(REND.z) + 4));
-	str = ft_strjoin(ft_strjoin(ft_itoa(REND.z / 10), ","),
-	ft_strjoin(ft_itoa(REND.z % 10), " m."));
+	MAP.str = ft_itoa(REND.z / 10);
+	MAP.str1 = ft_strjoin(MAP.str, ",");
+	free(MAP.str);
+	MAP.str = ft_itoa(REND.z % 10);
+	MAP.str2 = ft_strjoin(MAP.str, " m.");
+	free(MAP.str);
+	str = ft_strjoin(MAP.str1, MAP.str2);
+	free(MAP.str1);
+	free(MAP.str2);
 	TTF_SizeText(SDL.ttf_28, str, &w, &h);
 	rect.x = WIN_W / 2 - w / 3;
 	rect.y = WIN_H / 2 + WIN_H / 4;
@@ -31,6 +38,7 @@ void	aim_distance(t_main *m)
 	sur = TTF_RenderText_Solid(SDL.ttf_28, str, SDL.white);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
 	SDL_FreeSurface(sur);
+	free(str);
 }
 
 void	draw_aim(t_main *m)

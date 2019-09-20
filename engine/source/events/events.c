@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:10:27 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 16:07:50 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 15:32:20 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	events(t_main *m)
 {
-	MOVE.eyeheight = MOVE.ducking  ? DUCK_H : EYE_H;
+	MOVE.eyeheight = MOVE.ducking ? DUCK_H : EYE_H;
 	if (CFG.fly)
 		MOVE.ground = !MOVE.falling;
 	if (MOVE.falling)
@@ -62,7 +62,7 @@ void	event_falling(t_main *m)
 		USER.where.z = MAP.sectors[USER.sector].floor + MOVE.eyeheight;
 		USER.velocity.z = 0;
 		MOVE.falling = 0;
-		MOVE.ground  = 1;
+		MOVE.ground = 1;
 	}
 	else if (USER.velocity.z > 0 && MOVE.nextz > MAP.sectors[USER.sector].ceil)
 	{
@@ -80,7 +80,7 @@ void	event_moving(t_main *m)
 {
 	unsigned	s;
 
-	if(MOVE.moving)
+	if (MOVE.moving)
 	{
 		MOVE.px = USER.where.x;
 		MOVE.py = USER.where.y;
@@ -94,12 +94,12 @@ void	event_moving(t_main *m)
 			&& PS(MOVE.px + MOVE.dx, MOVE.py + MOVE.dy, MOVE.sect->vertex[s + 0].x, MOVE.sect->vertex[s + 0].y,
 			MOVE.sect->vertex[s + 1].x, MOVE.sect->vertex[s + 1].y) < 0)
 			{
-				MOVE.hole_low = MOVE.sect->neighbors[s] < 0 ?  9e9 : MAX(MOVE.sect->floor,
+				MOVE.hole_low = MOVE.sect->neighbors[s] < 0 ? 9e9 : MAX(MOVE.sect->floor,
 				MAP.sectors[MOVE.sect->neighbors[s]].floor);
 				MOVE.hole_high = MOVE.sect->neighbors[s] < 0 ? -9e9 : MIN(MOVE.sect->ceil,
 				MAP.sectors[MOVE.sect->neighbors[s]].ceil);
-				if(MOVE.hole_high < USER.where.z + HEAD_MARG
-				|| MOVE.hole_low  > USER.where.z - EYE_H + KNEE_H)
+				if (MOVE.hole_high < USER.where.z + HEAD_MARG
+				|| MOVE.hole_low > USER.where.z - EYE_H + KNEE_H)
 				{
 					MOVE.xd = MOVE.sect->vertex[s + 1].x - MOVE.sect->vertex[s].x;
 					MOVE.yd = MOVE.sect->vertex[s + 1].y - MOVE.sect->vertex[s].y;
@@ -110,9 +110,9 @@ void	event_moving(t_main *m)
 					MOVE.moving = 0;
 				}
 			}
-			move_player(m, MOVE.dx, MOVE.dy);
-			MOVE.falling = 1;
-		}
+		move_player(m, MOVE.dx, MOVE.dy);
+		MOVE.falling = 1;
+	}
 }
 
 void	mouse_rotation(t_main *m)
@@ -122,22 +122,20 @@ void	mouse_rotation(t_main *m)
 	double	old_dir_x;
 	double	old_plane_x;
 
-	SDL_GetRelativeMouseState(&x,&y);
+	SDL_GetRelativeMouseState(&x, &y);
 	move_sky(m, x, y);
 	USER.angle += x * 0.03f;
 	MOVE.yaw = CLAMP(MOVE.yaw + y * 0.05f, -5, 5);
 	USER.yaw = MOVE.yaw - USER.velocity.z * 0.5f;
-	move_player(m, 0,0);
+	move_player(m, 0, 0);
 	MOVE.move_vec[0] = 0.f;
 	MOVE.move_vec[1] = 0.f;
-
 	old_dir_x = SREND.dir_x;
 	SREND.dir_x = SREND.dir_x * cos(0.01f) - SREND.dir_y * sin(0.01f);
 	SREND.dir_y = old_dir_x * sin(0.01f) + SREND.dir_y * cos(0.01f);
 	old_plane_x = SREND.plane_x;
 	SREND.plane_x = SREND.plane_x * cos(0.01f) - SREND.plane_y * sin(0.01f);
 	SREND.plane_y = old_plane_x * sin(0.01f) + SREND.plane_y * cos(0.01f);
-
 	if (MOVE.wsad[0])
 	{
 		MOVE.move_vec[0] += USER.anglecos * USER.speed;
@@ -158,12 +156,10 @@ void	mouse_rotation(t_main *m)
 		MOVE.move_vec[0] -= USER.anglesin * USER.speed;
 		MOVE.move_vec[1] += USER.anglecos * USER.speed;
 	}
-
 	MOVE.pushing = MOVE.wsad[0] || MOVE.wsad[1] || MOVE.wsad[2] || MOVE.wsad[3];
 	MOVE.acceleration = MOVE.pushing ? 0.4 : 0.2;
 	USER.velocity.x = USER.velocity.x * (1 - MOVE.acceleration) + MOVE.move_vec[0] * MOVE.acceleration;
 	USER.velocity.y = USER.velocity.y * (1 - MOVE.acceleration) + MOVE.move_vec[1] * MOVE.acceleration;
-
 	if (MOVE.pushing)
 		MOVE.moving = 1;
 	SDL_Delay(10);
