@@ -49,6 +49,7 @@ void	draw_aim(t_main *m)
 	rect.y = 0;
 	rect.h = WIN_H;
 	rect.w = WIN_W;
-	SDL_SetColorKey(SDL.texture[4], SDL_TRUE, SDL_MapRGB(SDL.texture[4]->format, 255, 255, 255));
+	SDL_SetColorKey(SDL.texture[4], SDL_TRUE,
+		SDL_MapRGB(SDL.texture[4]->format, 255, 255, 255));
 	SDL_BlitScaled(SDL.texture[4], NULL, SDL.sur, &rect);
 }

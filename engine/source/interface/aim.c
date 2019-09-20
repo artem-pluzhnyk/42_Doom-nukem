@@ -20,6 +20,7 @@ void	main_aim(t_main *m)
 	rect.w = SDL.texture[20]->h;
 	rect.x = WIN_W / 2 - SDL.texture[20]->w / 2;
 	rect.y = WIN_H / 2 - SDL.texture[20]->h / 2;
-	SDL_SetColorKey(SDL.texture[20], SDL_TRUE, SDL_MapRGB(SDL.texture[20]->format, 255, 255, 255));
+	SDL_SetColorKey(SDL.texture[20], SDL_TRUE,
+		SDL_MapRGB(SDL.texture[20]->format, 255, 255, 255));
 	SDL_BlitScaled(SDL.texture[20], NULL, SDL.sur, &rect);
 }

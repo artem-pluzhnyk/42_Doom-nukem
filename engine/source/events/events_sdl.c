@@ -60,20 +60,7 @@ void	events_moves(t_main *m)
 	|| SDL.event.key.type == SDL_KEYDOWN)
 	&& m->state == 2)
 	{
-		if (SDL.event.key.keysym.sym == 'w')
-			MOVE.wsad[0] = SDL.event.type == SDL_KEYDOWN;
-		if (SDL.event.key.keysym.sym == 's')
-			MOVE.wsad[1] = SDL.event.type == SDL_KEYDOWN;
-		if (SDL.event.key.keysym.sym == 'a')
-			MOVE.wsad[2] = SDL.event.type == SDL_KEYDOWN;
-		if (SDL.event.key.keysym.sym == 'd')
-			MOVE.wsad[3] = SDL.event.type == SDL_KEYDOWN;
-		if (SDL.event.key.keysym.sym == SDLK_LSHIFT)
-		{
-			USER.speed = SDL.event.type == SDL_KEYDOWN ? 0.6f : 0.3f;
-			if (!(Mix_Playing(3)))
-				Mix_PlayChannel(3, SDL.run, 0);
-		}
+		key(m);
 		if (SDL.event.key.keysym.sym == ' ')
 			if (MOVE.ground)
 			{
@@ -88,5 +75,23 @@ void	events_moves(t_main *m)
 			MOVE.ducking = SDL.event.type == SDL_KEYDOWN;
 			MOVE.falling = 1;
 		}
+	}
+}
+
+void	key(t_main *m)
+{
+	if (SDL.event.key.keysym.sym == 'w')
+		MOVE.wsad[0] = SDL.event.type == SDL_KEYDOWN;
+	if (SDL.event.key.keysym.sym == 's')
+		MOVE.wsad[1] = SDL.event.type == SDL_KEYDOWN;
+	if (SDL.event.key.keysym.sym == 'a')
+		MOVE.wsad[2] = SDL.event.type == SDL_KEYDOWN;
+	if (SDL.event.key.keysym.sym == 'd')
+		MOVE.wsad[3] = SDL.event.type == SDL_KEYDOWN;
+	if (SDL.event.key.keysym.sym == SDLK_LSHIFT)
+	{
+		USER.speed = SDL.event.type == SDL_KEYDOWN ? 0.6f : 0.3f;
+		if (!(Mix_Playing(3)))
+			Mix_PlayChannel(3, SDL.run, 0);
 	}
 }

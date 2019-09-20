@@ -57,7 +57,8 @@ void	event_falling(t_main *m)
 {
 	USER.velocity.z -= 0.05f;
 	MOVE.nextz = USER.where.z + USER.velocity.z;
-	if (USER.velocity.z < 0 && MOVE.nextz < MAP.sectors[USER.sector].floor + MOVE.eyeheight)
+	if (USER.velocity.z < 0 && MOVE.nextz <
+		MAP.sectors[USER.sector].floor + MOVE.eyeheight)
 	{
 		USER.where.z = MAP.sectors[USER.sector].floor + MOVE.eyeheight;
 		USER.velocity.z = 0;
@@ -158,8 +159,10 @@ void	mouse_rotation(t_main *m)
 	}
 	MOVE.pushing = MOVE.wsad[0] || MOVE.wsad[1] || MOVE.wsad[2] || MOVE.wsad[3];
 	MOVE.acceleration = MOVE.pushing ? 0.4 : 0.2;
-	USER.velocity.x = USER.velocity.x * (1 - MOVE.acceleration) + MOVE.move_vec[0] * MOVE.acceleration;
-	USER.velocity.y = USER.velocity.y * (1 - MOVE.acceleration) + MOVE.move_vec[1] * MOVE.acceleration;
+	USER.velocity.x = USER.velocity.x * (1 - MOVE.acceleration) +
+		MOVE.move_vec[0] * MOVE.acceleration;
+	USER.velocity.y = USER.velocity.y * (1 - MOVE.acceleration) +
+		MOVE.move_vec[1] * MOVE.acceleration;
 	if (MOVE.pushing)
 		MOVE.moving = 1;
 	SDL_Delay(10);

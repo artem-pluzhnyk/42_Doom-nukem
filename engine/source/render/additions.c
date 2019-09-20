@@ -27,13 +27,13 @@ t_xy	intersect(t_main *m)
 	return (s);
 }
 
-void	scaler_init(t_main *m, int a, int b, int c, int d, int f)
+void	scaler_init(t_main *m, int a, int b, int c)
 {
-	SCAL.result = d + (b - 1 - a) * (f - d) / (c - a);
-	SCAL.bop = ((f < d) ^ (c < a)) ? -1 : 1;
-	SCAL.fd = abs(f - d);
+	SCAL.result = (b - 1 - a) * 1023 / (c - a);
+	SCAL.bop = ((1023 < 0) ^ (c < a)) ? -1 : 1;
+	SCAL.fd = abs(1023);
 	SCAL.ca = abs(c - a);
-	SCAL.cache = (int)((b - 1 - a) * abs(f - d)) % abs(c - a);
+	SCAL.cache = (int)((b - 1 - a) * abs(1023)) % abs(c - a);
 }
 
 int		scaler_next(t_scaler *i)

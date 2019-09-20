@@ -64,7 +64,8 @@ void	render_npoints(t_main *m)
 			continue ;
 		render_2(m);
 		render_init3(m);
-		if (REND.x1 >= REND.x2 || REND.x2 < REND.now.sx1 || REND.x1 > REND.now.sx2)
+		if (REND.x1 >= REND.x2 || REND.x2 < REND.now.sx1
+			|| REND.x1 > REND.now.sx2)
 			continue ;
 		render_init4(m, s);
 		render_startend(m, s);

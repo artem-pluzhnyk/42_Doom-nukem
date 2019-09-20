@@ -27,7 +27,7 @@ void	render_startend(t_main *m, int s)
 		else
 		{
 			REND.txtr_id = SECT[REND.now.sectorno].texture[s];
-			scaler_init(m, REND.ya, REND.cya, REND.yb, 0, 1024);
+			scaler_init(m, REND.ya, REND.cya, REND.yb);
 			vline(m, x, REND.cya, REND.cyb, REND.txtx); // Walls
 		}
 	}
@@ -88,11 +88,11 @@ void	render_init6(t_main *m, int x)
 	REND.nyb = (x - REND.x1) * (REND.ny2b - REND.ny1b) / (REND.x2 - REND.x1) + REND.ny1b;
 	REND.cnyb = CLAMP(REND.nyb, REND.ytop[x], REND.ybottom[x]);
 	REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 2];
-	scaler_init(m, REND.ya, REND.cya, REND.yb, 0, 1023);
+	scaler_init(m, REND.ya, REND.cya, REND.yb);
 	vline(m, x, REND.cya, REND.cnya - 1, REND.txtx); // Lower
 	REND.ytop[x] = CLAMP(MAX(REND.cya, REND.cnya), REND.ytop[x], (int)WIN_H - 1);
 	REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 3];
-	scaler_init(m, REND.ya, REND.cnyb + 1, REND.yb, 0, 1023);
+	scaler_init(m, REND.ya, REND.cnyb + 1, REND.yb);
 	vline(m, x, REND.cnyb + 1, REND.cyb, REND.txtx); // Upper
 	REND.ybottom[x] = CLAMP(MIN(REND.cyb, REND.cnyb), 0, REND.ybottom[x]);
 }
