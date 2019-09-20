@@ -6,7 +6,7 @@
 /*   By: akrivosh <akrivosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 14:36:18 by isavchen          #+#    #+#             */
-/*   Updated: 2019/09/20 15:38:13 by akrivosh         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:26:39 by akrivosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <SDL.h>
 # include <SDL_mixer.h>
 # include <SDL_ttf.h>
+#include "../../libft/include/libft.h"
 
 # define SDL		m->sdl
 
@@ -28,7 +29,7 @@
 typedef struct s_sdl		t_sdl;
 typedef struct s_map		t_map;
 typedef struct s_main		t_main;
-typedef struct s_xy			t_xy;
+typedef struct s_vert		t_vert;
 
 struct				s_sdl
 {
@@ -41,16 +42,19 @@ struct				s_sdl
 	SDL_Color		yellow;
 };
 
-struct				s_xy
-{
-	int				x;
-	int				y;
-};
-
 struct				s_main
 {
 	t_sdl			sdl;
 	int				map_tab;
+	int				num_v;
+	t_vert			*head;
+	t_vert			*last;
+};
+
+struct				s_vert
+{
+	t_xy			xy;
+	t_vert			*next;
 };
 
 void				init_sdl(t_main *m);
@@ -60,5 +64,6 @@ void				draw_grid(t_main *m);
 void				map_tabs(t_main *m);
 void				map_tabs2(t_main *m, SDL_Rect rect);
 void				ft_put_pixel(t_main *m, int x, int y, int pixel);
-void coord(int x, int y, t_main *m);
+void				coord(t_main *m);
+void				draw_points(t_main *m);
 #endif

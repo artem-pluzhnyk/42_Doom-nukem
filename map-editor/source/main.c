@@ -6,7 +6,7 @@
 /*   By: akrivosh <akrivosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 14:35:37 by isavchen          #+#    #+#             */
-/*   Updated: 2019/09/20 15:59:26 by akrivosh         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:26:05 by akrivosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	init_sdl(t_main *m)
 	SDL.yellow.r = 255;
 	SDL.yellow.g = 255;
 	SDL.yellow.b = 0;
+	m->head = NULL;
+	m->num_v = 0;
 }
 
 void	loop(t_main *m)
@@ -52,14 +54,13 @@ void	loop(t_main *m)
 	{
 		SDL_FillRect(SDL.sur, NULL, 0x000000);
 		map_editor(m);
+				if(SDL_MOUSEBUTTONDOWN)
+					coord(m);
 		while (SDL_PollEvent(&SDL.event))
 			if ((SDL.event.type == SDL_QUIT) ||
 			(SDL.event.key.type == SDL_KEYDOWN
 			&& SDL.event.key.keysym.sym == SDLK_ESCAPE))
 				exit(EXIT_SUCCESS);
-				if(SDL_MOUSEBUTTONDOWN)
-					if(SDL_MOUSEBUTTONUP && SDL.event.button.clicks == 1)
-						coord(SDL.event.button.x, SDL.event.button.y, m);
 		SDL_UpdateWindowSurface(SDL.win);
 	}
 }
@@ -68,6 +69,7 @@ void	map_editor(t_main *m)
 {
 	draw_grid(m);
 	map_tabs(m);
+	draw_points(m);
 }
 
 void	ft_put_pixel(t_main *m, int x, int y, int pixel)
@@ -81,7 +83,44 @@ void	ft_put_pixel(t_main *m, int x, int y, int pixel)
 	*new_pixel = pixel;
 }
 
-void	coord(int x, int y, t_main *m)
+void	coord(t_main *m)
 {
-	ft_put_pixel(m, x, y, 0x00CA00);
+	int		x;
+	int		y;
+	t_vert	*new;
+
+	if (SDL.event.button.button == SDL_BUTTON_LEFT)
+	{
+		x = SDL.event.button.x;
+		y = SDL.event.button.y;
+		new = (t_vert *)malloc(sizeof(t_vert));
+		new->next = NULL;
+		new->xy.x = x;
+		new->xy.y = y;
+		if (m->head == NULL)
+		{
+			m->head = new;
+			m->last = m->head;
+		}
+		else
+		{
+			m->last->next = new;
+			m->last = new;
+		}
+		SDL_UpdateWindowSurface(SDL.win);
+		SDL_Delay(100);
+	}
+}
+
+void	draw_points(t_main *m)
+{
+	t_vert *walk;
+
+	walk = m->head;
+	while (walk)
+	{
+		ft_put_pixel(m, walk->xy.x, walk->xy.y, 0x00CA00);
+		walk = walk->next;
+		m->num_v++;
+	}
 }
