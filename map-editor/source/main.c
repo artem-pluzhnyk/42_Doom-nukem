@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isavchen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akrivosh <akrivosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 14:35:37 by isavchen          #+#    #+#             */
-/*   Updated: 2019/09/20 14:35:40 by isavchen         ###   ########.fr       */
+/*   Updated: 2019/09/20 15:59:26 by akrivosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ void	loop(t_main *m)
 			(SDL.event.key.type == SDL_KEYDOWN
 			&& SDL.event.key.keysym.sym == SDLK_ESCAPE))
 				exit(EXIT_SUCCESS);
+				if(SDL_MOUSEBUTTONDOWN)
+					if(SDL_MOUSEBUTTONUP && SDL.event.button.clicks == 1)
+						coord(SDL.event.button.x, SDL.event.button.y, m);
 		SDL_UpdateWindowSurface(SDL.win);
 	}
 }
@@ -76,4 +79,9 @@ void	ft_put_pixel(t_main *m, int x, int y, int pixel)
 	new_pixel = SDL.sur->pixels + y * SDL.sur->pitch
 	+ x * SDL.sur->format->BytesPerPixel;
 	*new_pixel = pixel;
+}
+
+void	coord(int x, int y, t_main *m)
+{
+	ft_put_pixel(m, x, y, 0x00CA00);
 }

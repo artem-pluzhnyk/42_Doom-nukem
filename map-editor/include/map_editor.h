@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_editor.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isavchen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akrivosh <akrivosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 14:36:18 by isavchen          #+#    #+#             */
-/*   Updated: 2019/09/20 14:36:19 by isavchen         ###   ########.fr       */
+/*   Updated: 2019/09/20 15:38:13 by akrivosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define WIN_FLG	SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL
 
 # define GRAY		0x808080
-
+# define RED					0xFF0000
 typedef struct s_sdl		t_sdl;
 typedef struct s_map		t_map;
 typedef struct s_main		t_main;
@@ -60,4 +60,5 @@ void				draw_grid(t_main *m);
 void				map_tabs(t_main *m);
 void				map_tabs2(t_main *m, SDL_Rect rect);
 void				ft_put_pixel(t_main *m, int x, int y, int pixel);
+void coord(int x, int y, t_main *m);
 #endif
