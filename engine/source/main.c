@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 16:43:23 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 19:26:38 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 15:16:50 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ void	escape(t_main *m)
 	save_game(m);
 	save_settings(m);
 	SDL_DestroyWindow(SDL.win);
-	TTF_CloseFont(SDL.ttf_50);
-	TTF_CloseFont(SDL.ttf_28);
+	SDL_FreeSurface(SDL.sur);
+	unload_font(m);
+	unload_sounds(m);
 	TTF_Quit();
 	SDL_Quit();
-	Mix_FreeMusic(SDL.sound);
+	system("leaks doom-nukem");
 	exit(EXIT_SUCCESS);
 }

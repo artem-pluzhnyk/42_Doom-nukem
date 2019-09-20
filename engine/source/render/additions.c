@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 14:27:43 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 15:47:02 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 15:39:37 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ t_xy	intersect(t_main *m)
 {
 	t_xy	s;
 
-	s.x = VXS(VXS(IS.x1,IS.y1, IS.x2,IS.y2), (IS.x1)-(IS.x2),
-	VXS(IS.x3,IS.y3, IS.x4,IS.y4), (IS.x3)-(IS.x4)) / VXS((IS.x1)-(IS.x2),
-	(IS.y1)-(IS.y2), (IS.x3)-(IS.x4), (IS.y3)-(IS.y4));
-	s.y = VXS(VXS(IS.x1,IS.y1, IS.x2,IS.y2), (IS.y1)-(IS.y2),
-	VXS(IS.x3,IS.y3, IS.x4,IS.y4), (IS.y3)-(IS.y4)) / VXS((IS.x1)-(IS.x2),
-	(IS.y1)-(IS.y2), (IS.x3)-(IS.x4), (IS.y3)-(IS.y4));
+	s.x = VXS(VXS(IS.x1, IS.y1, IS.x2, IS.y2), (IS.x1) - (IS.x2),
+	VXS(IS.x3, IS.y3, IS.x4, IS.y4), (IS.x3) - (IS.x4))
+	/ VXS((IS.x1) - (IS.x2),
+	(IS.y1) - (IS.y2), (IS.x3) - (IS.x4), (IS.y3) - (IS.y4));
+	s.y = VXS(VXS(IS.x1, IS.y1, IS.x2, IS.y2), (IS.y1) - (IS.y2),
+	VXS(IS.x3, IS.y3, IS.x4, IS.y4), (IS.y3) - (IS.y4))
+	/ VXS((IS.x1) - (IS.x2),
+	(IS.y1) - (IS.y2), (IS.x3) - (IS.x4), (IS.y3) - (IS.y4));
 	return (s);
 }
 

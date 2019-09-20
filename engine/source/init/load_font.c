@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:14:54 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/10 12:09:20 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 14:24:14 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,10 @@ void	load_font(t_main *m)
 	TTF_SetFontHinting(SDL.ttf_50, TTF_HINTING_NORMAL);
 	if (!(SDL.ttf_28 = TTF_OpenFont("../resources/font/SAMBD.ttf", 28)))
 		ft_exit("☣ Error ☣");
+}
+
+void	unload_font(t_main *m)
+{
+	TTF_CloseFont(SDL.ttf_50);
+	TTF_CloseFont(SDL.ttf_28);
 }

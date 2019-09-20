@@ -6,9 +6,17 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 19:19:36 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 15:37:54 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// events		-
+// init			-
+// interface	-
+// player		+
+// render		-
+// settings		+
+// windows		-
 
 #ifndef DOOM_H
 # define DOOM_H
@@ -106,6 +114,9 @@ struct				s_map
 	t_xy			*vert;
 	t_sector		*sectors;
 	t_player		player;
+	char			*str;
+	char			*str1;
+	char			*str2;
 };
 
 struct				s_item
@@ -252,7 +263,7 @@ struct				s_sdl
 	SDL_Surface		*sur;
 	SDL_DisplayMode	display;
 	SDL_Event		event;
-	SDL_Surface		*texture[50];
+	SDL_Surface		*texture[25];
 	TTF_Font		*ttf_50;
 	TTF_Font		*ttf_28;
 	Mix_Music		*sound;
@@ -317,6 +328,7 @@ void				load_textures(t_main *m);
 ** load_font.c
 */
 void				load_font(t_main *m);
+void				unload_font(t_main *m);
 
 /*
 ** load_map.c
@@ -328,6 +340,7 @@ void				read_map(t_main *m);
 ** load_sounds.c
 */
 void				load_sounds(t_main *m);
+void				unload_sounds(t_main *m);
 
 /*
 ** default_map.c
@@ -480,7 +493,6 @@ void				main_aim(t_main *m);
 */
 void				aim_distance(t_main *m);
 void				draw_aim(t_main *m);
-
 
 /*
 ** hud.c

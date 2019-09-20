@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:50:28 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 19:28:50 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 14:23:21 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,12 @@ void	load_sounds(t_main *m)
 	SDL.fire = Mix_LoadWAV("../resources/sounds/shot.wav");
 	SDL.jump = Mix_LoadWAV("../resources/sounds/jump.wav");
 	SDL.run = Mix_LoadWAV("../resources/sounds/run.wav");
+}
+
+void	unload_sounds(t_main *m)
+{
+	Mix_FreeMusic(SDL.sound);
+	Mix_FreeChunk(SDL.fire);
+	Mix_FreeChunk(SDL.jump);
+	Mix_FreeChunk(SDL.run);
 }

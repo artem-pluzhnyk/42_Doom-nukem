@@ -6,7 +6,7 @@
 #    By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/06 12:38:04 by apluzhni          #+#    #+#              #
-#    Updated: 2019/09/19 14:00:57 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/09/20 14:18:35 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = doom-nukem
 
 OPTIM = -flto -Ofast -pipe -O3 -march=native -mtune=native
 DEBUG = -g -fsanitize=address
-FLAGS = -Wall -Wextra -Werror $(OPTIM) $(DEBUG)
+FLAGS = -Wall -Wextra -Werror $(OPTIM) #$(DEBUG)
 
 SRC_DIR = ./source/
 OBJ_DIR = ./object/

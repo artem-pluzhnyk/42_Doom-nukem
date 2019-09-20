@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 19:00:57 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 16:58:50 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 15:27:29 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,18 @@ void	endgame(t_main *m)
 	sur = TTF_RenderText_Solid(SDL.ttf_28,
 	"Atque in pepetuum, frater, ave atque vale.", SDL.red);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
+	SDL_FreeSurface(sur);
 	rect.y += 30;
 	sur = TTF_RenderText_Solid(SDL.ttf_28,
 	"Forever and ever, my brother, hail and farewell.", SDL.red);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
+	SDL_FreeSurface(sur);
 	rect.y += 50;
 	rect.x += 25;
 	sur = TTF_RenderText_Solid(SDL.ttf_50,
 	"Press Enter for respawn.", SDL.green);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
 	SDL_FreeSurface(sur);
-
 	if (SDL.event.key.type == SDL_KEYDOWN
 	&& SDL.event.key.keysym.sym == SDLK_RETURN)
 	{
