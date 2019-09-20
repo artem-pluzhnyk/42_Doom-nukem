@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 19:51:39 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/20 15:27:17 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:58:18 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	menu(t_main *m)
 	draw_background(m, SDL.texture[0]);
 	play_btn(m);
 	setting_btn(m);
-	map_edit_btn(m);
 }
 
 void	play_btn(t_main *m)
@@ -73,28 +72,6 @@ void	setting_btn(t_main *m)
 	&& SDL.event.button.y <= (rect.x + rect.h))
 	{
 		m->state = 3;
-		Mix_HaltMusic();
-		SDL_Delay(100);
-	}
-}
-
-void	map_edit_btn(t_main *m)
-{
-	SDL_Rect	rect;
-
-	rect.h = WIN_H / 11;
-	rect.w = rect.h;
-	rect.x = WIN_W - rect.w - rect.w;
-	rect.y = 0;
-	SDL_BlitScaled(SDL.texture[3], NULL, SDL.sur, &rect);
-	if (SDL.event.type == SDL_MOUSEBUTTONDOWN
-	&& SDL.event.button.button == SDL_BUTTON_LEFT
-	&& SDL.event.button.x >= rect.x
-	&& SDL.event.button.x <= (rect.x + rect.w)
-	&& SDL.event.button.y >= rect.y
-	&& SDL.event.button.y <= (rect.x + rect.h))
-	{
-		m->state = 4;
 		Mix_HaltMusic();
 		SDL_Delay(100);
 	}

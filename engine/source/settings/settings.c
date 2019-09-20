@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 16:55:29 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 14:43:22 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 18:30:11 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	default_setings(t_main *m)
 	CFG.fly = 1;
 	CFG.sky = 0;
 	CFG.walls = 1;
+	CFG.txtr = 0;
 	write(fd, &CFG, sizeof(t_cfg));
 	close(fd);
 }

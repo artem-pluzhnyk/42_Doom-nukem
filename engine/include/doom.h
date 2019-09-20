@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:49:25 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/20 15:37:54 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 18:31:36 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -249,6 +249,8 @@ struct				s_cfg
 	int				fly;
 	int				sky;
 	int				walls;
+	int				txtr;
+	int				tall;
 };
 
 struct				s_hud
@@ -263,7 +265,7 @@ struct				s_sdl
 	SDL_Surface		*sur;
 	SDL_DisplayMode	display;
 	SDL_Event		event;
-	SDL_Surface		*texture[25];
+	SDL_Surface		*texture[26];
 	TTF_Font		*ttf_50;
 	TTF_Font		*ttf_28;
 	Mix_Music		*sound;
@@ -318,11 +320,15 @@ void				init_sdl(t_main *m);
 ** init_data.c
 */
 void				init_data(t_main *m);
+void				init_data1(t_main *m);
+void				init_data2(t_main *m);
 
 /*
 ** load_textures.c
 */
 void				load_textures(t_main *m);
+void				load_textures1(t_main *m);
+void				load_textures2(t_main *m);
 
 /*
 ** load_font.c
@@ -415,7 +421,7 @@ void				move_sky(t_main *m, int x, int y);
 ** additions.c
 */
 t_xy				intersect(t_main *m);
-void				scaler_init(t_main *m, int a, int b, int c, int d, int f);
+void				scaler_init(t_main *m, int a, int b, int c);
 int					scaler_next(t_scaler *i);
 float				percentage(int start, int end, int curr);
 int					color_transoform(int color, float percent);
@@ -441,7 +447,6 @@ void				loading_text(t_main *m);
 void				menu(t_main *m);
 void				play_btn(t_main *m);
 void				setting_btn(t_main *m);
-void				map_edit_btn(t_main *m);
 
 /*
 ** settings.c
@@ -453,11 +458,14 @@ void				screen_resolution(t_main *m);
 void				switch_gravitation(t_main *m);
 void				switch_sky(t_main *m);
 void				switch_walls(t_main *m);
+void				switch_texture(t_main *m);
+void				tall_towers(t_main *m);
 
 /*
 ** endgame.c
 */
 void				endgame(t_main *m);
+void				endreturn(t_main *m);
 
 /*
 ** ./events/###################################################################|
@@ -469,6 +477,7 @@ void				endgame(t_main *m);
 void				events_sdl(t_main *m);
 void				events_moves(t_main *m);
 void				mouse_buttons(t_main *m);
+void				key(t_main *m);
 
 /*
 ** events.c

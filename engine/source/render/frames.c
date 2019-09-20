@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:45:51 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/19 14:03:38 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 18:38:45 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,5 @@ void	select_window(t_main *m)
 	if (m->state == 3)
 		settings_window(m);
 	if (m->state == 4)
-	{
-		system("../map-editor/./map-editor");
-		escape(m);
-	}
-	if (m->state == 5)
 		endgame(m);
 }

@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 12:09:42 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/18 19:31:11 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 18:17:23 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ void	render_init5(t_main *m, int x)
 		{
 			if (!(CFG.sky))
 			{
-				REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 1]; // Ceiling
+				if (!(CFG.txtr))
+					REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints + 1]; // Ceiling
+				else
+					REND.txtr_id = 24;
 				REND.pel = color_transoform(ft_get_pixel(SDL.texture[REND.txtr_id],
 				txtx % SDL.texture[REND.txtr_id]->w, txtz % SDL.texture[REND.txtr_id]->h),
 				percentage(255, 0, REND.z));
@@ -72,7 +75,10 @@ void	render_init5(t_main *m, int x)
 		}
 		else
 		{
-			REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints]; // Floor
+			if (!(CFG.txtr))
+				REND.txtr_id = SECT[REND.now.sectorno].texture[SECT[REND.now.sectorno].npoints]; // Floor
+			else
+				REND.txtr_id = 25;
 			REND.pel = color_transoform(ft_get_pixel(SDL.texture[REND.txtr_id],
 			txtx % SDL.texture[REND.txtr_id]->w, txtz % SDL.texture[REND.txtr_id]->h),
 			percentage(255, 0, REND.z));

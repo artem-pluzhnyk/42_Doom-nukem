@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 16:43:23 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/20 15:16:50 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:58:36 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ void	escape(t_main *m)
 	unload_sounds(m);
 	TTF_Quit();
 	SDL_Quit();
-	system("leaks doom-nukem");
 	exit(EXIT_SUCCESS);
 }

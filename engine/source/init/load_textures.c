@@ -6,7 +6,7 @@
 /*   By: apluzhni <apluzhni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:10:00 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/09/20 15:14:30 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/09/20 18:17:02 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,7 @@ void	load_textures2(t_main *m)
 	if (!(SDL.texture[23] = SDL_LoadBMP("../resources/textures/hazard.bmp")))
 		ft_exit("☣ Error ☣");
 	if (!(SDL.texture[24] = SDL_LoadBMP("../resources/textures/blood.bmp")))
+		ft_exit("☣ Error ☣");
+	if (!(SDL.texture[25] = SDL_LoadBMP("../resources/textures/carpet.bmp")))
 		ft_exit("☣ Error ☣");
 }
