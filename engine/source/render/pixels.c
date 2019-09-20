@@ -39,7 +39,7 @@ void	vline(t_main *m, int x, int y1, int y2, unsigned txtx)
 	unsigned	txty;
 	int			color;
 
-	pix = (int*) SDL.sur->pixels;
+	pix = (int*)SDL.sur->pixels;
 	y1 = CLAMP(y1, 0, (int)WIN_H - 1);
 	y2 = CLAMP(y2, 0, (int)WIN_H - 1);
 	pix += y1 * WIN_W + x;
@@ -48,7 +48,8 @@ void	vline(t_main *m, int x, int y1, int y2, unsigned txtx)
 	{
 		txty = scaler_next(&SCAL);
 		color = color_transoform(ft_get_pixel(SDL.texture[REND.txtr_id],
-		txtx % SDL.texture[REND.txtr_id]->w, txty % SDL.texture[REND.txtr_id]->h),
+		txtx % SDL.texture[REND.txtr_id]->w, txty
+			% SDL.texture[REND.txtr_id]->h),
 		percentage(255, 0, REND.z));
 		*pix = (!(CFG.walls) && color <= 0x010101) ? *pix : color;
 		pix += WIN_W;
@@ -81,9 +82,9 @@ void	move_sky(t_main *m, int x, int y)
 {
 	SDL.view.x += x * 25;
 	SDL.view.y += y / 2;
-
 	SDL.view.x = (SDL.view.x < 0) ? SDL.texture[6]->w - SDL.view.w : SDL.view.x;
 	SDL.view.y = (SDL.view.y < 0) ? 0 : SDL.view.y;
 	SDL.view.x = (SDL.view.x > SDL.texture[6]->w - SDL.view.w) ? 0 : SDL.view.x;
-	SDL.view.y = (SDL.view.y > SDL.texture[6]->h - SDL.view.h) ? SDL.texture[6]->h - SDL.view.h : SDL.view.y;
+	SDL.view.y = (SDL.view.y > SDL.texture[6]->h - SDL.view.h)
+		? SDL.texture[6]->h - SDL.view.h : SDL.view.y;
 }

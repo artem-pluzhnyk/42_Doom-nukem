@@ -33,6 +33,11 @@ void	init_data(t_main *m)
 	SDL.gray.r = 100;
 	SDL.gray.g = 100;
 	SDL.gray.b = 100;
+	init_data2(m);
+}
+
+void	init_data2(t_main *m)
+{
 	MOVE.wsad[0] = 0;
 	MOVE.wsad[1] = 0;
 	MOVE.wsad[2] = 0;

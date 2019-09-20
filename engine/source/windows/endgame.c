@@ -37,6 +37,11 @@ void	endgame(t_main *m)
 	"Press Enter for respawn.", SDL.green);
 	SDL_BlitSurface(sur, NULL, SDL.sur, &rect);
 	SDL_FreeSurface(sur);
+	endreturn(m);
+}
+
+void	endreturn(t_main *m)
+{
 	if (SDL.event.key.type == SDL_KEYDOWN
 	&& SDL.event.key.keysym.sym == SDLK_RETURN)
 	{

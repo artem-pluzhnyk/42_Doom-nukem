@@ -34,6 +34,12 @@ void	load_textures(t_main *m)
 		ft_exit("☣ Error ☣");
 	if (!(SDL.texture[9] = SDL_LoadBMP("../resources/textures/grass.bmp")))
 		ft_exit("☣ Error ☣");
+	load_textures1(m);
+	load_textures2(m);
+}
+
+void	load_textures1(t_main *m)
+{
 	if (!(SDL.texture[10] = SDL_LoadBMP("../resources/textures/poster1.bmp")))
 		ft_exit("☣ Error ☣");
 	if (!(SDL.texture[11] = SDL_LoadBMP("../resources/textures/atm.bmp")))
@@ -50,15 +56,22 @@ void	load_textures(t_main *m)
 		ft_exit("☣ Error ☣");
 	if (!(SDL.texture[17] = SDL_LoadBMP("../resources/textures/comics.bmp")))
 		ft_exit("☣ Error ☣");
-	if (!(SDL.texture[18] = SDL_LoadBMP("../resources/textures/volume_off.bmp")))
+	if (!(SDL.texture[18] = SDL_LoadBMP(
+			"../resources/textures/volume_off.bmp")))
 		ft_exit("☣ Error ☣");
+}
+
+void	load_textures2(t_main *m)
+{
 	if (!(SDL.texture[19] = SDL_LoadBMP("../resources/textures/volume_on.bmp")))
 		ft_exit("☣ Error ☣");
 	if (!(SDL.texture[20] = SDL_LoadBMP("../resources/textures/small-aim.bmp")))
 		ft_exit("☣ Error ☣");
-	if (!(SDL.texture[21] = SDL_LoadBMP("../resources/textures/checkbox_off.bmp")))
+	if (!(SDL.texture[21] = SDL_LoadBMP(
+			"../resources/textures/checkbox_off.bmp")))
 		ft_exit("☣ Error ☣");
-	if (!(SDL.texture[22] = SDL_LoadBMP("../resources/textures/checkbox_on.bmp")))
+	if (!(SDL.texture[22] = SDL_LoadBMP(
+			"../resources/textures/checkbox_on.bmp")))
 		ft_exit("☣ Error ☣");
 	if (!(SDL.texture[23] = SDL_LoadBMP("../resources/textures/hazard.bmp")))
 		ft_exit("☣ Error ☣");
